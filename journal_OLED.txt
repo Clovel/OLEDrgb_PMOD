@@ -1,0 +1,47 @@
+Projet OLED
+Xavier Marino & Clovis Durand
+Encadrant : Yannick Bornat
+2017 - E2 - S8
+
+
+	- 30.01.2017
+
+ - Guide de références du PMOD OLED : https://reference.digilentinc.com/reference/pmod/pmodoledrgb/reference-manual 
+ Ce guide contient les informations sur le Power-On Sequence. On communique entre la carte et le PMOD avec le protocol SPI. 
+ - Page Wiki SPI : https://en.wikipedia.org/wiki/Serial_Peripheral_Interface_Bus
+ - Tera Term : Logiciel Open source software. Sert a communiquer avec la carte Nexys4 en liaison. 
+  - Processeur décrit en VHDL : compatible jeu d'instructions du PIC 16F636
+
+  	- 06.02.2017
+
+Le uP possède :
+	- Un module SPI
+	- Un module GPIO
+	- UART (Communication PC - Comm Serie)
+	- Timer
+Fichier compilé : .hex
+
+Quand on lance Tera Term :
+- Configurer le terminal : Choisir le port. 
+
+Terminal : stty/settty
+115200 bps
+1 bit de stop
+pas de parité
+8 bits de données 
+pas de controle de flux
+
+stty /dev/ttymachin speed 115200 cs8 -crtscts -parenb -cstopb
+
+il est conseilé d'utiliser deux temrinaux en parallèle
+- cat /dev/ttyUSB0    -- Affiche tout ce qui arrive de la carte. La carte indique "P2K" lorquelle est prete à recevoir du coe. 
+- cat fichier_compile.hex > /dev/ttyUSB0    -- Pour envoyer le fichier a la carte
+- cat > /dev/ttyUSB0     -- Tout ce que l'on tape sera envoyé 
+
+sur oscillo : on peut lire les différentes donées envoyées en SPI mais aucune réponse au niveau de l'OLED
+
+	-27.02.2017
+
+http://pbxbook.com/other/mac-tty.html
+
+You might notice that each serial device shows up twice in /dev, once as a tty.* and once as a cu.*. So, what's the difference? Well, TTY devices are for calling into UNIX systems, whereas CU (Call-Up) devices are for calling out from them (eg, modems). We want to call-out from our Mac, so /dev/cu.* is the correct device to use.

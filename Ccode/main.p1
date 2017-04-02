@@ -1,0 +1,498 @@
+Version 3.2 HI-TECH Software Intermediate Code
+"1674 /Applications/Microchip/xc8/v1.37/include/pic16f636.h
+[v _T0IF `Vb ~T0 @X0 0 e@90 ]
+[p mainexit ]
+"31 Sources/../Headers/OLED_functions.h
+[v _init `(v ~T0 @X0 0 ef ]
+"9 Sources/../Headers/OLED_power_on.h
+[v _init_OLED `(v ~T0 @X0 0 ef ]
+"32 Sources/../Headers/OLED_functions.h
+[v _clearScreen `(v ~T0 @X0 0 ef ]
+"29
+[v _wait_ms `(v ~T0 @X0 0 ef1`us ]
+"36
+[v _setPixelAddrTo0 `(v ~T0 @X0 0 ef ]
+"18
+[v _send_char `(v ~T0 @X0 0 ef1`uc ]
+"21
+[v _send_nl `(v ~T0 @X0 0 ef ]
+"23
+[v _getbyte `(uc ~T0 @X0 0 ef ]
+"26
+[v _OLED_spi_sendchar `(v ~T0 @X0 0 ef1`uc ]
+"51 /Applications/Microchip/xc8/v1.37/include/pic16f636.h
+[; <" INDF equ 00h ;# ">
+"57
+[; <" TMR0 equ 01h ;# ">
+"63
+[; <" PCL equ 02h ;# ">
+"69
+[; <" STATUS equ 03h ;# ">
+"156
+[; <" FSR equ 04h ;# ">
+"162
+[; <" PORTA equ 05h ;# ">
+"211
+[; <" PORTC equ 07h ;# ">
+"260
+[; <" PCLATH equ 0Ah ;# ">
+"279
+[; <" INTCON equ 0Bh ;# ">
+"340
+[; <" PIR1 equ 0Ch ;# ">
+"396
+[; <" TMR1 equ 0Eh ;# ">
+"402
+[; <" TMR1L equ 0Eh ;# ">
+"408
+[; <" TMR1H equ 0Fh ;# ">
+"414
+[; <" T1CON equ 010h ;# ">
+"484
+[; <" WDTCON equ 018h ;# ">
+"536
+[; <" CMCON0 equ 019h ;# ">
+"605
+[; <" CMCON1 equ 01Ah ;# ">
+"630
+[; <" OPTION_REG equ 081h ;# ">
+"699
+[; <" TRISA equ 085h ;# ">
+"748
+[; <" TRISC equ 087h ;# ">
+"797
+[; <" PIE1 equ 08Ch ;# ">
+"853
+[; <" PCON equ 08Eh ;# ">
+"912
+[; <" OSCCON equ 08Fh ;# ">
+"976
+[; <" OSCTUNE equ 090h ;# ">
+"1027
+[; <" LVDCON equ 094h ;# ">
+"1079
+[; <" WPUDA equ 095h ;# ">
+"1123
+[; <" IOCA equ 096h ;# ">
+"1172
+[; <" WDA equ 097h ;# ">
+"1216
+[; <" VRCON equ 099h ;# ">
+"1275
+[; <" EEDAT equ 09Ah ;# ">
+"1280
+[; <" EEDATA equ 09Ah ;# ">
+"1328
+[; <" EEADR equ 09Bh ;# ">
+"1334
+[; <" EECON1 equ 09Ch ;# ">
+"1371
+[; <" EECON2 equ 09Dh ;# ">
+"1377
+[; <" CRCON equ 0110h ;# ">
+"1436
+[; <" CRDAT0 equ 0111h ;# ">
+"1455
+[; <" CRDAT1 equ 0112h ;# ">
+"1474
+[; <" CRDAT2 equ 0113h ;# ">
+"1493
+[; <" CRDAT3 equ 0114h ;# ">
+"11 Sources/../Headers/OLED_up_header.h
+[v _FPGA_CONFIG_ID `Vuc ~T0 @X0 1 s@5 ]
+"12
+[v _FPGA_PROJECT_ID `Vuc ~T0 @X0 1 s@6 ]
+"13
+[v _FPGA_BOARD_ID `Vuc ~T0 @X0 1 s@7 ]
+"16
+[v _NEX4_RGB_LED_OUT `Vuc ~T0 @X0 1 s@12 ]
+"17
+[v _NEX4_DIR_BUT_IN `Vuc ~T0 @X0 1 s@12 ]
+"18
+[v _SOC_MODES `Vuc ~T0 @X0 1 s@13 ]
+"19
+[v _NEX4_SW_LSB_IN `Vuc ~T0 @X0 1 s@14 ]
+"20
+[v _NEX4_LED_LSB_OUT `Vuc ~T0 @X0 1 s@14 ]
+"21
+[v _NEX4_SW_MSB_IN `Vuc ~T0 @X0 1 s@15 ]
+"22
+[v _NEX4_LED_MSB_OUT `Vuc ~T0 @X0 1 s@15 ]
+"23
+[v _UART_STATUS `Vuc ~T0 @X0 1 s@16 ]
+"24
+[v _UART_RXR `Vuc ~T0 @X0 1 s@17 ]
+"25
+[v _UART_TXR `Vuc ~T0 @X0 1 s@17 ]
+"26
+[v _CRC_L `Vuc ~T0 @X0 1 s@18 ]
+"27
+[v _CRC_H `Vuc ~T0 @X0 1 s@19 ]
+"30
+[v _OLED_SPI_STATUS `Vuc ~T0 @X0 1 s@22 ]
+"31
+[v _OLED_SPI_FILE `Vuc ~T0 @X0 1 s@23 ]
+"32
+[v _NEX4_7SEG_VAL `Vuc ~T0 @X0 1 s@24 ]
+"33
+[v _NEX4_7SEG_SEL `Vuc ~T0 @X0 1 s@25 ]
+"35
+[v _CODE_ADDR_LSB `Vuc ~T0 @X0 1 s@140 ]
+"36
+[v _CODE_ADDR_MSB `Vuc ~T0 @X0 1 s@141 ]
+"37
+[v _CODE_DATA_L `Vuc ~T0 @X0 1 s@142 ]
+"38
+[v _CODE_DATA_H `Vuc ~T0 @X0 1 s@143 ]
+"40
+[v _CODE_ADDR `Vus ~T0 @X0 1 s@140 ]
+"41
+[v _CODE_DATA `Vus ~T0 @X0 1 s@142 ]
+"44
+[v _NEX4_PMOD_B `Vuc ~T0 @X0 1 s@192 ]
+"49
+[v _NEX4_RGBL0_BLUE `Vb ~T0 @X0 1 s@96 ]
+"50
+[v _NEX4_RGBL0_GREEN `Vb ~T0 @X0 1 s@97 ]
+"51
+[v _NEX4_RGBL0_RED `Vb ~T0 @X0 1 s@98 ]
+"52
+[v _NEX4_RGBL1_BLUE `Vb ~T0 @X0 1 s@99 ]
+"53
+[v _NEX4_RGBL1_GREEN `Vb ~T0 @X0 1 s@100 ]
+"54
+[v _NEX4_RGBL1_RED `Vb ~T0 @X0 1 s@101 ]
+"56
+[v _NEX4_PB_RIGHT `Vb ~T0 @X0 1 s@96 ]
+"57
+[v _NEX4_PB_LEFT `Vb ~T0 @X0 1 s@97 ]
+"58
+[v _NEX4_PB_DOWN `Vb ~T0 @X0 1 s@98 ]
+"59
+[v _NEX4_PB_UP `Vb ~T0 @X0 1 s@99 ]
+"60
+[v _NEX4_PB_CENT `Vb ~T0 @X0 1 s@100 ]
+"63
+[v _RAM_MODE `Vb ~T0 @X0 1 s@104 ]
+"64
+[v _WDTE `Vb ~T0 @X0 1 s@105 ]
+"66
+[v _NEX4_SW_0 `Vb ~T0 @X0 1 s@112 ]
+"67
+[v _NEX4_SW_1 `Vb ~T0 @X0 1 s@113 ]
+"68
+[v _NEX4_SW_2 `Vb ~T0 @X0 1 s@114 ]
+"69
+[v _NEX4_SW_3 `Vb ~T0 @X0 1 s@115 ]
+"70
+[v _NEX4_SW_4 `Vb ~T0 @X0 1 s@116 ]
+"71
+[v _NEX4_SW_5 `Vb ~T0 @X0 1 s@117 ]
+"72
+[v _NEX4_SW_6 `Vb ~T0 @X0 1 s@118 ]
+"73
+[v _NEX4_SW_7 `Vb ~T0 @X0 1 s@119 ]
+"74
+[v _NEX4_SW_8 `Vb ~T0 @X0 1 s@120 ]
+"75
+[v _NEX4_SW_9 `Vb ~T0 @X0 1 s@121 ]
+"76
+[v _NEX4_SW_A `Vb ~T0 @X0 1 s@122 ]
+"77
+[v _NEX4_SW_B `Vb ~T0 @X0 1 s@123 ]
+"78
+[v _NEX4_SW_C `Vb ~T0 @X0 1 s@124 ]
+"79
+[v _NEX4_SW_D `Vb ~T0 @X0 1 s@125 ]
+"80
+[v _NEX4_SW_E `Vb ~T0 @X0 1 s@126 ]
+"81
+[v _NEX4_SW_F `Vb ~T0 @X0 1 s@127 ]
+"84
+[v _NEX4_LED_0 `Vb ~T0 @X0 1 s@112 ]
+"85
+[v _NEX4_LED_1 `Vb ~T0 @X0 1 s@113 ]
+"86
+[v _NEX4_LED_2 `Vb ~T0 @X0 1 s@114 ]
+"87
+[v _NEX4_LED_3 `Vb ~T0 @X0 1 s@115 ]
+"88
+[v _NEX4_LED_4 `Vb ~T0 @X0 1 s@116 ]
+"89
+[v _NEX4_LED_5 `Vb ~T0 @X0 1 s@117 ]
+"90
+[v _NEX4_LED_6 `Vb ~T0 @X0 1 s@118 ]
+"91
+[v _NEX4_LED_7 `Vb ~T0 @X0 1 s@119 ]
+"92
+[v _NEX4_LED_8 `Vb ~T0 @X0 1 s@120 ]
+"93
+[v _NEX4_LED_9 `Vb ~T0 @X0 1 s@121 ]
+"94
+[v _NEX4_LED_A `Vb ~T0 @X0 1 s@122 ]
+"95
+[v _NEX4_LED_B `Vb ~T0 @X0 1 s@123 ]
+"96
+[v _NEX4_LED_C `Vb ~T0 @X0 1 s@124 ]
+"97
+[v _NEX4_LED_D `Vb ~T0 @X0 1 s@125 ]
+"98
+[v _NEX4_LED_E `Vb ~T0 @X0 1 s@126 ]
+"99
+[v _NEX4_LED_F `Vb ~T0 @X0 1 s@127 ]
+"103
+[v _UART_RXRDY `Vb ~T0 @X0 1 s@128 ]
+"104
+[v _UART_TXBSY `Vb ~T0 @X0 1 s@129 ]
+"105
+[v _UART_TXMPTY `Vb ~T0 @X0 1 s@130 ]
+"106
+[v _UART_RXHIGH `Vb ~T0 @X0 1 s@131 ]
+"107
+[v _UART_RXFULL `Vb ~T0 @X0 1 s@132 ]
+"108
+[v _UART_RXDLSS `Vb ~T0 @X0 1 s@133 ]
+"109
+[v _UART_SPEEDL `Vb ~T0 @X0 1 s@134 ]
+"110
+[v _UART_SPEEDH `Vb ~T0 @X0 1 s@135 ]
+"116
+[v _OLED_SPI_BSY `Vb ~T0 @X0 1 s@176 ]
+"118
+[v _OLED_DC `Vb ~T0 @X0 1 s@1540 ]
+"119
+[v _OLED_RES `Vb ~T0 @X0 1 s@1541 ]
+"120
+[v _OLED_VBATC `Vb ~T0 @X0 1 s@1542 ]
+"121
+[v _OLED_VDDC `Vb ~T0 @X0 1 s@1543 ]
+"125
+[v _FSPI_STATUS `Vuc ~T0 @X0 1 s@195 ]
+"126
+[v _FSPI_FILE `Vuc ~T0 @X0 1 s@195 ]
+"28 Sources/../Headers/def.h
+[v _tmpg `Vuc ~T0 @X0 1 e ]
+"29
+[v _Display `Vuc ~T0 @X0 -> 8 `i e ]
+"30
+[v _Disp_idx `Vuc ~T0 @X0 1 e ]
+"31
+[v _sys_cnt `Vuc ~T0 @X0 1 e ]
+"33
+[v _last_R7_resp `Vuc ~T0 @X0 -> 4 `i e ]
+[v F863 `(v ~T0 @X0 1 tf ]
+"10 Sources/main.c
+[v _IT `IF863 ~T0 @X0 1 e ]
+"11
+{
+[e :U _IT ]
+[f ]
+"12
+[e = _T0IF -> -> 0 `i `b ]
+"13
+[e = _NEX4_7SEG_VAL -> -> 255 `i `uc ]
+"14
+[e =<< _NEX4_7SEG_SEL -> 1 `i ]
+"15
+[e $ ! != -> _NEX4_7SEG_SEL `i -> 254 `i 77  ]
+{
+[e ++ _NEX4_7SEG_SEL -> -> 1 `i `uc ]
+}
+[e :U 77 ]
+"16
+[e = _Disp_idx -> & + -> _Disp_idx `i -> 1 `i -> 7 `i `uc ]
+"17
+[e = _NEX4_7SEG_VAL *U + &U _Display * -> _Disp_idx `ux -> -> # *U &U _Display `ui `ux ]
+"18
+[e $ ! ! != -> _Disp_idx `i -> -> -> 0 `i `Vuc `i 78  ]
+{
+[e ++ _sys_cnt -> -> 1 `i `uc ]
+}
+[e :U 78 ]
+"19
+[e :UE 76 ]
+}
+"26
+[v _main `(i ~T0 @X0 1 ef ]
+"27
+{
+[e :U _main ]
+[f ]
+"28
+[v _a `uc ~T0 @X0 1 a ]
+"29
+[v _command `uc ~T0 @X0 1 a ]
+"30
+[e ( _init ..  ]
+"31
+[e ( _init_OLED ..  ]
+"33
+[e ( _clearScreen ..  ]
+"34
+[e ( _wait_ms (1 -> -> 50 `i `us ]
+"35
+[e ( _setPixelAddrTo0 ..  ]
+"42
+[e :U 81 ]
+"43
+{
+"44
+[e = _command -> -> 0 `i `uc ]
+"45
+[e $ ! _UART_RXRDY 83  ]
+[e = _command _UART_RXR ]
+[e :U 83 ]
+"47
+[e $ ! == -> _command `ui -> 82 `ui 84  ]
+"49
+{
+"51
+[e = _NEX4_7SEG_VAL -> -> 191 `i `uc ]
+"52
+[e = _NEX4_7SEG_SEL -> -> 0 `i `uc ]
+"53
+[e = _RAM_MODE -> -> 0 `i `b ]
+"54
+}
+[e :U 84 ]
+"55
+[e $ ! == -> _command `ui -> 73 `ui 85  ]
+"57
+{
+"58
+[e ( _clearScreen ..  ]
+"60
+[e ( _send_char (1 -> -> 83 `ui `uc ]
+"61
+[e ( _send_char (1 -> -> 101 `ui `uc ]
+"62
+[e ( _send_char (1 -> -> 110 `ui `uc ]
+"63
+[e ( _send_char (1 -> -> 100 `ui `uc ]
+"64
+[e ( _send_char (1 -> -> 32 `ui `uc ]
+"65
+[e ( _send_char (1 -> -> 98 `ui `uc ]
+"66
+[e ( _send_char (1 -> -> 105 `ui `uc ]
+"67
+[e ( _send_char (1 -> -> 116 `ui `uc ]
+"68
+[e ( _send_char (1 -> -> 109 `ui `uc ]
+"69
+[e ( _send_char (1 -> -> 97 `ui `uc ]
+"70
+[e ( _send_char (1 -> -> 112 `ui `uc ]
+"71
+[e ( _send_char (1 -> -> 32 `ui `uc ]
+"72
+[e ( _send_char (1 -> -> 84 `ui `uc ]
+"73
+[e ( _send_char (1 -> -> 101 `ui `uc ]
+"74
+[e ( _send_char (1 -> -> 120 `ui `uc ]
+"75
+[e ( _send_char (1 -> -> 116 `ui `uc ]
+"76
+[e ( _send_char (1 -> -> 102 `ui `uc ]
+"77
+[e ( _send_char (1 -> -> 105 `ui `uc ]
+"78
+[e ( _send_char (1 -> -> 108 `ui `uc ]
+"79
+[e ( _send_char (1 -> -> 101 `ui `uc ]
+"80
+[e ( _send_nl ..  ]
+"82
+[e = _OLED_DC -> -> 1 `i `b ]
+"83
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i * -> 6144 `i -> 2 `i 86  ]
+[e $U 87  ]
+"85
+[e :U 86 ]
+{
+"86
+[e = _a ( _getbyte ..  ]
+"87
+[e ( _OLED_spi_sendchar (1 _a ]
+"88
+}
+"83
+[e ++ _i -> 1 `i ]
+[e $ < _i * -> 6144 `i -> 2 `i 86  ]
+[e :U 87 ]
+"88
+}
+"89
+[e = _OLED_DC -> -> 0 `i `b ]
+"90
+[e ( _send_char (1 -> -> 68 `ui `uc ]
+"91
+[e ( _send_char (1 -> -> 79 `ui `uc ]
+"92
+[e ( _send_char (1 -> -> 78 `ui `uc ]
+"93
+[e ( _send_char (1 -> -> 69 `ui `uc ]
+"94
+[e ( _send_nl ..  ]
+"95
+[e ( _setPixelAddrTo0 ..  ]
+"96
+}
+[e :U 85 ]
+"97
+[e $ ! == -> _command `ui -> 84 `ui 89  ]
+"99
+{
+"101
+}
+[e :U 89 ]
+"102
+[e $ ! == -> _command `ui -> 67 `ui 90  ]
+"103
+{
+"104
+[e ( _clearScreen ..  ]
+"105
+[e ( _send_char (1 -> -> 83 `ui `uc ]
+"106
+[e ( _send_char (1 -> -> 99 `ui `uc ]
+"107
+[e ( _send_char (1 -> -> 114 `ui `uc ]
+"108
+[e ( _send_char (1 -> -> 101 `ui `uc ]
+"109
+[e ( _send_char (1 -> -> 101 `ui `uc ]
+"110
+[e ( _send_char (1 -> -> 110 `ui `uc ]
+"112
+[e ( _send_char (1 -> -> 67 `ui `uc ]
+"113
+[e ( _send_char (1 -> -> 108 `ui `uc ]
+"114
+[e ( _send_char (1 -> -> 101 `ui `uc ]
+"115
+[e ( _send_char (1 -> -> 97 `ui `uc ]
+"116
+[e ( _send_char (1 -> -> 114 `ui `uc ]
+"117
+[e ( _send_char (1 -> -> 101 `ui `uc ]
+"118
+[e ( _send_char (1 -> -> 100 `ui `uc ]
+"119
+[e ( _send_nl ..  ]
+"120
+}
+[e :U 90 ]
+"127
+}
+[e :U 80 ]
+"42
+[e $U 81  ]
+[e :U 82 ]
+"128
+[e :UE 79 ]
+}

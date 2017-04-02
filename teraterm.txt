@@ -1,0 +1,17 @@
+/dev/ttyUSB0
+		   1
+		   2
+		   3
+		   .
+
+settty 	115200bps 
+		1bit de stop 
+		pas de parité
+		8 bits de données
+		pas de contrôle de flux
+
+cat /dev/tttyUSB0
+
+la carte indique P2k quand elle est prête à recevoir 
+
+cat fichier .hex > /dev/tttyUSB0	(envoyer le fichier .hex sur la carte)
