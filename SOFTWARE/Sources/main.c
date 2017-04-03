@@ -4,8 +4,6 @@
 // 2017
 
 #include "../Headers/def.h"
-//#include "../Headers/OLED_power_on.h"
-//#include "../Headers/OLED_functions.h"
 
 interrupt void IT(void)
 { 
@@ -32,10 +30,13 @@ int main()
 
 	clearScreen();
 	wait_ms(50);
-	setPixelAddrTo0();
+	setPixelAddrTo0(); // Reinitialisation de l'addresse d'ecriture
+
+	// Test ecriture pixel
 	/*writePixel(0xF8, 0x00);
     setPixelAddrTo0();*/
 
+	// Test de drawline
 /*	drawRect(0x00, 0x00, 0x5F, 0x3F, 0x00, 0x00, 0xFF, 0x00, 0xFF, 0x00);
 	drawLine(0x01, 0x01, 0x5E, 0x3E, 0xFF, 0x00, 0x00);*/
 

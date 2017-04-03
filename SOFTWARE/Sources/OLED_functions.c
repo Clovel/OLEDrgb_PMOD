@@ -4,8 +4,6 @@
 // 2017
 
 #include "../Headers/def.h"
-/*#include "../Headers/OLED_functions.h"*/
-//#include <string.h>
 
 uChar recv_char(void) // receive Char de la part de l'ordi
 {

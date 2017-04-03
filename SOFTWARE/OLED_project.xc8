@@ -1,1 +1,0 @@
---chip=16F636 -m --opt=all -g Sources/main.c Sources/OLED_power_on.c Sources/OLED_functions.c

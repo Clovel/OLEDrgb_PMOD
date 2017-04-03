@@ -3,9 +3,7 @@
 // Ecdt : Y. Bornat
 // 2017
 
-#include "../Headers/def.h"/*
-#include "../Headers/OLED_power_on.h"
-#include "../Headers/OLED_functions.h"*/
+#include "../Headers/def.h"
 
 
 void init_OLED(void)
