@@ -1,1 +1,0 @@
- OLED_functions.d  OLED_functions.p1:  Sources/OLED_functions.c Sources/../Headers/OLED_functions.h Sources/../Headers/OLED_power_on.h Sources/../Headers/OLED_up_header.h Sources/../Headers/def.h
