@@ -8,13 +8,17 @@ use IEEE.STD_LOGIC_1164.all;
 use IEEE.NUMERIC_STD.all;
 
 entity sync_ram is
-  port (
-    clock   : in  std_logic;
-    we      : in  std_logic;
-    address : in  std_logic_vector;
-    datain  : in  std_logic_vector;
-    dataout : out std_logic_vector
-  );
+	generic (
+		data_size
+		ram_length
+		);
+  	port (
+		clock   : in  std_logic;
+		we      : in  std_logic;
+		address : in  std_logic_vector;
+		datain  : in  std_logic_vector;
+		dataout : out std_logic_vector
+		);
 end entity sync_ram;
 
 architecture RTL of sync_ram is
