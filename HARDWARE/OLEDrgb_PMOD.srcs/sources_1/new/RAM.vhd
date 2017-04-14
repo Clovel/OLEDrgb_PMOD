@@ -9,8 +9,8 @@ use IEEE.NUMERIC_STD.all;
 
 entity sync_ram is
 	generic (
-		data_size
-		ram_length
+		data_size	: integer;
+		ram_length	: integer
 		);
   	port (
 		clock   : in  std_logic;
