@@ -33,15 +33,15 @@ use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 use work.ram_config.ALL;
 
-entity MEM_init is
+entity RAM_init is
     Port 
     ( 
         read_idx    : in    STD_LOGIC_VECTOR (addr_size-1 downto 0);
         data_out    : out   STD_LOGIC_VECTOR (data_size-1 downto 0)
     );
-end MEM_init;
+end RAM_init;
 
-architecture Behavioral of MEM_init is
+architecture Behavioral of RAM_init is
 
     type   MEMORY is array (0 to MEM_size-1) of std_logic_vector(data_size-1 downto 0);
     signal mem          : MEMORY := (

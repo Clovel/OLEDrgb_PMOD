@@ -62,7 +62,7 @@ architecture Behavioral of top_level_init is
     signal sdata_out    : STD_LOGIC_VECTOR (31 downto 0);
     signal sSPI_busy    : STD_LOGIC;
     
-    component MEM_init is
+    component RAM_init is
         Port 
         (  
             read_idx    : in    STD_LOGIC_VECTOR (3 downto 0);
@@ -103,7 +103,7 @@ architecture Behavioral of top_level_init is
     end component;
 begin
 
-    bloc1 : MEM_init 
+    bloc1 : RAM_init 
     Port map
     (
         read_idx    => sread_idx,

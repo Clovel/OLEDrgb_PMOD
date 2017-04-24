@@ -9,9 +9,9 @@ use IEEE.NUMERIC_STD.all;
 
 entity sync_ram is
 	generic (
-		data_size	: integer := 16;
-		addr_length	: integer := 10
-		-- Ave ces valeurs par defaut, on a 2ko, taille de base des blocs memoire du FPGA
+		data_size	: integer := 32; -- Deux case par pixel
+		addr_length	: integer := 12  -- 3k d'adresses de 32 bits : 96*64*2*8 = 3072*32 = 98304
+		-- Avec ces valeurs par defaut, on a 2ko, taille de base des blocs memoire du FPGA
 		);
   	port (
 		clock   : in  std_logic;
