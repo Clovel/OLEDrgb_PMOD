@@ -103,7 +103,7 @@ begin
             end if;
     end process;
     
-    sclk <= ssclk;
+    sclk <= NOT(ssclk);
     
     SPI_busy_generator : process(clk, reset)
         begin
