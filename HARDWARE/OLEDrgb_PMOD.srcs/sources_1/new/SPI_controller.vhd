@@ -1,23 +1,7 @@
-----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date: 03.04.2017 10:36:36
--- Design Name: 
--- Module Name: SPI_controller - Behavioral
--- Project Name: 
--- Target Devices: 
--- Tool Versions: 
--- Description: 
--- 
--- Dependencies: 
--- 
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
--- 
-----------------------------------------------------------------------------------
-
+-- MARINO Xavier & DURAND Clovis
+-- ENSEIRB-Matmeca, E2
+-- 2017 - PR214
+-- OLEDrgb PMOD
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;

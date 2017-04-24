@@ -1,23 +1,7 @@
-----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date: 16.04.2017 14:59:24
--- Design Name: 
--- Module Name: FSM - Behavioral
--- Project Name: 
--- Target Devices: 
--- Tool Versions: 
--- Description: 
--- 
--- Dependencies: 
--- 
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
--- 
-----------------------------------------------------------------------------------
-
+-- MARINO Xavier & DURAND Clovis
+-- ENSEIRB-Matmeca, E2
+-- 2017 - PR214
+-- OLEDrgb PMOD
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
