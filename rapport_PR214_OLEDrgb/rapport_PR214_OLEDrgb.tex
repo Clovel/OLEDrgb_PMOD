@@ -1,0 +1,132 @@
+\documentclass[11pt]{article}
+
+\usepackage[utf8]{inputenc}  %francais et caractères
+\usepackage[T1]{fontenc} 
+\usepackage[francais]{babel}
+
+\usepackage{amsmath} %math
+\usepackage{amssymb}
+
+\usepackage{graphicx} %images
+%\usepackage{caption}
+\usepackage{subfig}
+%\usepackage{subcaption}
+\usepackage{wrapfig} %images dans texte
+
+\usepackage[dvipsnames]{xcolor} %couleurs
+\usepackage{appendix} %annexes
+\usepackage{listings} %insertion de lignes de code
+\usepackage{physics}
+\usepackage{mathtools, stmaryrd}
+%\usepackage[framed,numbered,autolinebreaks,useliterate]{mcode}
+
+\usepackage[right=2cm, left=2cm, top=2cm, bottom=2cm, headheight=110pt]{geometry}
+\usepackage{lscape}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{\leftmark}
+\fancyhead[L]{PR 206}
+\cfoot{\thepage}
+
+\renewcommand\lstlistingname{Code}
+\renewcommand{\lstlistlistingname}{Table de Codes}
+
+\lstset{language = C,%
+    %basicstyle=\color{red},
+    breaklines=true,%{}
+    keywordstyle=\color{Orange},
+    identifierstyle=\color{Cyan},
+    stringstyle=\color{Red},
+    commentstyle=\color{Green},
+    morekeywords={matlab2tikz},
+    morekeywords=[2]{1}, keywordstyle=[2]{\color{black}},
+    showstringspaces=false,%without this there will be a symbol in the places where there is a space
+    numbers=left,%
+    numberstyle={\tiny \color{black}},% size of the numbers
+    numbersep=9pt, % this defines how far the numbers are from the text
+    emph=[1]{for,end,break},emphstyle=[1]\color{red}, %some words to emphasise
+    %emph=[2]{word1,word2}, emphstyle=[2]{style}, 
+    backgroundcolor=\color{White},
+    basicstyle=\scriptsize\color{black}\ttfamily,
+    frame=L,
+    captionpos = b,
+    %===========================================================
+    framesep=3pt,%expand outward.
+    framerule=0.4pt,%expand outward.
+    xleftmargin=3.4pt,%make the frame fits in the text area. 
+    xrightmargin=3.4pt,%make the frame fits in the text area.
+    %=========================================================== 
+    rulecolor=\color{Red}   
+}
+
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+\newenvironment{rmq}[1] {\noindent\HRule\par\vspace{5pt}\textbf{\textit{REMARQUE : }}#1}{\\\HRule\par\vspace{5pt}}
+
+
+
+\begin{document}
+
+% Page de Garde
+\thispagestyle{empty}
+
+\noindent 
+DURAND Clovis \\ MARINO Xavier\hfill{4 Mai 2017}
+% // et entrer d'autres noms. 
+
+
+
+\vspace{2cm}
+\begin{center}
+\Large{PR 214} % Inserer la matiere concernée
+\HRule \\[0.1cm]
+{\textsc{\LARGE \textbf{Projet Thématique\\ Conception d'un module en VHDL pour la gestion d'un PMOD OLEDrgb Xilinx sur FPGA}}}\\
+\HRule\\[01cm]
+\Large{V1.0} % Version of document
+\end{center}
+\vspace{1,5cm}
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=10cm]{/Users/Clovel/Documents/Scolaire/ENSEIRB-MATMECA/Logo_ENSEIRB.png}
+\end{center}
+\end{figure}
+
+\vspace{1cm}
+\begin{center}
+\Large{ENSEIRB-Matmeca \\ Bordeaux - Talence}
+\end{center}
+
+\vspace{1cm}
+Encadrant : Yannick Bornat
+
+\newpage
+% Tables
+\tableofcontents
+%\lstlistoflistings
+\listoffigures
+\newpage 
+
+% Debut doc
+
+\section{Introduction}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
