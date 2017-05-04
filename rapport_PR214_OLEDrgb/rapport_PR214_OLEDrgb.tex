@@ -13,7 +13,7 @@
 %\usepackage{subcaption}
 \usepackage{wrapfig} %images dans texte
 
-\usepackage[dvipsnames]{xcolor} %couleurs
+\usepackage[table,xcdraw,dvipsnames]{xcolor} %couleurs
 \usepackage{appendix} %annexes
 \usepackage{listings} %insertion de lignes de code
 \usepackage{physics}
@@ -31,6 +31,10 @@
 \cfoot{\thepage}
 
 \usepackage[nottoc]{tocbibind} % Rajoute la bibliographie dans la tdm
+
+%Tables du generateur de tables
+\usepackage[normalem]{ulem}
+\useunder{\uline}{\ul}{}
 
 \renewcommand\lstlistingname{Code}
 \renewcommand{\lstlistlistingname}{Table de Codes}
@@ -131,11 +135,53 @@ Enfin, nous avons développé notre module de gestion du Pmod en VHDL. L’envir
 
 En pratique, l'étude de la datasheet à été un travail permanent, et à donc été faite en parallèle au développement de nos programmes C et de nos descriptions VHDL. Les points de fonctionnement de nos composant qui semblent pour certains relativement simples en apparence mais nous ont posé problème tout de même quand nous avancions dans nos études. A chaque problème de la sorte, il a fallu revoir les points concernés de la datasheet à plusieurs reprises. Pour les problèmes plus complexes, comme la gestion de la communication entre la carte et le Pmod, la datasheet à été d'une grande aide. 
 
+\clearpage
+
 \section{Pmod OLEDrgb}
 
 Un Pmod est un périphérique ou extension destinée à être utilisé avec des cartes programmables telles que la Nexys4 de Digilent que nous utilisons dans ce projet. Le Pmod sur lequel notre travail se concentre ici est l'OLEDrgb, un écran OLED (Organic Light-Emitting Diode) \cite{oleddef} d'une résolution de 96 x 64 pixels capable d'afficher 65k couleurs. 
 
-Pour communiquer avec la carte mère, ce périphérique utilise le protocole SPI (Serial Periphéral Interface Bus)
+\begin{figure}[!htbp]
+	\begin{center}
+		\includegraphics[width = 7cm]{/Users/Clovel/Documents/Scolaire/ENSEIRB-MATMECA/E2/PR214_OLED_project/rapport_PR214_OLEDrgb/pmodoledrgb-1.png}
+		\caption[OLEDrgb Pmod]{Le Pmod OLEDrgb de Digilent utilisé dans ce projet}
+	\end{center}
+\end{figure}
+
+Pour communiquer avec la carte mère, ce périphérique utilise le protocole SPI (Serial Periphéral Interface Bus). Avec ce protocole, on peut envoyer par paquet les informations et commandes nécessaires au fonctionnement de notre écran OLED. 
+Un contrôleur Solomon Systech SSD1331 \cite{ssd1331} est employé pour communiquer entre le Pmod support et le composant de l'écran. Grâce à celui-ci, les commandes envoyées sont exploités et traités. De plus, lorsque que ce contrôleur reçoit des informations, il les stocke dans la RAM de l'écran. Ce contrôleur possède tout un panel de commandes qui permettent d'interagir avec l'écran. (i.e. dessiner un rectangle, un pixel, etc.)\\
+
+
+Ce Pmod à 12 broches : \\
+% Generated w/ http://www.tablesgenerator.com/
+% Please add the following required packages to your document preamble:
+% \usepackage{graphicx}
+% \usepackage[table,xcdraw]{xcolor}
+% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
+% \usepackage[normalem]{ulem}
+% \useunder{\uline}{\ul}{}
+\begin{table}[!htbp]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+\multicolumn{7}{|c|}{{\ul \textbf{Header J1}}}                                                                   \\ \hline
+Pin & Signal      & Decription             & \cellcolor[HTML]{9B9B9B} & Pin & Signal & Description               \\ \cline{1-3} \cline{5-7} 
+1   & CS          & Chip Select            & \cellcolor[HTML]{9B9B9B} & 7   & D/C    & Data/Command Control      \\ \cline{1-3} \cline{5-7} 
+2   & MOSI        & Master Out - Slave In  & \cellcolor[HTML]{9B9B9B} & 8   & RES    & Power Reset               \\ \cline{1-3} \cline{5-7} 
+3   & \textit{NC} & \textit{Not Connected} & \cellcolor[HTML]{9B9B9B} & 9   & VCCEN  & Vcc Enable                \\ \cline{1-3} \cline{5-7} 
+4   & SCK         & Serial Clock           & \cellcolor[HTML]{9B9B9B} & 10  & PMODEN & Vdd Logic Voltage Control \\ \cline{1-3} \cline{5-7} 
+5   & GND         & Power Supply Ground    & \cellcolor[HTML]{9B9B9B} & 11  & GND    & Power Supply Ground       \\ \cline{1-3} \cline{5-7} 
+6   & VCC         & Power Supply (3.3V)    & \cellcolor[HTML]{9B9B9B} & 12  & VCC    & Power Supply (3.3V)       \\ \hline
+\end{tabular}%
+}
+\caption{My caption}
+\label{my-label}
+\end{table}
+
+\clearpage
+
+
 
 
 
@@ -155,6 +201,10 @@ Digilent, Revised April 26, 2016
 Definition of Serial Peripherals Interface Bus and how it works\\
 https://web.archive.org/web/20150413003534/http://www.ee.nmt.edu/\~teare/ee308l/datasheets/S12SPIV3.pdf\\
 Motorola, Inc. , Original Release Date: January 21, 2000, Revised: February 04, 2003
+
+\bibitem{ssd1331}
+Datasheet du SSD1331, contrôleur de matrice de points OLED/PLED\\
+https://www.parallax.com/sites/default/files/downloads/28087-SSD1331\_1.2.pdf
 \end{thebibliography}
 
 
