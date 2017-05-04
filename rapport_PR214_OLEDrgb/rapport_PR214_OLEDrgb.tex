@@ -27,8 +27,10 @@
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[R]{\leftmark}
-\fancyhead[L]{PR 206}
+\fancyhead[L]{PR 214}
 \cfoot{\thepage}
+
+\usepackage[nottoc]{tocbibind} % Rajoute la bibliographie dans la tdm
 
 \renewcommand\lstlistingname{Code}
 \renewcommand{\lstlistlistingname}{Table de Codes}
@@ -83,7 +85,7 @@ DURAND Clovis \\ MARINO Xavier\hfill{4 Mai 2017}
 \begin{center}
 \Large{PR 214} % Inserer la matiere concernée
 \HRule \\[0.1cm]
-{\textsc{\LARGE \textbf{Projet Thématique\\ Conception d'un module en VHDL pour la gestion d'un PMOD OLEDrgb Xilinx sur FPGA}}}\\
+{\textsc{\LARGE \textbf{Projet Thématique\\ Conception d'un module en VHDL pour la gestion d'un Pmod OLEDrgb Digilent sur FPGA}}}\\
 \HRule\\[01cm]
 \Large{V1.0} % Version of document
 \end{center}
@@ -111,8 +113,51 @@ Encadrant : Yannick Bornat
 \newpage 
 
 % Debut doc
+\setcounter{section}{-1}
 
 \section{Introduction}
+
+Au cours de ce projet, un objectif clair nous a été fixé : afficher une image sur un écran OLED couleur d'une résolution 96 x 64, connecté sur une carte Nexys4 de Digilent. Cet écran est monté sur un Pmod (extensions de cartes d'interfaces Entrées/Sorties de chez Digilent). Le cœur du projet est de comprendre comment le Pmod communique avec la carte Nexys4 et de lui envoyer les informations nécessaires à son fonctionnement, telle que la séquence de commandes initialisation de l'écran ou les données de l'image que l'on souhaite afficher. \\
+
+\subsection{Segmentation et déroulement du projet}
+
+Le projet a donc été séparé en plusieurs parties. 
+
+D'abord, l'étude du composant et de sa datasheet. En effet, le Pmod de Digilent possède sa propre datasheet, mais sur celui-ci est monté un contrôleur spécifique à l'écran OLED : le SSD1331. Il a donc été nécessaire d’appréhender comment celui-ci fonctionnait. 
+
+Ensuite, nous avons élaboré un programme d'initialisation et d'utilisation de l'écran. Un microprocesseur basique à été implémenté sur FPGA, nous compilions des programmes écrit en langage C, et nous testions le Pmod de cette façon. Ainsi, en se basant sur ce qu'on a appris des datasheet, nous avons mis au point une séquence de commandes pour initialiser l'écran et pour lui envoyer, via la liaison UART de la carte Nexys4 les données bitmap de l'image. Le but de ces programmes est avant tout de comprendre ce qui doit être décrit en VHDL pour le module de gestion de notre écran OLEDrgb, et ils ne constituent pas notre produit fini. 
+
+Enfin, nous avons développé notre module de gestion du Pmod en VHDL. L’environnement de travail choisi est Vivado de Xilinx. En appliquant une ingénierie inverse aux programmes C développés en amont, une architecture précise à été définie, et la conception de tous les blocs composant notre module ont été écrits. \\
+
+En pratique, l'étude de la datasheet à été un travail permanent, et à donc été faite en parallèle au développement de nos programmes C et de nos descriptions VHDL. Les points de fonctionnement de nos composant qui semblent pour certains relativement simples en apparence mais nous ont posé problème tout de même quand nous avancions dans nos études. A chaque problème de la sorte, il a fallu revoir les points concernés de la datasheet à plusieurs reprises. Pour les problèmes plus complexes, comme la gestion de la communication entre la carte et le Pmod, la datasheet à été d'une grande aide. 
+
+\section{Pmod OLEDrgb}
+
+Un Pmod est un périphérique ou extension destinée à être utilisé avec des cartes programmables telles que la Nexys4 de Digilent que nous utilisons dans ce projet. Le Pmod sur lequel notre travail se concentre ici est l'OLEDrgb, un écran OLED (Organic Light-Emitting Diode) \cite{oleddef} d'une résolution de 96 x 64 pixels capable d'afficher 65k couleurs. 
+
+Pour communiquer avec la carte mère, ce périphérique utilise le protocole SPI (Serial Periphéral Interface Bus)
+
+
+
+%Bibliographic references
+\clearpage
+\begin{thebibliography}{9}
+\bibitem{oleddef} 
+OLED Wikipedia page for definitions\\
+https://en.wikipedia.org/wiki/OLED
+
+\bibitem{oledrgb} 
+OLEDrgb Pmod reference sheet and Datasheet\\
+\textit{Pmod OLEDrgb Reference Manual.} \\
+Digilent, Revised April 26, 2016
+
+\bibitem{spidef} 
+Definition of Serial Peripherals Interface Bus and how it works\\
+https://web.archive.org/web/20150413003534/http://www.ee.nmt.edu/\~teare/ee308l/datasheets/S12SPIV3.pdf\\
+Motorola, Inc. , Original Release Date: January 21, 2000, Revised: February 04, 2003
+\end{thebibliography}
+
+
 
 
 
