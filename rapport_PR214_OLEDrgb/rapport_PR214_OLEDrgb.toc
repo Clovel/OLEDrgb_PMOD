@@ -1,6 +1,18 @@
 \select@language {french}
 \contentsline {section}{Table des figures}{2}
-\contentsline {section}{\numberline {0}Introduction}{3}
-\contentsline {subsection}{\numberline {0.1}Segmentation et d\IeC {\'e}roulement du projet}{3}
-\contentsline {section}{\numberline {1}Pmod OLEDrgb}{4}
-\contentsline {section}{R\'ef\'erences}{5}
+\contentsline {section}{\numberline {0}Introduction}{4}
+\contentsline {subsection}{\numberline {0.1}Segmentation et d\IeC {\'e}roulement du projet}{4}
+\contentsline {section}{\numberline {1}Pmod OLEDrgb}{5}
+\contentsline {section}{\numberline {2}Fonctionnement du Pmod OLEDrgb}{6}
+\contentsline {subsection}{\numberline {2.1}Liaison UART et outils}{6}
+\contentsline {subsection}{\numberline {2.2}S\IeC {\'e}quence d'initialisation}{6}
+\contentsline {subsection}{\numberline {2.3}Envoi de donn\IeC {\'e}es}{6}
+\contentsline {section}{\numberline {3}Module de gestion du Pmod OLEDrgb}{7}
+\contentsline {subsection}{\numberline {3.1}Module de transmission de donn\IeC {\'e}es destin\IeC {\'e}es \IeC {\`a} un protocole d'envoi SPI}{7}
+\contentsline {subsubsection}{\numberline {3.1.1}Principe de fonctionnment du module}{7}
+\contentsline {subsubsection}{\numberline {3.1.2}Description et fonctionnement technique}{8}
+\contentsline {subsection}{\numberline {3.2}Contr\IeC {\^o}le d'envoi de commandes et de donn\IeC {\'e}es}{9}
+\contentsline {subsubsection}{\numberline {3.2.1}Principe de fonctionnement de la machine d'\IeC {\'e}tat}{9}
+\contentsline {subsubsection}{\numberline {3.2.2}Description de la machine d'\IeC {\'e}tat}{11}
+\contentsline {section}{\numberline {4}Conclusion}{15}
+\contentsline {section}{R\'ef\'erences}{16}

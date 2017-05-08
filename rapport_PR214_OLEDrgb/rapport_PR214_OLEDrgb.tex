@@ -7,8 +7,11 @@
 \usepackage{amsmath} %math
 \usepackage{amssymb}
 
+\usepackage{version}
+
 \usepackage{graphicx} %images
 %\usepackage{caption}
+\usepackage{float}
 \usepackage{subfig}
 %\usepackage{subcaption}
 \usepackage{wrapfig} %images dans texte
@@ -26,8 +29,9 @@
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[R]{\leftmark}
-\fancyhead[L]{PR 214}
+\fancyhead[L]{PR214}
+\fancyhead[C]{Rapport Projet Thématique}
+\fancyhead[R]{E2}
 \cfoot{\thepage}
 
 \usepackage[nottoc]{tocbibind} % Rajoute la bibliographie dans la tdm
@@ -70,6 +74,9 @@
 
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
 
+\renewcommand{\arraystretch}{1.5}
+\renewcommand{\baselinestretch}{1.5}
+
 \newenvironment{rmq}[1] {\noindent\HRule\par\vspace{5pt}\textbf{\textit{REMARQUE : }}#1}{\\\HRule\par\vspace{5pt}}
 
 
@@ -80,33 +87,33 @@
 \thispagestyle{empty}
 
 \noindent 
-DURAND Clovis \\ MARINO Xavier\hfill{4 Mai 2017}
+DURAND Clovis\hfill{E2} \\ MARINO Xavier\hfill{Mai 2017}
 % // et entrer d'autres noms. 
 
 
 
-\vspace{2cm}
+\vspace{1cm}
 \begin{center}
 \Large{PR 214} % Inserer la matiere concernée
 \HRule \\[0.1cm]
 {\textsc{\LARGE \textbf{Projet Thématique\\ Conception d'un module en VHDL pour la gestion d'un Pmod OLEDrgb Digilent sur FPGA}}}\\
 \HRule\\[01cm]
-\Large{V1.0} % Version of document
+%\Large{V1.0} % Version of document
 \end{center}
-\vspace{1,5cm}
+\vspace{1cm}
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[width=10cm]{/Users/Clovel/Documents/Scolaire/ENSEIRB-MATMECA/Logo_ENSEIRB.png}
+\includegraphics[width=10cm]{background.png}
 \end{center}
 \end{figure}
 
-\vspace{1cm}
+\vspace{0.5cm}
 \begin{center}
-\Large{ENSEIRB-Matmeca \\ Bordeaux - Talence}
+\Large{ENSEIRB-MATMECA \\ Bordeaux - Talence}
 \end{center}
 
-\vspace{1cm}
+\vspace{0.5cm}
 Encadrant : Yannick Bornat
 
 \newpage
@@ -141,18 +148,26 @@ En pratique, l'étude de la datasheet à été un travail permanent, et à donc 
 
 Un Pmod est un périphérique ou extension destinée à être utilisé avec des cartes programmables telles que la Nexys4 de Digilent que nous utilisons dans ce projet. Le Pmod sur lequel notre travail se concentre ici est l'OLEDrgb, un écran OLED (Organic Light-Emitting Diode) \cite{oleddef} d'une résolution de 96 x 64 pixels capable d'afficher 65k couleurs. 
 
-\begin{figure}[!htbp]
-	\begin{center}
-		\includegraphics[width = 7cm]{/Users/Clovel/Documents/Scolaire/ENSEIRB-MATMECA/E2/PR214_OLED_project/rapport_PR214_OLEDrgb/pmodoledrgb-1.png}
-		\caption[OLEDrgb Pmod]{Le Pmod OLEDrgb de Digilent utilisé dans ce projet}
-	\end{center}
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width = 6cm]{pmodoledrgb-1.png}
+\caption{Le Pmod OLEDrgb de Digilent utilisé dans ce projet}
+\end{center}
 \end{figure}
 
 Pour communiquer avec la carte mère, ce périphérique utilise le protocole SPI (Serial Periphéral Interface Bus). Avec ce protocole, on peut envoyer par paquet les informations et commandes nécessaires au fonctionnement de notre écran OLED. 
 Un contrôleur Solomon Systech SSD1331 \cite{ssd1331} est employé pour communiquer entre le Pmod support et le composant de l'écran. Grâce à celui-ci, les commandes envoyées sont exploités et traités. De plus, lorsque que ce contrôleur reçoit des informations, il les stocke dans la RAM de l'écran. Ce contrôleur possède tout un panel de commandes qui permettent d'interagir avec l'écran. (i.e. dessiner un rectangle, un pixel, etc.)\\
 
+Ce Pmod à un connecteur 12 broches qui se branche sur la carte principale :
 
-Ce Pmod à un connecteur 12 broches qui se branche sur la carte principale : \\
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale = 0.4, keepaspectratio]{Oled_pin_tab.png}
+\caption{Table de correpsondance des pins du Pmod OLEDrgb \cite{oledrgb}}
+\end{center}
+\end{figure}
+
+\begin{comment}
 % Generated w/ http://www.tablesgenerator.com/
 % Please add the following required packages to your document preamble:
 % \usepackage{graphicx}
@@ -178,12 +193,201 @@ Pin & Signal      & Decription             & \cellcolor[HTML]{9B9B9B} & Pin & Si
 \caption{My caption}
 \label{my-label}
 \end{table}
+\end{comment}
 
 \clearpage
 
+\section{Fonctionnement du Pmod OLEDrgb}
+
+\subsection{Liaison UART et outils}
+
+\subsection{Séquence d'initialisation}
+
+\subsection{Envoi de données}
+
+\newpage
+
+\section{Module de gestion du Pmod OLEDrgb}
+
+Une fois les différentes séquences de commandes mises en place, nous sommes passé à la description en langage VHDL du module de gestion de l'écran OLED. Ce developpement s'est scindé en la description de quatre modules :
+
+\begin{itemize}
+
+\item[\textbullet] \texttt{SPI\_controller} : Ce module genère l'ensemble des signaux nécessaires à la transmission d'informations par le biais du protocole SPI.
+
+\item[\textbullet] \texttt{MEM\_init} : Cette source est une ROM contenant les commandes d'initialisations du microcontrôleur.
+
+\item[\textbullet] \texttt{RAM} : Cette RAM contient les données de l'image à afficher sur l'écran, elle est à l'image de la RAM présente dans le microcontrôleur. Cependant elle a été décrite avec deux accès pour permettre son utilisation par un utilisateur extérieur.
+
+\item[\textbullet] \texttt{FSM} : Cette machine d'état conditionne l'envoi des données d'initialisation stockées dans la ROM vers le module SPI, puis celui de l'image stockée dans la RAM.
+
+\end{itemize}
+
+Les deux mémoires présentées plus haut sont toutes deux composées de données sur 16 bits. Ce format a été choisi car il correspond, pour la RAM, au format de données pour un pixel de l'écran. La RAM est combinatoire en lecture et séquentielle pour l'écriture. L'implémentation de deux horloges distinctes, même si  elles sont toutes deux reliées à la même horloge de fonctionnement de la carte, a été nécessaire à la synthèse d'une RAM à double entrée. La ROM quant à elle est purement combinatoire.
+
+\subsection{Module de transmission de données destinées à un protocole d'envoi SPI}
+
+\subsubsection{Principe de fonctionnment du module}
+
+Le protocole de communication SPI permet la tranmission de bus de données de 8 bits par le signal \texttt{MOSI} (Master Out Slave In), c'est le signal d'horloge \texttt{sclk} qui permet la lecture des différentes bits du \texttt{MOSI}. En effet, c'est le déclenchement de huit périodes d'horloge qui permet au contrôleur de détecter l'envoi de données. Le protocole SPI possède également une entrée de contrôle \texttt{CS} (Chip Select) et un signal de retour \texttt{MISO} (Master In Slave Out). L'ensemble des signaux sont représentés dans la figure suivante, représentant la caractéristique simplifiée d'un envoi de données par SPI.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale = 0.32, keepaspectratio]{spi_signals.png}
+\caption{Chronogramme simplifié du fonctionnement du protocole SPI \cite{spiimg}}
+\end{center}
+\end{figure}
+
+Dans le cas du microcontrôleur SSD1331, la lecture des bits de données est faite sur front montant de \texttt{sclk}. Nous avons pu également tester, lors de notre phase de recherche, qu'aucun passage à l'état logique haut n'était nécessaire pour l'entrée \texttt{CS} entre deux envois de données. Enfin, c'est le bit de poids fort qui est envoyé en premier au contrôleur lors de la transmission d'un octet. À l'aide de l'ensemble des ces informations nous avons pu décrire le module explicité plus haut.
+
+La source prend en entrée les signaux \texttt{clk} et \texttt{reset} communs à tous bloc séquentiels, la donnée d'entrée sur 8 bits, ainsi qu'un signal logique d'activation qui dure une période d'horloge. En sortie, sont générés les signaux nécessaires à la communication en SPI, aisni qu'un signal logique $busy$ qui permettra par la suite de temporiser l'envoi de données.
+
+D'après la datasheet du microcontrôleur, la fréquence de fonctionnment du module SPI ne doit pas dépasser les 6 MHz.
+
+\begin{eqnarray*}
+&&f_{max} = 6\text{ Mhz}\\
+&\Rightarrow&T_{min} = \frac{1}{6}\text{ }\mu\text{s}\\
+&\Rightarrow&T_{haut_{min}} = \frac{1}{12}\text{ }\mu\text{s} \sim 83.33\text{ ns}
+\end{eqnarray*}
+
+Nous avons donc choisi, le premier entier paire, afin d'avoir un signal \texttt{sclk} de rapport cyclique 0.5, satisfaisant la condition précédente, comme facteur de division de la fréquence de fonctionnement principale. La fréquence de fonctionnement de la carte NEXYS4 étant 100 Mhz, l'entier choisit est donc 18.
 
 
+\subsubsection{Description et fonctionnement technique}
 
+La description se subdivise en plusieurs processus séquentiels qui génèrent chacun une sortie du module en fonction des entrées. 
+
+\begin{itemize} 
+
+\item[\textbullet] \texttt{sclk} : À chaque détection d'un signal d'$enable$, huit périodes d'horloge, d'une fréquence de 100/18 Mhz, sont générés par le biais de deux compteurs. Le premier, \texttt{cpt\_sclk}, est majoré par la constante définie plus haut et impose la fréquence de \texttt{sclk}. Le second, \texttt{cpt\_octet}, dénombre le nombre de coup d'horloge déjà générés, il est donc majoré par 8. Cette horloge permettra de séquencer l'envoi successif des 8 bits de données. Le niveau de repos de l'horloge devant être reçu par le microcontrôleur étant le niveau haut et la lecture du bit de donné étant effectuée sur front montant de l'horloge, il nous faut envoyer, en sortie du module, l'inverse du signal ainsi généré.
+
+\item[\textbullet] \texttt{SPI\_busy} : Le signal d'occupation reste au niveau haut durant les huit périodes "actives" de \texttt{sclk}, le reste du temps il est maintenu à 0.
+
+\newpage
+
+\item[\textbullet] \texttt{MOSI} : À chaque détection d'un signal d'$enable$, la donnée d'entrée est sauvegardée dans une registre à décalage. Ce registre à décalage est incrémenté à chaque front montant de \texttt{sclk} et c'est sa valeur qui est lue afin de mettre à jour le signal de sortie. Dans la source \texttt{SPI\_controller.vhd}, le dernier processus, qui permet l'actualisation du signal \texttt{MOSI}, a été décrit de façon séquentielle. Le signal \texttt{sdata\_in} étant déjà séquentiel et le signal de sortie seulement lu lors de l'activation de \texttt{sclk}, le processus aurait pu être décrit de manière combinatoire. Cependant, la fréquence de fonctionnement du SPI étant très faible devant celle de la carte, ce choix n'a très peu d'impact sur l'optimisation du temps de transmission et aucun sur le bon fonctionnement du module.
+
+\end{itemize}
+
+Une fois la description terminée, nous avons pu déboguer le code à l'aide de l'outil de simulation de Vivado, duquel est tiré le chronogramme présent en figure X, représentant le fonctionnement du module.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale = 0.3, keepaspectratio]{chrono_SPI_controller.png}
+\caption{Chronogramme du module \texttt{SPI\_controller}}
+\end{center}
+\end{figure}
+
+\subsection{Contrôle d'envoi de commandes et de données}
+
+\subsubsection{Principe de fonctionnement de la machine d'état}
+
+Une fois le module de communication SPI terminé, nous nous sommes penché sur la machine d'état qui aura pour rôle d'ordonnancer les différentes étapes du processus d'initialisation, puis l'envoi des données de l'image. En effet, la séquence d'initialisation déterminée plus tôt peut être subdivisée en plusieurs étapes successives :
+
+\begin{itemize}
+
+\item[\textbullet] Le changement d'état des différentes pins de contrôles du Pmod (\texttt{DC}, \texttt{RES}, \texttt{VCCEN} et \texttt{PMODEN}), séparé ou non par des temporisations. Ces étapes occuperons les états 1 à 6, puis 10 de la machine d'état.
+
+\item[\textbullet] Une séquence d'envoi de commandes par le biais du protocole SPI. Ces commandes, au nombre de quarante-quatre, sont stockés dans la mémoire évoquée plus haut.
+
+\item[\textbullet] Et enfin la commande d'allumage de l'écran qui est la dernière étape de l'initialisation.
+
+\end{itemize}
+
+Nous avons ensuite fait le choix de faire suivre l'initialisation par un tracé de rectangle en utilisant les différentes commandes du microcontrôleur, afin de vérifier le bon focntionnment de la séquence précédente. En effet, la RAM du Pmod étant nettoyée par nos précédentes utilisation, nous n'avions aucun retour visuel de l'allumage de l'écran.
+
+Enfin, la dernière étape consiste à venir chercher les données de l'image de la RAM de notre module vers celle du contrôleur.La figure X illustre la machine d'état ainsi mise en place, dans un schéma simplifié, sans les différentes conditions de changement d'état.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale = 0.67, keepaspectratio]{fsm_visio.pdf}
+\caption{FSM du module de contrôle du Pmod OLEDrgb}
+\end{center}
+\end{figure}
+
+\subsubsection{Description de la machine d'état}
+
+La machine d'état est composée d'un processus séquentiel qui détermine l'état présent et d'un processus combinatoire qui détermine l'état futur en fonction de l'état présent, des entrées du module et d'un ensemble de signaux internes à la source. L'ensemble des processus qui suivent les deux premiers, sont destinés à générer l'ensemble des signaux de sorties et internes de la FSM, c'est sur ces derniers que nous allons nous pencher.
+
+\begin{itemize}
+
+\item[$\rightarrow$] \textbf{Les compteurs}
+
+\begin{itemize}
+
+\item[\textbullet] \textbf{Les temporisations} : Afin de satisfaire les différentes temporisations nécessaires à la séquence d'initialisation, nous avons synthétisé trois compteurs permettant la modélisation de trois temporisations d'une durée de 500 ms, 150 ms et 15 $\mu$s. Trois processus permettent donc d'incrémenter les différents compteurs dans les états correspondants. Ces derniers ne peuvent être quittés seulement lorsque le compteur atteind sa valeur maximale. Tout come pour la synthèse de \texttt{sclk}, la valeur maximale des compteurs est déterminée grâce à la fréquence de fonctionnment de la carte NEXYS 4.
+
+\item[\textbullet] \textbf{Les indices de lecture} : L'état numéro 7 de la machine d'état correspond au temps d'occupation du module lors de l'envoi d'un octet en SPI. Entre deux envois de données et donc deux passages à l'état 7, on vient incrémenter l'indice de lecture de la mémoire en cours de lecture, c'est l'état 9 qui se charge de cela. L'état 8 quant à lui, permet l'incrémentation d'un compteur modulo 2 qui désigne successivement les deux octets compris dans une case mémoire. Ainsi, trois processus incrémentent respectivement les compteurs \texttt{read\_idx\_mem}, \texttt{read\_idx\_ram} et \texttt{cpt\_read}. À noter que le compteur \texttt{read\_idx\_mem} possède deux valeurs d'arrêt, puisqu'une partie la mémoire est utilisée pour stocker les commandes d'initialisation et une autre pour les commandes de tracé de rectangle. Ces commandes peuvent d'ailleurs être inhibées dans le code vhdl car inutiles à l'initialisation.
+
+\end{itemize}
+
+\item[$\rightarrow$] \textbf{Les signaux de sortie}
+
+\begin{itemize}
+
+\item[\textbullet] \textbf{Vers le Pmod} : Les processus qui suivent ont pour rôle de $set$ ou $reset$ les signaux de contrôle du Pmod \texttt{DC}, \texttt{RES}, \texttt{VCCEN} et \texttt{PMODEN}, en fonction de l'état présent.
+
+\item[\textbullet] \textbf{Vers le module SPI} : Enfin, les trois derniers processus permettent la bon focntionnement du module SPI. En effet l'un d'eux génère le signal \texttt{data\_en} nécessaire à la tranmission de donnée par le module SPI, ce signal est condionné selon un signal \texttt{flag\_en} synthétisé juste avant. Ce dernier est presque à l'image du signal \texttt{SPI\_busy}, cependant il passe au niveau haut un coup d'horloge avant \texttt{SPI\_busy}, ce qui permet à \texttt{data\_en} d'être au niveau haut seulement pendant une période d'horloge. Comme l'illustre la figure X.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale = 0.4, keepaspectratio]{chrono_flag_en}
+\caption{Chronogramme représentant le rôle de \texttt{flag\_en}}
+\end{center}
+\end{figure}
+
+Le dernier processus est un processus combinatoire, qui, en fonction de \texttt{DC} et \texttt{cpt\_read}, vient relier la sortie de la FSM et donc l'entrée du module SPI, au bon octet de la ROM ou de la RAM. Ce fonctionnnment est illustré dans la figure qui suit.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale = 0.4, keepaspectratio]{chrono_out}
+\caption{Évolution de \texttt{data\_out} en dfonction des différents paramètres}
+\end{center}
+\end{figure}
+
+On peut voir que, dès que l'envoi de commandes passe en envoi de données, la sortie est reliée à la RAM et non plus à la ROM. Les deux octets de chaque case mémoire sont bien lus grâce au changement d'état de \texttt{cpt\_read}.
+
+\end{itemize}
+
+\end{itemize}
+
+Une fois l'ensemble des composants décrits, nous avons pu les instancier et ainsi simuler le fonctionnement globale du module de gestion de l'écran.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale = 0.3, keepaspectratio]{chrono_1}
+\caption{Chronogramme représentant l'ensemble de la séquence synthétisée}
+\end{center}
+\end{figure}
+
+Sur la figure précente on peut voir au niveau du signal \texttt{MOSI} les différentes étapes d'initialisation. Après environ 150 ms nécessaire à la prise en compte des commutations des signaux de commmandes, au premier pic se trouve l'envoi des commandes d'initialiation via le protocole SPI. Ensuite, après de nouveau environ 150 ms, se trouve le second pic qui correspond à la commandes d'allumage. Enfin, après un temps d'attente de 500 ms, on peut relever un travail continu au niveau du signal \texttt{MOSI}, il s'agit de l'envoi des commandes de tracé du rectangle, puis le rafraichissement continu de l'écran.
+
+Dans les deux figures qui suivent, qui sont un zoom de la précédente, on peut mieux se rendre compte du protocole d'envoi des commandes durant l'initialisation et ainsi vérifier son fonctionnnement.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale = 0.3, keepaspectratio]{chrono_2}
+\caption{Zoom sur l'envoi des commandes d'initialisation}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale = 0.3, keepaspectratio]{chrono_3}
+\caption{Zoom sur la première commande d'initialisation}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale = 1.4, keepaspectratio]{schematic_OLEDrgb_manager.png}
+\caption{Schematic du module de contrôle du PMOD OLEDrgb}
+\end{center}
+\end{figure}
+
+\newpage
+
+\section{Conclusion}
 
 %Bibliographic references
 \clearpage
@@ -192,19 +396,24 @@ Pin & Signal      & Decription             & \cellcolor[HTML]{9B9B9B} & Pin & Si
 OLED Wikipedia page for definitions\\
 https://en.wikipedia.org/wiki/OLED
 
+\bibitem{ssd1331}
+Datasheet du SSD1331, contrôleur de matrice de points OLED/PLED\\
+https://www.parallax.com/sites/default/files/downloads/28087-SSD1331\_1.2.pdf
+
 \bibitem{oledrgb} 
 OLEDrgb Pmod reference sheet and Datasheet\\
 \textit{Pmod OLEDrgb Reference Manual.} \\
 Digilent, Revised April 26, 2016
+
+\bibitem{spiimg}
+Digilent SPI protocol information\\
+https://reference.digilentinc.com/pmod/communication\_protocols/spi
 
 \bibitem{spidef} 
 Definition of Serial Peripherals Interface Bus and how it works\\
 https://web.archive.org/web/20150413003534/http://www.ee.nmt.edu/\~teare/ee308l/datasheets/S12SPIV3.pdf\\
 Motorola, Inc. , Original Release Date: January 21, 2000, Revised: February 04, 2003
 
-\bibitem{ssd1331}
-Datasheet du SSD1331, contrôleur de matrice de points OLED/PLED\\
-https://www.parallax.com/sites/default/files/downloads/28087-SSD1331\_1.2.pdf
 \end{thebibliography}
 
 
