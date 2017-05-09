@@ -1,0 +1,106 @@
+Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+-------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2015.4 (win64) Build 1412921 Wed Nov 18 09:43:45 MST 2015
+| Date         : Sun May 07 13:26:04 2017
+| Host         : MARINOXAVIEB6B8 running 64-bit Service Pack 1  (build 7601)
+| Command      : report_control_sets -verbose -file top_level_test_control_sets_placed.rpt
+| Design       : top_level_test
+| Device       : xc7a100t
+-------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Flip-Flop Distribution
+3. Detailed Control Set Information
+
+1. Summary
+----------
+
++-------------------------------------------------------------------+-------+
+|                               Status                              | Count |
++-------------------------------------------------------------------+-------+
+| Number of unique control sets                                     |    53 |
+| Minimum Number of register sites lost to control set restrictions |    17 |
++-------------------------------------------------------------------+-------+
+
+
+2. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |               0 |            0 |
+| No           | No                    | Yes                    |             180 |           85 |
+| No           | Yes                   | No                     |               0 |            0 |
+| Yes          | No                    | No                     |               0 |            0 |
+| Yes          | No                    | Yes                    |             147 |           91 |
+| Yes          | Yes                   | No                     |               0 |            0 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+3. Detailed Control Set Information
+-----------------------------------
+
++----------------+--------------------------------------+------------------+------------------+----------------+
+|  Clock Signal  |             Enable Signal            | Set/Reset Signal | Slice Load Count | Bel Load Count |
++----------------+--------------------------------------+------------------+------------------+----------------+
+|  clk_IBUF_BUFG | bloc2/bloc4/sread_idx_mem[4]_i_1_n_0 | reset_IBUF       |                2 |              5 |
+|  clk_IBUF_BUFG | bloc2/bloc3/cpt_sclk[4]_i_1_n_0      | reset_IBUF       |                2 |              5 |
+|  clk_IBUF_BUFG | bloc2/bloc4/E[0]                     | reset_IBUF       |                3 |              8 |
+|  clk_IBUF_BUFG | bloc1/sdata_in_reg[7]_8              |                  |               16 |             64 |
+|  clk_IBUF_BUFG | bloc1/sdata_in_reg[7]                |                  |               16 |             64 |
+|  clk_IBUF_BUFG | bloc1/sdata_in_reg[7]_9              |                  |               16 |             64 |
+|  clk_IBUF_BUFG | bloc1/sdata_in_reg[7]_44             |                  |               16 |             64 |
+|  clk_IBUF_BUFG | bloc1/sdata_in_reg[7]_7              |                  |               16 |             64 |
+|  clk_IBUF_BUFG | bloc1/sdata_in_reg[7]_6              |                  |               16 |             64 |
+|  clk_IBUF_BUFG | bloc1/sdata_in_reg[7]_5              |                  |               16 |             64 |
+|  clk_IBUF_BUFG | bloc1/sdata_in_reg[7]_46             |                  |               16 |             64 |
+|  clk_IBUF_BUFG | bloc1/sdata_in_reg[7]_45             |                  |               16 |             64 |
+|  clk_IBUF_BUFG | bloc1/sdata_in_reg[7]_0              |                  |               16 |             64 |
+|  clk_IBUF_BUFG | bloc1/sdata_in_reg[7]_43             |                  |               16 |             64 |
+|  clk_IBUF_BUFG | bloc1/sdata_in_reg[7]_42             |                  |               16 |             64 |
+|  clk_IBUF_BUFG | bloc1/sdata_in_reg[7]_41             |                  |               16 |             64 |
+|  clk_IBUF_BUFG | bloc1/sdata_in_reg[7]_40             |                  |               16 |             64 |
+|  clk_IBUF_BUFG | bloc1/sdata_in_reg[7]_4              |                  |               16 |             64 |
+|  clk_IBUF_BUFG | bloc1/sdata_in_reg[7]_39             |                  |               16 |             64 |
+|  clk_IBUF_BUFG | bloc1/sdata_in_reg[7]_38             |                  |               16 |             64 |
+|  clk_IBUF_BUFG | bloc1/sdata_in_reg[7]_37             |                  |               16 |             64 |
+|  clk_IBUF_BUFG | bloc1/sdata_in_reg[7]_36             |                  |               16 |             64 |
+|  clk_IBUF_BUFG | bloc1/sdata_in_reg[7]_35             |                  |               16 |             64 |
+|  clk_IBUF_BUFG | bloc1/sdata_in_reg[7]_34             |                  |               16 |             64 |
+|  clk_IBUF_BUFG | bloc1/sdata_in_reg[7]_33             |                  |               16 |             64 |
+|  clk_IBUF_BUFG | bloc1/sdata_in_reg[7]_32             |                  |               16 |             64 |
+|  clk_IBUF_BUFG | bloc1/sdata_in_reg[7]_31             |                  |               16 |             64 |
+|  clk_IBUF_BUFG | bloc1/sdata_in_reg[7]_30             |                  |               16 |             64 |
+|  clk_IBUF_BUFG | bloc1/sdata_in_reg[7]_3              |                  |               16 |             64 |
+|  clk_IBUF_BUFG | bloc1/sdata_in_reg[7]_29             |                  |               16 |             64 |
+|  clk_IBUF_BUFG | bloc1/sdata_in_reg[7]_28             |                  |               16 |             64 |
+|  clk_IBUF_BUFG | bloc1/sdata_in_reg[7]_27             |                  |               16 |             64 |
+|  clk_IBUF_BUFG | bloc1/sdata_in_reg[7]_26             |                  |               16 |             64 |
+|  clk_IBUF_BUFG | bloc1/sdata_in_reg[7]_25             |                  |               16 |             64 |
+|  clk_IBUF_BUFG | bloc1/sdata_in_reg[7]_24             |                  |               16 |             64 |
+|  clk_IBUF_BUFG | bloc1/sdata_in_reg[7]_23             |                  |               16 |             64 |
+|  clk_IBUF_BUFG | bloc1/sdata_in_reg[7]_22             |                  |               16 |             64 |
+|  clk_IBUF_BUFG | bloc1/sdata_in_reg[7]_21             |                  |               16 |             64 |
+|  clk_IBUF_BUFG | bloc1/sdata_in_reg[7]_20             |                  |               16 |             64 |
+|  clk_IBUF_BUFG | bloc1/sdata_in_reg[7]_2              |                  |               16 |             64 |
+|  clk_IBUF_BUFG | bloc1/sdata_in_reg[7]_19             |                  |               16 |             64 |
+|  clk_IBUF_BUFG | bloc1/sdata_in_reg[7]_18             |                  |               16 |             64 |
+|  clk_IBUF_BUFG | bloc1/sdata_in_reg[7]_17             |                  |               16 |             64 |
+|  clk_IBUF_BUFG | bloc1/sdata_in_reg[7]_16             |                  |               16 |             64 |
+|  clk_IBUF_BUFG | bloc1/sdata_in_reg[7]_15             |                  |               16 |             64 |
+|  clk_IBUF_BUFG | bloc1/sdata_in_reg[7]_14             |                  |               16 |             64 |
+|  clk_IBUF_BUFG | bloc1/sdata_in_reg[7]_13             |                  |               16 |             64 |
+|  clk_IBUF_BUFG | bloc1/sdata_in_reg[7]_12             |                  |               16 |             64 |
+|  clk_IBUF_BUFG | bloc1/sdata_in_reg[7]_11             |                  |               16 |             64 |
+|  clk_IBUF_BUFG | bloc1/sdata_in_reg[7]_10             |                  |               16 |             64 |
+|  clk_IBUF_BUFG | bloc1/sdata_in_reg[7]_1              |                  |               16 |             64 |
+|  clk_IBUF_BUFG | bloc2/bloc4/sread_idx_ram[0]_i_1_n_0 | reset_IBUF       |               84 |            129 |
+|  clk_IBUF_BUFG |                                      | reset_IBUF       |               85 |            180 |
++----------------+--------------------------------------+------------------+------------------+----------------+
+
+

@@ -1,0 +1,387 @@
+#-----------------------------------------------------------
+# Vivado v2015.4 (64-bit)
+# SW Build 1412921 on Wed Nov 18 09:43:45 MST 2015
+# IP Build 1412160 on Tue Nov 17 13:47:24 MST 2015
+# Start of session at: Mon Apr 10 09:48:08 2017
+# Process ID: 3708
+# Current directory: C:/Users/Xavier/Desktop/Projet OLED/OLED_rgb_manager
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent1700 C:\Users\Xavier\Desktop\Projet OLED\OLED_rgb_manager\OLED_rgb_manager.xpr
+# Log file: C:/Users/Xavier/Desktop/Projet OLED/OLED_rgb_manager/vivado.log
+# Journal file: C:/Users/Xavier/Desktop/Projet OLED/OLED_rgb_manager\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {C:/Users/Xavier/Desktop/Projet OLED/OLED_rgb_manager/OLED_rgb_manager.xpr}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+file mkdir C:/Users/Xavier/Desktop/Projet OLED/OLED_rgb_manager/OLED_rgb_manager.srcs/sim_1/new
+file mkdir C:/Users/Xavier/Desktop/Projet OLED/OLED_rgb_manager/OLED_rgb_manager.srcs/sim_1/new
+file mkdir C:/Users/Xavier/Desktop/Projet OLED/OLED_rgb_manager/OLED_rgb_manager.srcs/sim_1/new
+file mkdir C:/Users/Xavier/Desktop/Projet OLED/OLED_rgb_manager/OLED_rgb_manager.srcs/sim_1/new
+file mkdir C:/Users/Xavier/Desktop/Projet OLED/OLED_rgb_manager/OLED_rgb_manager.srcs/sim_1/new
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+file mkdir C:/Users/Xavier/Desktop/Projet OLED/OLED_rgb_manager/OLED_rgb_manager.srcs/sim_1/new
+file mkdir {C:/Users/Xavier/Desktop/Projet OLED/OLED_rgb_manager/OLED_rgb_manager.srcs/sim_1/new}
+close [ open {C:/Users/Xavier/Desktop/Projet OLED/OLED_rgb_manager/OLED_rgb_manager.srcs/sim_1/new/tb_SPI_controller.vhd} w ]
+add_files -fileset sim_1 {{C:/Users/Xavier/Desktop/Projet OLED/OLED_rgb_manager/OLED_rgb_manager.srcs/sim_1/new/tb_SPI_controller.vhd}}
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+launch_simulation
+launch_simulation
+launch_simulation
+launch_simulation
+launch_simulation
+launch_simulation
+launch_simulation
+launch_simulation
+launch_simulation
+source tb_SPI_controller.tcl
+restart
+run 2000 ns
+restart
+run 2000 ns
+restart
+run 100 ns
+restart
+run 1000 ns
+run all
+restart
+run 1000 ns
+save_wave_config {C:/Users/Xavier/Desktop/Projet OLED/OLED_rgb_manager/cfg_tb_SPI_controller.wcfg}
+close_sim
+launch_simulation
+source tb_SPI_controller.tcl
+restart
+run 1000 ns
+close_sim
+launch_simulation
+source tb_SPI_controller.tcl
+open_wave_config {C:/Users/Xavier/Desktop/Projet OLED/OLED_rgb_manager/cfg_tb_SPI_controller.wcfg}
+restart
+run 1000 ns
+restart
+run 1000 ns
+restart
+run 2000 ns
+save_wave_config {C:/Users/Xavier/Desktop/Projet OLED/OLED_rgb_manager/cfg_tb_SPI_controller.wcfg}
+close_sim
+launch_simulation
+source tb_SPI_controller.tcl
+create_wave_config
+open_wave_config {C:/Users/Xavier/Desktop/Projet OLED/OLED_rgb_manager/cfg_tb_SPI_controller.wcfg}
+restart
+run 10000 ns
+close_sim
+launch_simulation
+source tb_SPI_controller.tcl
+open_wave_config {C:/Users/Xavier/Desktop/Projet OLED/OLED_rgb_manager/cfg_tb_SPI_controller.wcfg}
+restart
+run 10000 ns
+restart
+close_sim
+launch_simulation
+source tb_SPI_controller.tcl
+open_wave_config {C:/Users/Xavier/Desktop/Projet OLED/OLED_rgb_manager/cfg_tb_SPI_controller.wcfg}
+restart
+run 10000 ns
+restart
+run 10000 ns
+close_sim
+launch_simulation
+source tb_SPI_controller.tcl
+open_wave_config {C:/Users/Xavier/Desktop/Projet OLED/OLED_rgb_manager/cfg_tb_SPI_controller.wcfg}
+restart
+run 10000 ns
+restart
+run 10000 ns
+synth_design -rtl -name rtl_1
+close_sim
+launch_simulation
+source tb_SPI_controller.tcl
+open_wave_config {C:/Users/Xavier/Desktop/Projet OLED/OLED_rgb_manager/cfg_tb_SPI_controller.wcfg}
+restart
+run 10000 ns
+restart
+run 10000 ns
+save_wave_config {C:/Users/Xavier/Desktop/Projet OLED/OLED_rgb_manager/cfg_tb_SPI_controller.wcfg}
+save_wave_config {C:/Users/Xavier/Desktop/Projet OLED/OLED_rgb_manager/cfg_tb_SPI_controller.wcfg}
+close_sim
+launch_simulation
+launch_simulation
+source tb_SPI_controller.tcl
+open_wave_config {C:/Users/Xavier/Desktop/Projet OLED/OLED_rgb_manager/cfg_tb_SPI_controller.wcfg}
+restart
+run 10000 ns
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+close_sim
+launch_simulation
+source tb_SPI_controller.tcl
+open_wave_config {C:/Users/Xavier/Desktop/Projet OLED/OLED_rgb_manager/cfg_tb_SPI_controller.wcfg}
+restart
+run 10000 ns
+close_sim
+launch_simulation
+source tb_SPI_controller.tcl
+open_wave_config {C:/Users/Xavier/Desktop/Projet OLED/OLED_rgb_manager/cfg_tb_SPI_controller.wcfg}
+restart
+run 10000 ns
+restart
+run 5000 ns
+close_sim
+launch_simulation
+launch_simulation
+source tb_SPI_controller.tcl
+open_wave_config {C:/Users/Xavier/Desktop/Projet OLED/OLED_rgb_manager/cfg_tb_SPI_controller.wcfg}
+restart
+run 5000 ns
+restart
+run 5000 ns
+save_wave_config {C:/Users/Xavier/Desktop/Projet OLED/OLED_rgb_manager/cfg_tb_SPI_controller.wcfg}
+close_sim
+launch_simulation
+source tb_SPI_controller.tcl
+open_wave_config {C:/Users/Xavier/Desktop/Projet OLED/OLED_rgb_manager/cfg_tb_SPI_controller.wcfg}
+restart
+run 5000 ns
+close_sim
+launch_simulation
+source tb_SPI_controller.tcl
+open_wave_config {C:/Users/Xavier/Desktop/Projet OLED/OLED_rgb_manager/cfg_tb_SPI_controller.wcfg}
+restart
+run 5000 ns
+close_sim
+launch_simulation
+source tb_SPI_controller.tcl
+open_wave_config {C:/Users/Xavier/Desktop/Projet OLED/OLED_rgb_manager/cfg_tb_SPI_controller.wcfg}
+restart
+run 5000 ns
+close_sim
+launch_simulation
+source tb_SPI_controller.tcl
+open_wave_config {C:/Users/Xavier/Desktop/Projet OLED/OLED_rgb_manager/cfg_tb_SPI_controller.wcfg}
+restart
+run 5000 ns
+close_sim
+launch_simulation
+source tb_SPI_controller.tcl
+open_wave_config {C:/Users/Xavier/Desktop/Projet OLED/OLED_rgb_manager/cfg_tb_SPI_controller.wcfg}
+restart
+run 5000 ns
+save_wave_config {C:/Users/Xavier/Desktop/Projet OLED/OLED_rgb_manager/cfg_tb_SPI_controller.wcfg}
+close_sim
+launch_simulation
+source tb_SPI_controller.tcl
+open_wave_config {C:/Users/Xavier/Desktop/Projet OLED/OLED_rgb_manager/cfg_tb_SPI_controller.wcfg}
+restart
+run 5000 ns
+save_wave_config {C:/Users/Xavier/Desktop/Projet OLED/OLED_rgb_manager/cfg_tb_SPI_controller.wcfg}
+close_sim
+launch_simulation
+source tb_SPI_controller.tcl
+open_wave_config {C:/Users/Xavier/Desktop/Projet OLED/OLED_rgb_manager/cfg_tb_SPI_controller.wcfg}
+restart
+run 5000 ns
+close [ open {C:/Users/Xavier/Desktop/Projet OLED/OLED_rgb_manager/OLED_rgb_manager.srcs/sources_1/new/FSM.vhd} w ]
+add_files {{C:/Users/Xavier/Desktop/Projet OLED/OLED_rgb_manager/OLED_rgb_manager.srcs/sources_1/new/FSM.vhd}}
+update_compile_order -fileset sources_1
+close_sim
+launch_simulation
+source tb_SPI_controller.tcl
+open_wave_config {C:/Users/Xavier/Desktop/Projet OLED/OLED_rgb_manager/cfg_tb_SPI_controller.wcfg}
+restart
+run 5000 ns
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open {C:/Users/Xavier/Desktop/Projet OLED/OLED_rgb_manager/OLED_rgb_manager.srcs/sim_1/new/tb_FSM.vhd} w ]
+add_files -fileset sim_1 {{C:/Users/Xavier/Desktop/Projet OLED/OLED_rgb_manager/OLED_rgb_manager.srcs/sim_1/new/tb_FSM.vhd}}
+update_compile_order -fileset sim_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top FSM [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sources_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top tb_FSM [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+launch_simulation
+launch_simulation
+launch_simulation
+launch_simulation
+launch_simulation
+launch_simulation
+launch_simulation
+source tb_FSM.tcl
+restart
+run 5000 ns
+restart
+run 5000 ns
+save_wave_config {C:/Users/Xavier/Desktop/Projet OLED/OLED_rgb_manager/cfg_tb_FSM_behav.wcfg}
+save_wave_config {C:/Users/Xavier/Desktop/Projet OLED/OLED_rgb_manager/cfg_tb_FSM_behav.wcfg}
+close_sim
+launch_simulation
+source tb_FSM.tcl
+open_wave_config {C:/Users/Xavier/Desktop/Projet OLED/OLED_rgb_manager/cfg_tb_FSM_behav.wcfg}
+restart
+run 5000 ns
+save_wave_config {C:/Users/Xavier/Desktop/Projet OLED/OLED_rgb_manager/cfg_tb_FSM_behav.wcfg}
+close_sim
+launch_simulation
+source tb_FSM.tcl
+open_wave_config {C:/Users/Xavier/Desktop/Projet OLED/OLED_rgb_manager/cfg_tb_FSM_behav.wcfg}
+restart
+run 5000 ns
+close_sim
+launch_simulation
+source tb_FSM.tcl
+open_wave_config {C:/Users/Xavier/Desktop/Projet OLED/OLED_rgb_manager/cfg_tb_FSM_behav.wcfg}
+restart
+run 5000 ns
+close_sim
+launch_simulation
+source tb_FSM.tcl
+open_wave_config {C:/Users/Xavier/Desktop/Projet OLED/OLED_rgb_manager/cfg_tb_FSM_behav.wcfg}
+restart
+run 5000 ns
+close_sim
+launch_simulation
+source tb_FSM.tcl
+open_wave_config {C:/Users/Xavier/Desktop/Projet OLED/OLED_rgb_manager/cfg_tb_FSM_behav.wcfg}
+restart
+run 5000 ns
+close_sim
+launch_simulation
+source tb_FSM.tcl
+open_wave_config {C:/Users/Xavier/Desktop/Projet OLED/OLED_rgb_manager/cfg_tb_FSM_behav.wcfg}
+restart
+run 5000 ns
+close_sim
+launch_simulation
+source tb_FSM.tcl
+open_wave_config {C:/Users/Xavier/Desktop/Projet OLED/OLED_rgb_manager/cfg_tb_FSM_behav.wcfg}
+restart
+run 5000 ns
+save_wave_config {C:/Users/Xavier/Desktop/Projet OLED/OLED_rgb_manager/cfg_tb_FSM_behav.wcfg}
+close_sim
+launch_simulation
+source tb_FSM.tcl
+open_wave_config {C:/Users/Xavier/Desktop/Projet OLED/OLED_rgb_manager/cfg_tb_FSM_behav.wcfg}
+restart
+run 5000 ns
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+close_sim
+launch_simulation
+source tb_FSM.tcl
+open_wave_config {C:/Users/Xavier/Desktop/Projet OLED/OLED_rgb_manager/cfg_tb_FSM_behav.wcfg}
+run all
+restart
+run 5000 ns
+restart
+run 3000 ns
+close_sim
+launch_simulation
+source tb_FSM.tcl
+open_wave_config {C:/Users/Xavier/Desktop/Projet OLED/OLED_rgb_manager/cfg_tb_FSM_behav.wcfg}
+restart
+run 3000 ns
+close_sim
+launch_simulation
+source tb_FSM.tcl
+open_wave_config {C:/Users/Xavier/Desktop/Projet OLED/OLED_rgb_manager/cfg_tb_FSM_behav.wcfg}
+restart
+run 3000 ns
+close_sim
+launch_simulation
+source tb_FSM.tcl
+open_wave_config {C:/Users/Xavier/Desktop/Projet OLED/OLED_rgb_manager/cfg_tb_FSM_behav.wcfg}
+restart
+run 3000 ns
+close_sim
+launch_simulation
+source tb_FSM.tcl
+open_wave_config {C:/Users/Xavier/Desktop/Projet OLED/OLED_rgb_manager/cfg_tb_FSM_behav.wcfg}
+restart
+run 3000 ns
+close_sim
+launch_simulation
+launch_simulation
+source tb_FSM.tcl
+open_wave_config {C:/Users/Xavier/Desktop/Projet OLED/OLED_rgb_manager/cfg_tb_FSM_behav.wcfg}
+restart
+run 3000 ns
+close [ open {C:/Users/Xavier/Desktop/Projet OLED/OLED_rgb_manager/OLED_rgb_manager.srcs/sources_1/new/MEM_init.vhd} w ]
+add_files {{C:/Users/Xavier/Desktop/Projet OLED/OLED_rgb_manager/OLED_rgb_manager.srcs/sources_1/new/MEM_init.vhd}}
+update_compile_order -fileset sources_1
+close [ open {C:/Users/Xavier/Desktop/Projet OLED/OLED_rgb_manager/OLED_rgb_manager.srcs/sources_1/new/top_level_init.vhd} w ]
+add_files {{C:/Users/Xavier/Desktop/Projet OLED/OLED_rgb_manager/OLED_rgb_manager.srcs/sources_1/new/top_level_init.vhd}}
+update_compile_order -fileset sources_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top top_level_init [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sources_1
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open {C:/Users/Xavier/Desktop/Projet OLED/OLED_rgb_manager/OLED_rgb_manager.srcs/sim_1/new/tb_top_level_init.vhd} w ]
+add_files -fileset sim_1 {{C:/Users/Xavier/Desktop/Projet OLED/OLED_rgb_manager/OLED_rgb_manager.srcs/sim_1/new/tb_top_level_init.vhd}}
+update_compile_order -fileset sim_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top top_level_init [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+launch_simulation
+launch_simulation
+source top_level_init.tcl
+restart
+run 3000 ns
+launch_runs synth_1
+wait_on_run synth_1
+launch_runs impl_1
+wait_on_run impl_1
+open_run impl_1
+open_run synth_1 -name synth_1
+current_design rtl_1
+current_design impl_1
+current_design synth_1
+reset_run synth_1
+launch_runs synth_1
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1
+wait_on_run synth_1
+close_design
+open_run synth_1 -name synth_1
+close_sim
+launch_simulation
+source top_level_init.tcl
+restart
+run 3000 ns
+close_sim
+launch_simulation
+source top_level_init.tcl
+restart
+run 3000 ns
+save_wave_config {C:/Users/Xavier/Desktop/Projet OLED/OLED_rgb_manager/cfg_tb_top_level_init.wcfg}
+close_sim
+launch_simulation
+source top_level_init.tcl
+close_sim
+launch_simulation
+source top_level_init.tcl
+restart
+run 3000 ns
+close_sim
+current_sim simulation_35
+close_sim
+close_sim

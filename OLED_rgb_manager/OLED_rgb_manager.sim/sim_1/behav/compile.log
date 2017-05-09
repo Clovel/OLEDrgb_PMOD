@@ -1,0 +1,27 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "Y:/Cours/Enseirb-E2/pr214/Ccode/Sources/OLED_rgb_manager/OLED_rgb_manager.srcs/sources_1/new/RAM.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity RAM
+INFO: [VRFC 10-163] Analyzing VHDL file "Y:/Cours/Enseirb-E2/pr214/Ccode/Sources/OLED_rgb_manager/OLED_rgb_manager.srcs/sources_1/new/MEM_init.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity MEM_init
+INFO: [VRFC 10-163] Analyzing VHDL file "Y:/Cours/Enseirb-E2/pr214/Ccode/Sources/OLED_rgb_manager/OLED_rgb_manager.srcs/sources_1/new/FSM.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity FSM
+WARNING: [VRFC 10-471] case choice must be a locally static expression [Y:/Cours/Enseirb-E2/pr214/Ccode/Sources/OLED_rgb_manager/OLED_rgb_manager.srcs/sources_1/new/FSM.vhd:97]
+WARNING: [VRFC 10-471] case choice must be a locally static expression [Y:/Cours/Enseirb-E2/pr214/Ccode/Sources/OLED_rgb_manager/OLED_rgb_manager.srcs/sources_1/new/FSM.vhd:99]
+WARNING: [VRFC 10-471] case choice must be a locally static expression [Y:/Cours/Enseirb-E2/pr214/Ccode/Sources/OLED_rgb_manager/OLED_rgb_manager.srcs/sources_1/new/FSM.vhd:101]
+WARNING: [VRFC 10-471] case choice must be a locally static expression [Y:/Cours/Enseirb-E2/pr214/Ccode/Sources/OLED_rgb_manager/OLED_rgb_manager.srcs/sources_1/new/FSM.vhd:103]
+WARNING: [VRFC 10-471] case choice must be a locally static expression [Y:/Cours/Enseirb-E2/pr214/Ccode/Sources/OLED_rgb_manager/OLED_rgb_manager.srcs/sources_1/new/FSM.vhd:105]
+WARNING: [VRFC 10-471] case choice must be a locally static expression [Y:/Cours/Enseirb-E2/pr214/Ccode/Sources/OLED_rgb_manager/OLED_rgb_manager.srcs/sources_1/new/FSM.vhd:111]
+WARNING: [VRFC 10-471] case choice must be a locally static expression [Y:/Cours/Enseirb-E2/pr214/Ccode/Sources/OLED_rgb_manager/OLED_rgb_manager.srcs/sources_1/new/FSM.vhd:117]
+WARNING: [VRFC 10-471] case choice must be a locally static expression [Y:/Cours/Enseirb-E2/pr214/Ccode/Sources/OLED_rgb_manager/OLED_rgb_manager.srcs/sources_1/new/FSM.vhd:123]
+WARNING: [VRFC 10-471] case choice must be a locally static expression [Y:/Cours/Enseirb-E2/pr214/Ccode/Sources/OLED_rgb_manager/OLED_rgb_manager.srcs/sources_1/new/FSM.vhd:153]
+WARNING: [VRFC 10-471] case choice must be a locally static expression [Y:/Cours/Enseirb-E2/pr214/Ccode/Sources/OLED_rgb_manager/OLED_rgb_manager.srcs/sources_1/new/FSM.vhd:155]
+WARNING: [VRFC 10-471] case choice must be a locally static expression [Y:/Cours/Enseirb-E2/pr214/Ccode/Sources/OLED_rgb_manager/OLED_rgb_manager.srcs/sources_1/new/FSM.vhd:157]
+WARNING: [VRFC 10-471] case choice must be a locally static expression [Y:/Cours/Enseirb-E2/pr214/Ccode/Sources/OLED_rgb_manager/OLED_rgb_manager.srcs/sources_1/new/FSM.vhd:163]
+WARNING: [VRFC 10-471] case choice must be a locally static expression [Y:/Cours/Enseirb-E2/pr214/Ccode/Sources/OLED_rgb_manager/OLED_rgb_manager.srcs/sources_1/new/FSM.vhd:169]
+WARNING: [VRFC 10-471] case choice must be a locally static expression [Y:/Cours/Enseirb-E2/pr214/Ccode/Sources/OLED_rgb_manager/OLED_rgb_manager.srcs/sources_1/new/FSM.vhd:175]
+WARNING: [VRFC 10-471] case choice must be a locally static expression [Y:/Cours/Enseirb-E2/pr214/Ccode/Sources/OLED_rgb_manager/OLED_rgb_manager.srcs/sources_1/new/FSM.vhd:177]
+INFO: [VRFC 10-163] Analyzing VHDL file "Y:/Cours/Enseirb-E2/pr214/Ccode/Sources/OLED_rgb_manager/OLED_rgb_manager.srcs/sources_1/new/SPI_controller.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity SPI_controller
+INFO: [VRFC 10-163] Analyzing VHDL file "Y:/Cours/Enseirb-E2/pr214/Ccode/Sources/OLED_rgb_manager/OLED_rgb_manager.srcs/sources_1/new/top_level_init.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity top_level_init
+INFO: [VRFC 10-163] Analyzing VHDL file "Y:/Cours/Enseirb-E2/pr214/Ccode/Sources/OLED_rgb_manager/OLED_rgb_manager.srcs/sim_1/new/tb_top_level_init.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity tb_top_level_init

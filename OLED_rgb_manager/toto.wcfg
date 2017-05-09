@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_top_level_init_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="tb_top_level_init" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="18158085204165fs"></ZoomStartTime>
+      <ZoomEndTime time="18158199375465fs"></ZoomEndTime>
+      <Cursor1Time time="18158155000000fs"></Cursor1Time>
+   </zoom_setting>
+   <WVObjectSize size="35" />
+   <wvobject db_ref_id="1" fp_name="/tb_top_level_init/bloc_test/bloc4/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/tb_top_level_init/bloc_test/bloc4/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/tb_top_level_init/bloc_test/bloc4/SPI_busy" type="logic">
+      <obj_property name="ElementShortName">SPI_busy</obj_property>
+      <obj_property name="ObjectShortName">SPI_busy</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/tb_top_level_init/bloc_test/bloc4/data_in_mem" type="array">
+      <obj_property name="ElementShortName">data_in_mem[31:0]</obj_property>
+      <obj_property name="ObjectShortName">data_in_mem[31:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/tb_top_level_init/bloc_test/bloc4/data_in_ram" type="array">
+      <obj_property name="ElementShortName">data_in_ram[31:0]</obj_property>
+      <obj_property name="ObjectShortName">data_in_ram[31:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/tb_top_level_init/bloc_test/bloc4/data_en" type="logic">
+      <obj_property name="ElementShortName">data_en</obj_property>
+      <obj_property name="ObjectShortName">data_en</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/tb_top_level_init/bloc_test/bloc4/data_out" type="array">
+      <obj_property name="ElementShortName">data_out[7:0]</obj_property>
+      <obj_property name="ObjectShortName">data_out[7:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/tb_top_level_init/bloc_test/bloc4/read_idx_mem" type="array">
+      <obj_property name="ElementShortName">read_idx_mem[3:0]</obj_property>
+      <obj_property name="ObjectShortName">read_idx_mem[3:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/tb_top_level_init/bloc_test/bloc4/read_idx_ram" type="array">
+      <obj_property name="ElementShortName">read_idx_ram[11:0]</obj_property>
+      <obj_property name="ObjectShortName">read_idx_ram[11:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/tb_top_level_init/bloc_test/bloc4/DC" type="logic">
+      <obj_property name="ElementShortName">DC</obj_property>
+      <obj_property name="ObjectShortName">DC</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/tb_top_level_init/bloc_test/bloc4/RES" type="logic">
+      <obj_property name="ElementShortName">RES</obj_property>
+      <obj_property name="ObjectShortName">RES</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/tb_top_level_init/bloc_test/bloc4/VCCEN" type="logic">
+      <obj_property name="ElementShortName">VCCEN</obj_property>
+      <obj_property name="ObjectShortName">VCCEN</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/tb_top_level_init/bloc_test/bloc4/PMODEN" type="logic">
+      <obj_property name="ElementShortName">PMODEN</obj_property>
+      <obj_property name="ObjectShortName">PMODEN</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/tb_top_level_init/bloc_test/bloc4/cpt_150ms" type="other">
+      <obj_property name="ElementShortName">cpt_150ms</obj_property>
+      <obj_property name="ObjectShortName">cpt_150ms</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/tb_top_level_init/bloc_test/bloc4/cpt_15us" type="other">
+      <obj_property name="ElementShortName">cpt_15us</obj_property>
+      <obj_property name="ObjectShortName">cpt_15us</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/tb_top_level_init/bloc_test/bloc4/cpt_500ms" type="other">
+      <obj_property name="ElementShortName">cpt_500ms</obj_property>
+      <obj_property name="ObjectShortName">cpt_500ms</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/tb_top_level_init/bloc_test/bloc4/cpt_read" type="other">
+      <obj_property name="ElementShortName">cpt_read</obj_property>
+      <obj_property name="ObjectShortName">cpt_read</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/tb_top_level_init/bloc_test/bloc4/flag_en" type="logic">
+      <obj_property name="ElementShortName">flag_en</obj_property>
+      <obj_property name="ObjectShortName">flag_en</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/tb_top_level_init/bloc_test/bloc4/sdata_en" type="logic">
+      <obj_property name="ElementShortName">sdata_en</obj_property>
+      <obj_property name="ObjectShortName">sdata_en</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/tb_top_level_init/bloc_test/bloc4/sdata_out" type="array">
+      <obj_property name="ElementShortName">sdata_out[7:0]</obj_property>
+      <obj_property name="ObjectShortName">sdata_out[7:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/tb_top_level_init/bloc_test/bloc4/sread_idx_mem" type="array">
+      <obj_property name="ElementShortName">sread_idx_mem[3:0]</obj_property>
+      <obj_property name="ObjectShortName">sread_idx_mem[3:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/tb_top_level_init/bloc_test/bloc4/sread_idx_ram" type="array">
+      <obj_property name="ElementShortName">sread_idx_ram[11:0]</obj_property>
+      <obj_property name="ObjectShortName">sread_idx_ram[11:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/tb_top_level_init/bloc_test/bloc4/sDC" type="logic">
+      <obj_property name="ElementShortName">sDC</obj_property>
+      <obj_property name="ObjectShortName">sDC</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/tb_top_level_init/bloc_test/bloc4/sRES" type="logic">
+      <obj_property name="ElementShortName">sRES</obj_property>
+      <obj_property name="ObjectShortName">sRES</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/tb_top_level_init/bloc_test/bloc4/sVCCEN" type="logic">
+      <obj_property name="ElementShortName">sVCCEN</obj_property>
+      <obj_property name="ObjectShortName">sVCCEN</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/tb_top_level_init/bloc_test/bloc4/sPMODEN" type="logic">
+      <obj_property name="ElementShortName">sPMODEN</obj_property>
+      <obj_property name="ObjectShortName">sPMODEN</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/tb_top_level_init/bloc_test/bloc4/current_state" type="array">
+      <obj_property name="ElementShortName">current_state[3:0]</obj_property>
+      <obj_property name="ObjectShortName">current_state[3:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/tb_top_level_init/bloc_test/bloc4/next_state" type="array">
+      <obj_property name="ElementShortName">next_state[3:0]</obj_property>
+      <obj_property name="ObjectShortName">next_state[3:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/tb_top_level_init/bloc_test/bloc4/cpt_150ms_max" type="other">
+      <obj_property name="ElementShortName">cpt_150ms_max</obj_property>
+      <obj_property name="ObjectShortName">cpt_150ms_max</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/tb_top_level_init/bloc_test/bloc4/cpt_15us_max" type="other">
+      <obj_property name="ElementShortName">cpt_15us_max</obj_property>
+      <obj_property name="ObjectShortName">cpt_15us_max</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/tb_top_level_init/bloc_test/bloc4/cpt_500ms_max" type="other">
+      <obj_property name="ElementShortName">cpt_500ms_max</obj_property>
+      <obj_property name="ObjectShortName">cpt_500ms_max</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/tb_top_level_init/bloc_test/bloc4/read_idx_init" type="other">
+      <obj_property name="ElementShortName">read_idx_init</obj_property>
+      <obj_property name="ObjectShortName">read_idx_init</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/tb_top_level_init/bloc_test/bloc4/read_idx_rec" type="other">
+      <obj_property name="ElementShortName">read_idx_rec</obj_property>
+      <obj_property name="ObjectShortName">read_idx_rec</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/tb_top_level_init/bloc_test/bloc4/read_idx_bmp" type="other">
+      <obj_property name="ElementShortName">read_idx_bmp</obj_property>
+      <obj_property name="ObjectShortName">read_idx_bmp</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/tb_top_level_init/bloc_test/bloc4/cpt_read_max" type="other">
+      <obj_property name="ElementShortName">cpt_read_max</obj_property>
+      <obj_property name="ObjectShortName">cpt_read_max</obj_property>
+   </wvobject>
+</wave_config>

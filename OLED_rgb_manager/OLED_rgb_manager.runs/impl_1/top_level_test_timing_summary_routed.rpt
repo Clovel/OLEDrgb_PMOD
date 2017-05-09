@@ -1,0 +1,1261 @@
+Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2015.4 (win64) Build 1412921 Wed Nov 18 09:43:45 MST 2015
+| Date         : Sun May 07 13:27:04 2017
+| Host         : MARINOXAVIEB6B8 running 64-bit Service Pack 1  (build 7601)
+| Command      : report_timing_summary -warn_on_violation -max_paths 10 -file top_level_test_timing_summary_routed.rpt -rpx top_level_test_timing_summary_routed.rpx
+| Design       : top_level_test
+| Device       : 7a100t-csg324
+| Speed File   : -1  PRODUCTION 1.14 2014-09-11
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Summary Report
+
+------------------------------------------------------------------------------------------------
+| Timer Settings
+| --------------
+------------------------------------------------------------------------------------------------
+
+  Enable Multi Corner Analysis               :  Yes
+  Enable Pessimism Removal                   :  Yes
+  Pessimism Removal Resolution               :  Nearest Common Node
+  Enable Input Delay Default Clock           :  No
+  Enable Preset / Clear Arcs                 :  No
+  Disable Flight Delays                      :  No
+  Ignore I/O Paths                           :  No
+  Timing Early Launch at Borrowing Latches   :  false
+
+  Corner  Analyze    Analyze    
+  Name    Max Paths  Min Paths  
+  ------  ---------  ---------  
+  Slow    Yes        Yes        
+  Fast    Yes        Yes        
+
+
+
+check_timing report
+
+Table of Contents
+-----------------
+1. checking no_clock
+2. checking constant_clock
+3. checking pulse_width_clock
+4. checking unconstrained_internal_endpoints
+5. checking no_input_delay
+6. checking no_output_delay
+7. checking multiple_clock
+8. checking generated_clocks
+9. checking loops
+10. checking partial_input_delay
+11. checking partial_output_delay
+12. checking latch_loops
+
+1. checking no_clock
+--------------------
+ There are 0 register/latch pins with no clock.
+
+
+2. checking constant_clock
+--------------------------
+ There are 0 register/latch pins with constant_clock.
+
+
+3. checking pulse_width_clock
+-----------------------------
+ There are 0 register/latch pins which need pulse_width check
+
+
+4. checking unconstrained_internal_endpoints
+--------------------------------------------
+ There are 0 pins that are not constrained for maximum delay.
+
+ There are 0 pins that are not constrained for maximum delay due to constant clock.
+
+
+5. checking no_input_delay
+--------------------------
+ There are 2 input ports with no input delay specified. (HIGH)
+
+ There are 0 input ports with no input delay but user has a false path constraint.
+
+
+6. checking no_output_delay
+---------------------------
+ There are 22 ports with no output delay specified. (HIGH)
+
+ There are 0 ports with no output delay but user has a false path constraint
+
+ There are 0 ports with no output delay but with a timing clock defined on it or propagating through it
+
+
+7. checking multiple_clock
+--------------------------
+ There are 0 register/latch pins with multiple clocks.
+
+
+8. checking generated_clocks
+----------------------------
+ There are 0 generated clocks that are not connected to a clock source.
+
+
+9. checking loops
+-----------------
+ There are 0 combinational loops in the design.
+
+
+10. checking partial_input_delay
+--------------------------------
+ There are 0 input ports with partial input delay specified.
+
+
+11. checking partial_output_delay
+---------------------------------
+ There are 0 ports with partial output delay specified.
+
+
+12. checking latch_loops
+------------------------
+ There are 0 combinational latch loops in the design through latch input
+
+
+
+------------------------------------------------------------------------------------------------
+| Design Timing Summary
+| ---------------------
+------------------------------------------------------------------------------------------------
+
+    WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+    -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+      0.243        0.000                      0                25049        0.060        0.000                      0                25049        3.750        0.000                       0                  3400  
+
+
+All user specified timing constraints are met.
+
+
+------------------------------------------------------------------------------------------------
+| Clock Summary
+| -------------
+------------------------------------------------------------------------------------------------
+
+Clock    Waveform(ns)       Period(ns)      Frequency(MHz)
+-----    ------------       ----------      --------------
+horloge  {0.000 5.000}      10.000          100.000         
+
+
+------------------------------------------------------------------------------------------------
+| Intra Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+Clock             WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+-----             -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+horloge             0.243        0.000                      0                25049        0.060        0.000                      0                25049        3.750        0.000                       0                  3400  
+
+
+------------------------------------------------------------------------------------------------
+| Inter Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Other Path Groups Table
+| -----------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    ----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Timing Details
+| --------------
+------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  horloge
+  To Clock:  horloge
+
+Setup :            0  Failing Endpoints,  Worst Slack        0.243ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.060ns,  Total Violation        0.000ns
+PW    :            0  Failing Endpoints,  Worst Slack        3.750ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             0.243ns  (required time - arrival time)
+  Source:                 bloc1/saddress_reg[1]/C
+                            (rising edge-triggered cell FDCE clocked by horloge  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bloc2/bloc2/mem_reg_3328_3455_13_13/DP.HIGH/WADR1
+                            (rising edge-triggered cell RAMD64E clocked by horloge  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             horloge
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (horloge rise@10.000ns - horloge rise@0.000ns)
+  Data Path Delay:        9.646ns  (logic 0.456ns (4.727%)  route 9.190ns (95.273%))
+  Logic Levels:           0  
+  Clock Path Skew:        -0.134ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.774ns = ( 14.774 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.081ns
+    Clock Pessimism Removal (CPR):    0.173ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock horloge rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.780     3.262    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.358 r  clk_IBUF_BUFG_inst/O
+                         net (fo=3399, routed)        1.722     5.081    bloc1/clk_IBUF_BUFG
+    SLICE_X4Y89          FDCE                                         r  bloc1/saddress_reg[1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X4Y89          FDCE (Prop_fdce_C_Q)         0.456     5.537 r  bloc1/saddress_reg[1]/Q
+                         net (fo=4610, routed)        9.190    14.727    bloc2/bloc2/mem_reg_3328_3455_13_13/A1
+    SLICE_X2Y144         RAMD64E                                      r  bloc2/bloc2/mem_reg_3328_3455_13_13/DP.HIGH/WADR1
+  -------------------------------------------------------------------    -------------------
+
+                         (clock horloge rise edge)   10.000    10.000 r  
+    E3                                                0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         1.411    11.411 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.683    13.094    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.185 r  clk_IBUF_BUFG_inst/O
+                         net (fo=3399, routed)        1.589    14.774    bloc2/bloc2/mem_reg_3328_3455_13_13/WCLK
+    SLICE_X2Y144         RAMD64E                                      r  bloc2/bloc2/mem_reg_3328_3455_13_13/DP.HIGH/CLK
+                         clock pessimism              0.173    14.947    
+                         clock uncertainty           -0.035    14.912    
+    SLICE_X2Y144         RAMD64E (Setup_ramd64e_CLK_WADR1)
+                                                      0.058    14.970    bloc2/bloc2/mem_reg_3328_3455_13_13/DP.HIGH
+  -------------------------------------------------------------------
+                         required time                         14.970    
+                         arrival time                         -14.727    
+  -------------------------------------------------------------------
+                         slack                                  0.243    
+
+Slack (MET) :             0.243ns  (required time - arrival time)
+  Source:                 bloc1/saddress_reg[1]/C
+                            (rising edge-triggered cell FDCE clocked by horloge  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bloc2/bloc2/mem_reg_3328_3455_13_13/DP.LOW/WADR1
+                            (rising edge-triggered cell RAMD64E clocked by horloge  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             horloge
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (horloge rise@10.000ns - horloge rise@0.000ns)
+  Data Path Delay:        9.646ns  (logic 0.456ns (4.727%)  route 9.190ns (95.273%))
+  Logic Levels:           0  
+  Clock Path Skew:        -0.134ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.774ns = ( 14.774 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.081ns
+    Clock Pessimism Removal (CPR):    0.173ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock horloge rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.780     3.262    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.358 r  clk_IBUF_BUFG_inst/O
+                         net (fo=3399, routed)        1.722     5.081    bloc1/clk_IBUF_BUFG
+    SLICE_X4Y89          FDCE                                         r  bloc1/saddress_reg[1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X4Y89          FDCE (Prop_fdce_C_Q)         0.456     5.537 r  bloc1/saddress_reg[1]/Q
+                         net (fo=4610, routed)        9.190    14.727    bloc2/bloc2/mem_reg_3328_3455_13_13/A1
+    SLICE_X2Y144         RAMD64E                                      r  bloc2/bloc2/mem_reg_3328_3455_13_13/DP.LOW/WADR1
+  -------------------------------------------------------------------    -------------------
+
+                         (clock horloge rise edge)   10.000    10.000 r  
+    E3                                                0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         1.411    11.411 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.683    13.094    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.185 r  clk_IBUF_BUFG_inst/O
+                         net (fo=3399, routed)        1.589    14.774    bloc2/bloc2/mem_reg_3328_3455_13_13/WCLK
+    SLICE_X2Y144         RAMD64E                                      r  bloc2/bloc2/mem_reg_3328_3455_13_13/DP.LOW/CLK
+                         clock pessimism              0.173    14.947    
+                         clock uncertainty           -0.035    14.912    
+    SLICE_X2Y144         RAMD64E (Setup_ramd64e_CLK_WADR1)
+                                                      0.058    14.970    bloc2/bloc2/mem_reg_3328_3455_13_13/DP.LOW
+  -------------------------------------------------------------------
+                         required time                         14.970    
+                         arrival time                         -14.727    
+  -------------------------------------------------------------------
+                         slack                                  0.243    
+
+Slack (MET) :             0.243ns  (required time - arrival time)
+  Source:                 bloc1/saddress_reg[1]/C
+                            (rising edge-triggered cell FDCE clocked by horloge  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bloc2/bloc2/mem_reg_3328_3455_13_13/SP.HIGH/WADR1
+                            (rising edge-triggered cell RAMD64E clocked by horloge  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             horloge
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (horloge rise@10.000ns - horloge rise@0.000ns)
+  Data Path Delay:        9.646ns  (logic 0.456ns (4.727%)  route 9.190ns (95.273%))
+  Logic Levels:           0  
+  Clock Path Skew:        -0.134ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.774ns = ( 14.774 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.081ns
+    Clock Pessimism Removal (CPR):    0.173ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock horloge rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.780     3.262    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.358 r  clk_IBUF_BUFG_inst/O
+                         net (fo=3399, routed)        1.722     5.081    bloc1/clk_IBUF_BUFG
+    SLICE_X4Y89          FDCE                                         r  bloc1/saddress_reg[1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X4Y89          FDCE (Prop_fdce_C_Q)         0.456     5.537 r  bloc1/saddress_reg[1]/Q
+                         net (fo=4610, routed)        9.190    14.727    bloc2/bloc2/mem_reg_3328_3455_13_13/A1
+    SLICE_X2Y144         RAMD64E                                      r  bloc2/bloc2/mem_reg_3328_3455_13_13/SP.HIGH/WADR1
+  -------------------------------------------------------------------    -------------------
+
+                         (clock horloge rise edge)   10.000    10.000 r  
+    E3                                                0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         1.411    11.411 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.683    13.094    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.185 r  clk_IBUF_BUFG_inst/O
+                         net (fo=3399, routed)        1.589    14.774    bloc2/bloc2/mem_reg_3328_3455_13_13/WCLK
+    SLICE_X2Y144         RAMD64E                                      r  bloc2/bloc2/mem_reg_3328_3455_13_13/SP.HIGH/CLK
+                         clock pessimism              0.173    14.947    
+                         clock uncertainty           -0.035    14.912    
+    SLICE_X2Y144         RAMD64E (Setup_ramd64e_CLK_WADR1)
+                                                      0.058    14.970    bloc2/bloc2/mem_reg_3328_3455_13_13/SP.HIGH
+  -------------------------------------------------------------------
+                         required time                         14.970    
+                         arrival time                         -14.727    
+  -------------------------------------------------------------------
+                         slack                                  0.243    
+
+Slack (MET) :             0.243ns  (required time - arrival time)
+  Source:                 bloc1/saddress_reg[1]/C
+                            (rising edge-triggered cell FDCE clocked by horloge  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bloc2/bloc2/mem_reg_3328_3455_13_13/SP.LOW/WADR1
+                            (rising edge-triggered cell RAMD64E clocked by horloge  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             horloge
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (horloge rise@10.000ns - horloge rise@0.000ns)
+  Data Path Delay:        9.646ns  (logic 0.456ns (4.727%)  route 9.190ns (95.273%))
+  Logic Levels:           0  
+  Clock Path Skew:        -0.134ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.774ns = ( 14.774 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.081ns
+    Clock Pessimism Removal (CPR):    0.173ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock horloge rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.780     3.262    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.358 r  clk_IBUF_BUFG_inst/O
+                         net (fo=3399, routed)        1.722     5.081    bloc1/clk_IBUF_BUFG
+    SLICE_X4Y89          FDCE                                         r  bloc1/saddress_reg[1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X4Y89          FDCE (Prop_fdce_C_Q)         0.456     5.537 r  bloc1/saddress_reg[1]/Q
+                         net (fo=4610, routed)        9.190    14.727    bloc2/bloc2/mem_reg_3328_3455_13_13/A1
+    SLICE_X2Y144         RAMD64E                                      r  bloc2/bloc2/mem_reg_3328_3455_13_13/SP.LOW/WADR1
+  -------------------------------------------------------------------    -------------------
+
+                         (clock horloge rise edge)   10.000    10.000 r  
+    E3                                                0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         1.411    11.411 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.683    13.094    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.185 r  clk_IBUF_BUFG_inst/O
+                         net (fo=3399, routed)        1.589    14.774    bloc2/bloc2/mem_reg_3328_3455_13_13/WCLK
+    SLICE_X2Y144         RAMD64E                                      r  bloc2/bloc2/mem_reg_3328_3455_13_13/SP.LOW/CLK
+                         clock pessimism              0.173    14.947    
+                         clock uncertainty           -0.035    14.912    
+    SLICE_X2Y144         RAMD64E (Setup_ramd64e_CLK_WADR1)
+                                                      0.058    14.970    bloc2/bloc2/mem_reg_3328_3455_13_13/SP.LOW
+  -------------------------------------------------------------------
+                         required time                         14.970    
+                         arrival time                         -14.727    
+  -------------------------------------------------------------------
+                         slack                                  0.243    
+
+Slack (MET) :             0.253ns  (required time - arrival time)
+  Source:                 bloc1/saddress_reg[1]/C
+                            (rising edge-triggered cell FDCE clocked by horloge  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bloc2/bloc2/mem_reg_4608_4735_4_4/DP.HIGH/WADR1
+                            (rising edge-triggered cell RAMD64E clocked by horloge  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             horloge
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (horloge rise@10.000ns - horloge rise@0.000ns)
+  Data Path Delay:        9.556ns  (logic 0.456ns (4.772%)  route 9.100ns (95.228%))
+  Logic Levels:           0  
+  Clock Path Skew:        -0.214ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.694ns = ( 14.694 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.081ns
+    Clock Pessimism Removal (CPR):    0.173ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock horloge rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.780     3.262    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.358 r  clk_IBUF_BUFG_inst/O
+                         net (fo=3399, routed)        1.722     5.081    bloc1/clk_IBUF_BUFG
+    SLICE_X4Y89          FDCE                                         r  bloc1/saddress_reg[1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X4Y89          FDCE (Prop_fdce_C_Q)         0.456     5.537 r  bloc1/saddress_reg[1]/Q
+                         net (fo=4610, routed)        9.100    14.637    bloc2/bloc2/mem_reg_4608_4735_4_4/A1
+    SLICE_X14Y147        RAMD64E                                      r  bloc2/bloc2/mem_reg_4608_4735_4_4/DP.HIGH/WADR1
+  -------------------------------------------------------------------    -------------------
+
+                         (clock horloge rise edge)   10.000    10.000 r  
+    E3                                                0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         1.411    11.411 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.683    13.094    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.185 r  clk_IBUF_BUFG_inst/O
+                         net (fo=3399, routed)        1.509    14.694    bloc2/bloc2/mem_reg_4608_4735_4_4/WCLK
+    SLICE_X14Y147        RAMD64E                                      r  bloc2/bloc2/mem_reg_4608_4735_4_4/DP.HIGH/CLK
+                         clock pessimism              0.173    14.867    
+                         clock uncertainty           -0.035    14.832    
+    SLICE_X14Y147        RAMD64E (Setup_ramd64e_CLK_WADR1)
+                                                      0.058    14.890    bloc2/bloc2/mem_reg_4608_4735_4_4/DP.HIGH
+  -------------------------------------------------------------------
+                         required time                         14.890    
+                         arrival time                         -14.637    
+  -------------------------------------------------------------------
+                         slack                                  0.253    
+
+Slack (MET) :             0.253ns  (required time - arrival time)
+  Source:                 bloc1/saddress_reg[1]/C
+                            (rising edge-triggered cell FDCE clocked by horloge  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bloc2/bloc2/mem_reg_4608_4735_4_4/DP.LOW/WADR1
+                            (rising edge-triggered cell RAMD64E clocked by horloge  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             horloge
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (horloge rise@10.000ns - horloge rise@0.000ns)
+  Data Path Delay:        9.556ns  (logic 0.456ns (4.772%)  route 9.100ns (95.228%))
+  Logic Levels:           0  
+  Clock Path Skew:        -0.214ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.694ns = ( 14.694 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.081ns
+    Clock Pessimism Removal (CPR):    0.173ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock horloge rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.780     3.262    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.358 r  clk_IBUF_BUFG_inst/O
+                         net (fo=3399, routed)        1.722     5.081    bloc1/clk_IBUF_BUFG
+    SLICE_X4Y89          FDCE                                         r  bloc1/saddress_reg[1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X4Y89          FDCE (Prop_fdce_C_Q)         0.456     5.537 r  bloc1/saddress_reg[1]/Q
+                         net (fo=4610, routed)        9.100    14.637    bloc2/bloc2/mem_reg_4608_4735_4_4/A1
+    SLICE_X14Y147        RAMD64E                                      r  bloc2/bloc2/mem_reg_4608_4735_4_4/DP.LOW/WADR1
+  -------------------------------------------------------------------    -------------------
+
+                         (clock horloge rise edge)   10.000    10.000 r  
+    E3                                                0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         1.411    11.411 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.683    13.094    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.185 r  clk_IBUF_BUFG_inst/O
+                         net (fo=3399, routed)        1.509    14.694    bloc2/bloc2/mem_reg_4608_4735_4_4/WCLK
+    SLICE_X14Y147        RAMD64E                                      r  bloc2/bloc2/mem_reg_4608_4735_4_4/DP.LOW/CLK
+                         clock pessimism              0.173    14.867    
+                         clock uncertainty           -0.035    14.832    
+    SLICE_X14Y147        RAMD64E (Setup_ramd64e_CLK_WADR1)
+                                                      0.058    14.890    bloc2/bloc2/mem_reg_4608_4735_4_4/DP.LOW
+  -------------------------------------------------------------------
+                         required time                         14.890    
+                         arrival time                         -14.637    
+  -------------------------------------------------------------------
+                         slack                                  0.253    
+
+Slack (MET) :             0.253ns  (required time - arrival time)
+  Source:                 bloc1/saddress_reg[1]/C
+                            (rising edge-triggered cell FDCE clocked by horloge  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bloc2/bloc2/mem_reg_4608_4735_4_4/SP.HIGH/WADR1
+                            (rising edge-triggered cell RAMD64E clocked by horloge  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             horloge
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (horloge rise@10.000ns - horloge rise@0.000ns)
+  Data Path Delay:        9.556ns  (logic 0.456ns (4.772%)  route 9.100ns (95.228%))
+  Logic Levels:           0  
+  Clock Path Skew:        -0.214ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.694ns = ( 14.694 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.081ns
+    Clock Pessimism Removal (CPR):    0.173ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock horloge rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.780     3.262    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.358 r  clk_IBUF_BUFG_inst/O
+                         net (fo=3399, routed)        1.722     5.081    bloc1/clk_IBUF_BUFG
+    SLICE_X4Y89          FDCE                                         r  bloc1/saddress_reg[1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X4Y89          FDCE (Prop_fdce_C_Q)         0.456     5.537 r  bloc1/saddress_reg[1]/Q
+                         net (fo=4610, routed)        9.100    14.637    bloc2/bloc2/mem_reg_4608_4735_4_4/A1
+    SLICE_X14Y147        RAMD64E                                      r  bloc2/bloc2/mem_reg_4608_4735_4_4/SP.HIGH/WADR1
+  -------------------------------------------------------------------    -------------------
+
+                         (clock horloge rise edge)   10.000    10.000 r  
+    E3                                                0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         1.411    11.411 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.683    13.094    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.185 r  clk_IBUF_BUFG_inst/O
+                         net (fo=3399, routed)        1.509    14.694    bloc2/bloc2/mem_reg_4608_4735_4_4/WCLK
+    SLICE_X14Y147        RAMD64E                                      r  bloc2/bloc2/mem_reg_4608_4735_4_4/SP.HIGH/CLK
+                         clock pessimism              0.173    14.867    
+                         clock uncertainty           -0.035    14.832    
+    SLICE_X14Y147        RAMD64E (Setup_ramd64e_CLK_WADR1)
+                                                      0.058    14.890    bloc2/bloc2/mem_reg_4608_4735_4_4/SP.HIGH
+  -------------------------------------------------------------------
+                         required time                         14.890    
+                         arrival time                         -14.637    
+  -------------------------------------------------------------------
+                         slack                                  0.253    
+
+Slack (MET) :             0.253ns  (required time - arrival time)
+  Source:                 bloc1/saddress_reg[1]/C
+                            (rising edge-triggered cell FDCE clocked by horloge  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bloc2/bloc2/mem_reg_4608_4735_4_4/SP.LOW/WADR1
+                            (rising edge-triggered cell RAMD64E clocked by horloge  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             horloge
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (horloge rise@10.000ns - horloge rise@0.000ns)
+  Data Path Delay:        9.556ns  (logic 0.456ns (4.772%)  route 9.100ns (95.228%))
+  Logic Levels:           0  
+  Clock Path Skew:        -0.214ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.694ns = ( 14.694 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.081ns
+    Clock Pessimism Removal (CPR):    0.173ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock horloge rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.780     3.262    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.358 r  clk_IBUF_BUFG_inst/O
+                         net (fo=3399, routed)        1.722     5.081    bloc1/clk_IBUF_BUFG
+    SLICE_X4Y89          FDCE                                         r  bloc1/saddress_reg[1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X4Y89          FDCE (Prop_fdce_C_Q)         0.456     5.537 r  bloc1/saddress_reg[1]/Q
+                         net (fo=4610, routed)        9.100    14.637    bloc2/bloc2/mem_reg_4608_4735_4_4/A1
+    SLICE_X14Y147        RAMD64E                                      r  bloc2/bloc2/mem_reg_4608_4735_4_4/SP.LOW/WADR1
+  -------------------------------------------------------------------    -------------------
+
+                         (clock horloge rise edge)   10.000    10.000 r  
+    E3                                                0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         1.411    11.411 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.683    13.094    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.185 r  clk_IBUF_BUFG_inst/O
+                         net (fo=3399, routed)        1.509    14.694    bloc2/bloc2/mem_reg_4608_4735_4_4/WCLK
+    SLICE_X14Y147        RAMD64E                                      r  bloc2/bloc2/mem_reg_4608_4735_4_4/SP.LOW/CLK
+                         clock pessimism              0.173    14.867    
+                         clock uncertainty           -0.035    14.832    
+    SLICE_X14Y147        RAMD64E (Setup_ramd64e_CLK_WADR1)
+                                                      0.058    14.890    bloc2/bloc2/mem_reg_4608_4735_4_4/SP.LOW
+  -------------------------------------------------------------------
+                         required time                         14.890    
+                         arrival time                         -14.637    
+  -------------------------------------------------------------------
+                         slack                                  0.253    
+
+Slack (MET) :             0.401ns  (required time - arrival time)
+  Source:                 bloc1/saddress_reg[1]/C
+                            (rising edge-triggered cell FDCE clocked by horloge  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bloc2/bloc2/mem_reg_4736_4863_5_5/DP.HIGH/WADR1
+                            (rising edge-triggered cell RAMD64E clocked by horloge  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             horloge
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (horloge rise@10.000ns - horloge rise@0.000ns)
+  Data Path Delay:        9.486ns  (logic 0.456ns (4.807%)  route 9.030ns (95.193%))
+  Logic Levels:           0  
+  Clock Path Skew:        -0.136ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.772ns = ( 14.772 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.081ns
+    Clock Pessimism Removal (CPR):    0.173ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock horloge rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.780     3.262    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.358 r  clk_IBUF_BUFG_inst/O
+                         net (fo=3399, routed)        1.722     5.081    bloc1/clk_IBUF_BUFG
+    SLICE_X4Y89          FDCE                                         r  bloc1/saddress_reg[1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X4Y89          FDCE (Prop_fdce_C_Q)         0.456     5.537 r  bloc1/saddress_reg[1]/Q
+                         net (fo=4610, routed)        9.030    14.566    bloc2/bloc2/mem_reg_4736_4863_5_5/A1
+    SLICE_X6Y144         RAMD64E                                      r  bloc2/bloc2/mem_reg_4736_4863_5_5/DP.HIGH/WADR1
+  -------------------------------------------------------------------    -------------------
+
+                         (clock horloge rise edge)   10.000    10.000 r  
+    E3                                                0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         1.411    11.411 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.683    13.094    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.185 r  clk_IBUF_BUFG_inst/O
+                         net (fo=3399, routed)        1.587    14.772    bloc2/bloc2/mem_reg_4736_4863_5_5/WCLK
+    SLICE_X6Y144         RAMD64E                                      r  bloc2/bloc2/mem_reg_4736_4863_5_5/DP.HIGH/CLK
+                         clock pessimism              0.173    14.945    
+                         clock uncertainty           -0.035    14.910    
+    SLICE_X6Y144         RAMD64E (Setup_ramd64e_CLK_WADR1)
+                                                      0.058    14.968    bloc2/bloc2/mem_reg_4736_4863_5_5/DP.HIGH
+  -------------------------------------------------------------------
+                         required time                         14.968    
+                         arrival time                         -14.567    
+  -------------------------------------------------------------------
+                         slack                                  0.401    
+
+Slack (MET) :             0.401ns  (required time - arrival time)
+  Source:                 bloc1/saddress_reg[1]/C
+                            (rising edge-triggered cell FDCE clocked by horloge  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bloc2/bloc2/mem_reg_4736_4863_5_5/DP.LOW/WADR1
+                            (rising edge-triggered cell RAMD64E clocked by horloge  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             horloge
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (horloge rise@10.000ns - horloge rise@0.000ns)
+  Data Path Delay:        9.486ns  (logic 0.456ns (4.807%)  route 9.030ns (95.193%))
+  Logic Levels:           0  
+  Clock Path Skew:        -0.136ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.772ns = ( 14.772 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.081ns
+    Clock Pessimism Removal (CPR):    0.173ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock horloge rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.780     3.262    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.358 r  clk_IBUF_BUFG_inst/O
+                         net (fo=3399, routed)        1.722     5.081    bloc1/clk_IBUF_BUFG
+    SLICE_X4Y89          FDCE                                         r  bloc1/saddress_reg[1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X4Y89          FDCE (Prop_fdce_C_Q)         0.456     5.537 r  bloc1/saddress_reg[1]/Q
+                         net (fo=4610, routed)        9.030    14.566    bloc2/bloc2/mem_reg_4736_4863_5_5/A1
+    SLICE_X6Y144         RAMD64E                                      r  bloc2/bloc2/mem_reg_4736_4863_5_5/DP.LOW/WADR1
+  -------------------------------------------------------------------    -------------------
+
+                         (clock horloge rise edge)   10.000    10.000 r  
+    E3                                                0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         1.411    11.411 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.683    13.094    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.185 r  clk_IBUF_BUFG_inst/O
+                         net (fo=3399, routed)        1.587    14.772    bloc2/bloc2/mem_reg_4736_4863_5_5/WCLK
+    SLICE_X6Y144         RAMD64E                                      r  bloc2/bloc2/mem_reg_4736_4863_5_5/DP.LOW/CLK
+                         clock pessimism              0.173    14.945    
+                         clock uncertainty           -0.035    14.910    
+    SLICE_X6Y144         RAMD64E (Setup_ramd64e_CLK_WADR1)
+                                                      0.058    14.968    bloc2/bloc2/mem_reg_4736_4863_5_5/DP.LOW
+  -------------------------------------------------------------------
+                         required time                         14.968    
+                         arrival time                         -14.567    
+  -------------------------------------------------------------------
+                         slack                                  0.401    
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             0.060ns  (arrival time - required time)
+  Source:                 bloc1/saddress_reg[0]_rep__0/C
+                            (rising edge-triggered cell FDCE clocked by horloge  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bloc2/bloc2/mem_reg_1280_1407_0_0/DP.HIGH/WADR0
+                            (rising edge-triggered cell RAMD64E clocked by horloge  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             horloge
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (horloge rise@0.000ns - horloge rise@0.000ns)
+  Data Path Delay:        0.383ns  (logic 0.141ns (36.846%)  route 0.242ns (63.154%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.908ns
+    Source Clock Delay      (SCD):    1.403ns
+    Clock Pessimism Removal (CPR):    0.491ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock horloge rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.558     0.808    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.834 r  clk_IBUF_BUFG_inst/O
+                         net (fo=3399, routed)        0.570     1.403    bloc1/clk_IBUF_BUFG
+    SLICE_X9Y83          FDCE                                         r  bloc1/saddress_reg[0]_rep__0/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X9Y83          FDCE (Prop_fdce_C_Q)         0.141     1.544 r  bloc1/saddress_reg[0]_rep__0/Q
+                         net (fo=246, routed)         0.242     1.786    bloc2/bloc2/mem_reg_1280_1407_0_0/A0
+    SLICE_X8Y83          RAMD64E                                      r  bloc2/bloc2/mem_reg_1280_1407_0_0/DP.HIGH/WADR0
+  -------------------------------------------------------------------    -------------------
+
+                         (clock horloge rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.603     1.040    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.069 r  clk_IBUF_BUFG_inst/O
+                         net (fo=3399, routed)        0.839     1.908    bloc2/bloc2/mem_reg_1280_1407_0_0/WCLK
+    SLICE_X8Y83          RAMD64E                                      r  bloc2/bloc2/mem_reg_1280_1407_0_0/DP.HIGH/CLK
+                         clock pessimism             -0.491     1.416    
+    SLICE_X8Y83          RAMD64E (Hold_ramd64e_CLK_WADR0)
+                                                      0.310     1.726    bloc2/bloc2/mem_reg_1280_1407_0_0/DP.HIGH
+  -------------------------------------------------------------------
+                         required time                         -1.726    
+                         arrival time                           1.786    
+  -------------------------------------------------------------------
+                         slack                                  0.060    
+
+Slack (MET) :             0.060ns  (arrival time - required time)
+  Source:                 bloc1/saddress_reg[0]_rep__0/C
+                            (rising edge-triggered cell FDCE clocked by horloge  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bloc2/bloc2/mem_reg_1280_1407_0_0/DP.LOW/WADR0
+                            (rising edge-triggered cell RAMD64E clocked by horloge  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             horloge
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (horloge rise@0.000ns - horloge rise@0.000ns)
+  Data Path Delay:        0.383ns  (logic 0.141ns (36.846%)  route 0.242ns (63.154%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.908ns
+    Source Clock Delay      (SCD):    1.403ns
+    Clock Pessimism Removal (CPR):    0.491ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock horloge rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.558     0.808    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.834 r  clk_IBUF_BUFG_inst/O
+                         net (fo=3399, routed)        0.570     1.403    bloc1/clk_IBUF_BUFG
+    SLICE_X9Y83          FDCE                                         r  bloc1/saddress_reg[0]_rep__0/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X9Y83          FDCE (Prop_fdce_C_Q)         0.141     1.544 r  bloc1/saddress_reg[0]_rep__0/Q
+                         net (fo=246, routed)         0.242     1.786    bloc2/bloc2/mem_reg_1280_1407_0_0/A0
+    SLICE_X8Y83          RAMD64E                                      r  bloc2/bloc2/mem_reg_1280_1407_0_0/DP.LOW/WADR0
+  -------------------------------------------------------------------    -------------------
+
+                         (clock horloge rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.603     1.040    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.069 r  clk_IBUF_BUFG_inst/O
+                         net (fo=3399, routed)        0.839     1.908    bloc2/bloc2/mem_reg_1280_1407_0_0/WCLK
+    SLICE_X8Y83          RAMD64E                                      r  bloc2/bloc2/mem_reg_1280_1407_0_0/DP.LOW/CLK
+                         clock pessimism             -0.491     1.416    
+    SLICE_X8Y83          RAMD64E (Hold_ramd64e_CLK_WADR0)
+                                                      0.310     1.726    bloc2/bloc2/mem_reg_1280_1407_0_0/DP.LOW
+  -------------------------------------------------------------------
+                         required time                         -1.726    
+                         arrival time                           1.786    
+  -------------------------------------------------------------------
+                         slack                                  0.060    
+
+Slack (MET) :             0.060ns  (arrival time - required time)
+  Source:                 bloc1/saddress_reg[0]_rep__0/C
+                            (rising edge-triggered cell FDCE clocked by horloge  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bloc2/bloc2/mem_reg_1280_1407_0_0/SP.HIGH/WADR0
+                            (rising edge-triggered cell RAMD64E clocked by horloge  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             horloge
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (horloge rise@0.000ns - horloge rise@0.000ns)
+  Data Path Delay:        0.383ns  (logic 0.141ns (36.846%)  route 0.242ns (63.154%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.908ns
+    Source Clock Delay      (SCD):    1.403ns
+    Clock Pessimism Removal (CPR):    0.491ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock horloge rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.558     0.808    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.834 r  clk_IBUF_BUFG_inst/O
+                         net (fo=3399, routed)        0.570     1.403    bloc1/clk_IBUF_BUFG
+    SLICE_X9Y83          FDCE                                         r  bloc1/saddress_reg[0]_rep__0/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X9Y83          FDCE (Prop_fdce_C_Q)         0.141     1.544 r  bloc1/saddress_reg[0]_rep__0/Q
+                         net (fo=246, routed)         0.242     1.786    bloc2/bloc2/mem_reg_1280_1407_0_0/A0
+    SLICE_X8Y83          RAMD64E                                      r  bloc2/bloc2/mem_reg_1280_1407_0_0/SP.HIGH/WADR0
+  -------------------------------------------------------------------    -------------------
+
+                         (clock horloge rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.603     1.040    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.069 r  clk_IBUF_BUFG_inst/O
+                         net (fo=3399, routed)        0.839     1.908    bloc2/bloc2/mem_reg_1280_1407_0_0/WCLK
+    SLICE_X8Y83          RAMD64E                                      r  bloc2/bloc2/mem_reg_1280_1407_0_0/SP.HIGH/CLK
+                         clock pessimism             -0.491     1.416    
+    SLICE_X8Y83          RAMD64E (Hold_ramd64e_CLK_WADR0)
+                                                      0.310     1.726    bloc2/bloc2/mem_reg_1280_1407_0_0/SP.HIGH
+  -------------------------------------------------------------------
+                         required time                         -1.726    
+                         arrival time                           1.786    
+  -------------------------------------------------------------------
+                         slack                                  0.060    
+
+Slack (MET) :             0.060ns  (arrival time - required time)
+  Source:                 bloc1/saddress_reg[0]_rep__0/C
+                            (rising edge-triggered cell FDCE clocked by horloge  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bloc2/bloc2/mem_reg_1280_1407_0_0/SP.LOW/WADR0
+                            (rising edge-triggered cell RAMD64E clocked by horloge  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             horloge
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (horloge rise@0.000ns - horloge rise@0.000ns)
+  Data Path Delay:        0.383ns  (logic 0.141ns (36.846%)  route 0.242ns (63.154%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.908ns
+    Source Clock Delay      (SCD):    1.403ns
+    Clock Pessimism Removal (CPR):    0.491ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock horloge rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.558     0.808    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.834 r  clk_IBUF_BUFG_inst/O
+                         net (fo=3399, routed)        0.570     1.403    bloc1/clk_IBUF_BUFG
+    SLICE_X9Y83          FDCE                                         r  bloc1/saddress_reg[0]_rep__0/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X9Y83          FDCE (Prop_fdce_C_Q)         0.141     1.544 r  bloc1/saddress_reg[0]_rep__0/Q
+                         net (fo=246, routed)         0.242     1.786    bloc2/bloc2/mem_reg_1280_1407_0_0/A0
+    SLICE_X8Y83          RAMD64E                                      r  bloc2/bloc2/mem_reg_1280_1407_0_0/SP.LOW/WADR0
+  -------------------------------------------------------------------    -------------------
+
+                         (clock horloge rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.603     1.040    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.069 r  clk_IBUF_BUFG_inst/O
+                         net (fo=3399, routed)        0.839     1.908    bloc2/bloc2/mem_reg_1280_1407_0_0/WCLK
+    SLICE_X8Y83          RAMD64E                                      r  bloc2/bloc2/mem_reg_1280_1407_0_0/SP.LOW/CLK
+                         clock pessimism             -0.491     1.416    
+    SLICE_X8Y83          RAMD64E (Hold_ramd64e_CLK_WADR0)
+                                                      0.310     1.726    bloc2/bloc2/mem_reg_1280_1407_0_0/SP.LOW
+  -------------------------------------------------------------------
+                         required time                         -1.726    
+                         arrival time                           1.786    
+  -------------------------------------------------------------------
+                         slack                                  0.060    
+
+Slack (MET) :             0.060ns  (arrival time - required time)
+  Source:                 bloc1/saddress_reg[0]_rep__2/C
+                            (rising edge-triggered cell FDCE clocked by horloge  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bloc2/bloc2/mem_reg_5376_5503_1_1/DP.HIGH/WADR0
+                            (rising edge-triggered cell RAMD64E clocked by horloge  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             horloge
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (horloge rise@0.000ns - horloge rise@0.000ns)
+  Data Path Delay:        0.383ns  (logic 0.141ns (36.840%)  route 0.242ns (63.160%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.916ns
+    Source Clock Delay      (SCD):    1.409ns
+    Clock Pessimism Removal (CPR):    0.493ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock horloge rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.558     0.808    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.834 r  clk_IBUF_BUFG_inst/O
+                         net (fo=3399, routed)        0.576     1.409    bloc1/clk_IBUF_BUFG
+    SLICE_X11Y98         FDCE                                         r  bloc1/saddress_reg[0]_rep__2/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X11Y98         FDCE (Prop_fdce_C_Q)         0.141     1.550 r  bloc1/saddress_reg[0]_rep__2/Q
+                         net (fo=246, routed)         0.242     1.792    bloc2/bloc2/mem_reg_5376_5503_1_1/A0
+    SLICE_X10Y98         RAMD64E                                      r  bloc2/bloc2/mem_reg_5376_5503_1_1/DP.HIGH/WADR0
+  -------------------------------------------------------------------    -------------------
+
+                         (clock horloge rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.603     1.040    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.069 r  clk_IBUF_BUFG_inst/O
+                         net (fo=3399, routed)        0.847     1.916    bloc2/bloc2/mem_reg_5376_5503_1_1/WCLK
+    SLICE_X10Y98         RAMD64E                                      r  bloc2/bloc2/mem_reg_5376_5503_1_1/DP.HIGH/CLK
+                         clock pessimism             -0.493     1.422    
+    SLICE_X10Y98         RAMD64E (Hold_ramd64e_CLK_WADR0)
+                                                      0.310     1.732    bloc2/bloc2/mem_reg_5376_5503_1_1/DP.HIGH
+  -------------------------------------------------------------------
+                         required time                         -1.732    
+                         arrival time                           1.792    
+  -------------------------------------------------------------------
+                         slack                                  0.060    
+
+Slack (MET) :             0.060ns  (arrival time - required time)
+  Source:                 bloc1/saddress_reg[0]_rep__2/C
+                            (rising edge-triggered cell FDCE clocked by horloge  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bloc2/bloc2/mem_reg_5376_5503_1_1/DP.LOW/WADR0
+                            (rising edge-triggered cell RAMD64E clocked by horloge  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             horloge
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (horloge rise@0.000ns - horloge rise@0.000ns)
+  Data Path Delay:        0.383ns  (logic 0.141ns (36.840%)  route 0.242ns (63.160%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.916ns
+    Source Clock Delay      (SCD):    1.409ns
+    Clock Pessimism Removal (CPR):    0.493ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock horloge rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.558     0.808    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.834 r  clk_IBUF_BUFG_inst/O
+                         net (fo=3399, routed)        0.576     1.409    bloc1/clk_IBUF_BUFG
+    SLICE_X11Y98         FDCE                                         r  bloc1/saddress_reg[0]_rep__2/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X11Y98         FDCE (Prop_fdce_C_Q)         0.141     1.550 r  bloc1/saddress_reg[0]_rep__2/Q
+                         net (fo=246, routed)         0.242     1.792    bloc2/bloc2/mem_reg_5376_5503_1_1/A0
+    SLICE_X10Y98         RAMD64E                                      r  bloc2/bloc2/mem_reg_5376_5503_1_1/DP.LOW/WADR0
+  -------------------------------------------------------------------    -------------------
+
+                         (clock horloge rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.603     1.040    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.069 r  clk_IBUF_BUFG_inst/O
+                         net (fo=3399, routed)        0.847     1.916    bloc2/bloc2/mem_reg_5376_5503_1_1/WCLK
+    SLICE_X10Y98         RAMD64E                                      r  bloc2/bloc2/mem_reg_5376_5503_1_1/DP.LOW/CLK
+                         clock pessimism             -0.493     1.422    
+    SLICE_X10Y98         RAMD64E (Hold_ramd64e_CLK_WADR0)
+                                                      0.310     1.732    bloc2/bloc2/mem_reg_5376_5503_1_1/DP.LOW
+  -------------------------------------------------------------------
+                         required time                         -1.732    
+                         arrival time                           1.792    
+  -------------------------------------------------------------------
+                         slack                                  0.060    
+
+Slack (MET) :             0.060ns  (arrival time - required time)
+  Source:                 bloc1/saddress_reg[0]_rep__2/C
+                            (rising edge-triggered cell FDCE clocked by horloge  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bloc2/bloc2/mem_reg_5376_5503_1_1/SP.HIGH/WADR0
+                            (rising edge-triggered cell RAMD64E clocked by horloge  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             horloge
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (horloge rise@0.000ns - horloge rise@0.000ns)
+  Data Path Delay:        0.383ns  (logic 0.141ns (36.840%)  route 0.242ns (63.160%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.916ns
+    Source Clock Delay      (SCD):    1.409ns
+    Clock Pessimism Removal (CPR):    0.493ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock horloge rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.558     0.808    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.834 r  clk_IBUF_BUFG_inst/O
+                         net (fo=3399, routed)        0.576     1.409    bloc1/clk_IBUF_BUFG
+    SLICE_X11Y98         FDCE                                         r  bloc1/saddress_reg[0]_rep__2/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X11Y98         FDCE (Prop_fdce_C_Q)         0.141     1.550 r  bloc1/saddress_reg[0]_rep__2/Q
+                         net (fo=246, routed)         0.242     1.792    bloc2/bloc2/mem_reg_5376_5503_1_1/A0
+    SLICE_X10Y98         RAMD64E                                      r  bloc2/bloc2/mem_reg_5376_5503_1_1/SP.HIGH/WADR0
+  -------------------------------------------------------------------    -------------------
+
+                         (clock horloge rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.603     1.040    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.069 r  clk_IBUF_BUFG_inst/O
+                         net (fo=3399, routed)        0.847     1.916    bloc2/bloc2/mem_reg_5376_5503_1_1/WCLK
+    SLICE_X10Y98         RAMD64E                                      r  bloc2/bloc2/mem_reg_5376_5503_1_1/SP.HIGH/CLK
+                         clock pessimism             -0.493     1.422    
+    SLICE_X10Y98         RAMD64E (Hold_ramd64e_CLK_WADR0)
+                                                      0.310     1.732    bloc2/bloc2/mem_reg_5376_5503_1_1/SP.HIGH
+  -------------------------------------------------------------------
+                         required time                         -1.732    
+                         arrival time                           1.792    
+  -------------------------------------------------------------------
+                         slack                                  0.060    
+
+Slack (MET) :             0.060ns  (arrival time - required time)
+  Source:                 bloc1/saddress_reg[0]_rep__2/C
+                            (rising edge-triggered cell FDCE clocked by horloge  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bloc2/bloc2/mem_reg_5376_5503_1_1/SP.LOW/WADR0
+                            (rising edge-triggered cell RAMD64E clocked by horloge  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             horloge
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (horloge rise@0.000ns - horloge rise@0.000ns)
+  Data Path Delay:        0.383ns  (logic 0.141ns (36.840%)  route 0.242ns (63.160%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.916ns
+    Source Clock Delay      (SCD):    1.409ns
+    Clock Pessimism Removal (CPR):    0.493ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock horloge rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.558     0.808    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.834 r  clk_IBUF_BUFG_inst/O
+                         net (fo=3399, routed)        0.576     1.409    bloc1/clk_IBUF_BUFG
+    SLICE_X11Y98         FDCE                                         r  bloc1/saddress_reg[0]_rep__2/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X11Y98         FDCE (Prop_fdce_C_Q)         0.141     1.550 r  bloc1/saddress_reg[0]_rep__2/Q
+                         net (fo=246, routed)         0.242     1.792    bloc2/bloc2/mem_reg_5376_5503_1_1/A0
+    SLICE_X10Y98         RAMD64E                                      r  bloc2/bloc2/mem_reg_5376_5503_1_1/SP.LOW/WADR0
+  -------------------------------------------------------------------    -------------------
+
+                         (clock horloge rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.603     1.040    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.069 r  clk_IBUF_BUFG_inst/O
+                         net (fo=3399, routed)        0.847     1.916    bloc2/bloc2/mem_reg_5376_5503_1_1/WCLK
+    SLICE_X10Y98         RAMD64E                                      r  bloc2/bloc2/mem_reg_5376_5503_1_1/SP.LOW/CLK
+                         clock pessimism             -0.493     1.422    
+    SLICE_X10Y98         RAMD64E (Hold_ramd64e_CLK_WADR0)
+                                                      0.310     1.732    bloc2/bloc2/mem_reg_5376_5503_1_1/SP.LOW
+  -------------------------------------------------------------------
+                         required time                         -1.732    
+                         arrival time                           1.792    
+  -------------------------------------------------------------------
+                         slack                                  0.060    
+
+Slack (MET) :             0.068ns  (arrival time - required time)
+  Source:                 bloc1/saddress_reg[4]_rep__6/C
+                            (rising edge-triggered cell FDCE clocked by horloge  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bloc2/bloc2/mem_reg_128_255_8_8/DP.HIGH/WADR4
+                            (rising edge-triggered cell RAMD64E clocked by horloge  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             horloge
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (horloge rise@0.000ns - horloge rise@0.000ns)
+  Data Path Delay:        0.306ns  (logic 0.141ns (46.085%)  route 0.165ns (53.915%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.038ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.931ns
+    Source Clock Delay      (SCD):    1.423ns
+    Clock Pessimism Removal (CPR):    0.469ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock horloge rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.558     0.808    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.834 r  clk_IBUF_BUFG_inst/O
+                         net (fo=3399, routed)        0.590     1.423    bloc1/clk_IBUF_BUFG
+    SLICE_X4Y74          FDCE                                         r  bloc1/saddress_reg[4]_rep__6/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X4Y74          FDCE (Prop_fdce_C_Q)         0.141     1.564 r  bloc1/saddress_reg[4]_rep__6/Q
+                         net (fo=288, routed)         0.165     1.729    bloc2/bloc2/mem_reg_128_255_8_8/A4
+    SLICE_X2Y73          RAMD64E                                      r  bloc2/bloc2/mem_reg_128_255_8_8/DP.HIGH/WADR4
+  -------------------------------------------------------------------    -------------------
+
+                         (clock horloge rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.603     1.040    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.069 r  clk_IBUF_BUFG_inst/O
+                         net (fo=3399, routed)        0.862     1.931    bloc2/bloc2/mem_reg_128_255_8_8/WCLK
+    SLICE_X2Y73          RAMD64E                                      r  bloc2/bloc2/mem_reg_128_255_8_8/DP.HIGH/CLK
+                         clock pessimism             -0.469     1.461    
+    SLICE_X2Y73          RAMD64E (Hold_ramd64e_CLK_WADR4)
+                                                      0.200     1.661    bloc2/bloc2/mem_reg_128_255_8_8/DP.HIGH
+  -------------------------------------------------------------------
+                         required time                         -1.661    
+                         arrival time                           1.729    
+  -------------------------------------------------------------------
+                         slack                                  0.068    
+
+Slack (MET) :             0.068ns  (arrival time - required time)
+  Source:                 bloc1/saddress_reg[4]_rep__6/C
+                            (rising edge-triggered cell FDCE clocked by horloge  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bloc2/bloc2/mem_reg_128_255_8_8/DP.LOW/WADR4
+                            (rising edge-triggered cell RAMD64E clocked by horloge  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             horloge
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (horloge rise@0.000ns - horloge rise@0.000ns)
+  Data Path Delay:        0.306ns  (logic 0.141ns (46.085%)  route 0.165ns (53.915%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.038ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.931ns
+    Source Clock Delay      (SCD):    1.423ns
+    Clock Pessimism Removal (CPR):    0.469ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock horloge rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.558     0.808    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.834 r  clk_IBUF_BUFG_inst/O
+                         net (fo=3399, routed)        0.590     1.423    bloc1/clk_IBUF_BUFG
+    SLICE_X4Y74          FDCE                                         r  bloc1/saddress_reg[4]_rep__6/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X4Y74          FDCE (Prop_fdce_C_Q)         0.141     1.564 r  bloc1/saddress_reg[4]_rep__6/Q
+                         net (fo=288, routed)         0.165     1.729    bloc2/bloc2/mem_reg_128_255_8_8/A4
+    SLICE_X2Y73          RAMD64E                                      r  bloc2/bloc2/mem_reg_128_255_8_8/DP.LOW/WADR4
+  -------------------------------------------------------------------    -------------------
+
+                         (clock horloge rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.603     1.040    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.069 r  clk_IBUF_BUFG_inst/O
+                         net (fo=3399, routed)        0.862     1.931    bloc2/bloc2/mem_reg_128_255_8_8/WCLK
+    SLICE_X2Y73          RAMD64E                                      r  bloc2/bloc2/mem_reg_128_255_8_8/DP.LOW/CLK
+                         clock pessimism             -0.469     1.461    
+    SLICE_X2Y73          RAMD64E (Hold_ramd64e_CLK_WADR4)
+                                                      0.200     1.661    bloc2/bloc2/mem_reg_128_255_8_8/DP.LOW
+  -------------------------------------------------------------------
+                         required time                         -1.661    
+                         arrival time                           1.729    
+  -------------------------------------------------------------------
+                         slack                                  0.068    
+
+
+
+
+
+Pulse Width Checks
+--------------------------------------------------------------------------------------
+Clock Name:         horloge
+Waveform(ns):       { 0.000 5.000 }
+Period(ns):         10.000
+Sources:            { clk }
+
+Check Type        Corner  Lib Pin      Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location        Pin
+Min Period        n/a     BUFG/I       n/a            2.155         10.000      7.845      BUFGCTRL_X0Y16  clk_IBUF_BUFG_inst/I
+Min Period        n/a     FDCE/C       n/a            1.000         10.000      9.000      SLICE_X5Y89     bloc1/saddress_reg[0]/C
+Min Period        n/a     FDCE/C       n/a            1.000         10.000      9.000      SLICE_X5Y89     bloc1/saddress_reg[0]_rep/C
+Min Period        n/a     FDCE/C       n/a            1.000         10.000      9.000      SLICE_X9Y83     bloc1/saddress_reg[0]_rep__0/C
+Min Period        n/a     FDCE/C       n/a            1.000         10.000      9.000      SLICE_X9Y83     bloc1/saddress_reg[0]_rep__1/C
+Min Period        n/a     FDCE/C       n/a            1.000         10.000      9.000      SLICE_X13Y73    bloc1/saddress_reg[0]_rep__10/C
+Min Period        n/a     FDCE/C       n/a            1.000         10.000      9.000      SLICE_X13Y73    bloc1/saddress_reg[0]_rep__11/C
+Min Period        n/a     FDCE/C       n/a            1.000         10.000      9.000      SLICE_X13Y113   bloc1/saddress_reg[0]_rep__12/C
+Min Period        n/a     FDCE/C       n/a            1.000         10.000      9.000      SLICE_X13Y113   bloc1/saddress_reg[0]_rep__13/C
+Min Period        n/a     FDCE/C       n/a            1.000         10.000      9.000      SLICE_X5Y116    bloc1/saddress_reg[0]_rep__14/C
+Low Pulse Width   Fast    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X12Y94    bloc2/bloc2/mem_reg_1024_1151_1_1/SP.LOW/CLK
+Low Pulse Width   Fast    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X14Y46    bloc2/bloc2/mem_reg_128_255_7_7/DP.HIGH/CLK
+Low Pulse Width   Fast    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X14Y46    bloc2/bloc2/mem_reg_128_255_7_7/DP.LOW/CLK
+Low Pulse Width   Fast    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X14Y46    bloc2/bloc2/mem_reg_128_255_7_7/SP.HIGH/CLK
+Low Pulse Width   Fast    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X14Y46    bloc2/bloc2/mem_reg_128_255_7_7/SP.LOW/CLK
+Low Pulse Width   Fast    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X30Y124   bloc2/bloc2/mem_reg_1792_1919_10_10/SP.HIGH/CLK
+Low Pulse Width   Fast    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X30Y124   bloc2/bloc2/mem_reg_1792_1919_10_10/SP.LOW/CLK
+Low Pulse Width   Fast    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X30Y115   bloc2/bloc2/mem_reg_1792_1919_11_11/DP.HIGH/CLK
+Low Pulse Width   Fast    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X30Y115   bloc2/bloc2/mem_reg_1792_1919_11_11/DP.LOW/CLK
+Low Pulse Width   Fast    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X30Y115   bloc2/bloc2/mem_reg_1792_1919_11_11/SP.HIGH/CLK
+High Pulse Width  Slow    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X14Y99    bloc2/bloc2/mem_reg_3328_3455_2_2/DP.HIGH/CLK
+High Pulse Width  Slow    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X14Y99    bloc2/bloc2/mem_reg_3328_3455_2_2/DP.LOW/CLK
+High Pulse Width  Slow    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X6Y65     bloc2/bloc2/mem_reg_4480_4607_15_15/DP.HIGH/CLK
+High Pulse Width  Slow    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X6Y65     bloc2/bloc2/mem_reg_4480_4607_15_15/DP.LOW/CLK
+High Pulse Width  Slow    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X6Y65     bloc2/bloc2/mem_reg_4480_4607_15_15/SP.HIGH/CLK
+High Pulse Width  Slow    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X6Y65     bloc2/bloc2/mem_reg_4480_4607_15_15/SP.LOW/CLK
+High Pulse Width  Slow    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X6Y83     bloc2/bloc2/mem_reg_5632_5759_14_14/DP.HIGH/CLK
+High Pulse Width  Slow    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X6Y83     bloc2/bloc2/mem_reg_5632_5759_14_14/DP.LOW/CLK
+High Pulse Width  Slow    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X14Y126   bloc2/bloc2/mem_reg_6016_6143_3_3/DP.HIGH/CLK
+High Pulse Width  Slow    RAMD64E/CLK  n/a            1.250         5.000       3.750      SLICE_X14Y126   bloc2/bloc2/mem_reg_6016_6143_3_3/DP.LOW/CLK
+
+
+

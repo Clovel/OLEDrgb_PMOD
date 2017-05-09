@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_FSM_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="tb_FSM" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="438143890fs"></ZoomStartTime>
+      <ZoomEndTime time="592933234fs"></ZoomEndTime>
+      <Cursor1Time time="5000000000fs"></Cursor1Time>
+   </zoom_setting>
+   <WVObjectSize size="28" />
+   <wvobject db_ref_id="1" fp_name="/tb_FSM/bloc1/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/tb_FSM/bloc1/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/tb_FSM/bloc1/current_state" type="array">
+      <obj_property name="ElementShortName">current_state[3:0]</obj_property>
+      <obj_property name="ObjectShortName">current_state[3:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/tb_FSM/bloc1/next_state" type="array">
+      <obj_property name="ElementShortName">next_state[3:0]</obj_property>
+      <obj_property name="ObjectShortName">next_state[3:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/tb_FSM/bloc1/SPI_busy" type="logic">
+      <obj_property name="ElementShortName">SPI_busy</obj_property>
+      <obj_property name="ObjectShortName">SPI_busy</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/tb_FSM/bloc1/data_in" type="array">
+      <obj_property name="ElementShortName">data_in[31:0]</obj_property>
+      <obj_property name="ObjectShortName">data_in[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/tb_FSM/bloc1/data_en" type="logic">
+      <obj_property name="ElementShortName">data_en</obj_property>
+      <obj_property name="ObjectShortName">data_en</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/tb_FSM/bloc1/data_out" type="array">
+      <obj_property name="ElementShortName">data_out[7:0]</obj_property>
+      <obj_property name="ObjectShortName">data_out[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/tb_FSM/bloc1/read_idx" type="array">
+      <obj_property name="ElementShortName">read_idx[3:0]</obj_property>
+      <obj_property name="ObjectShortName">read_idx[3:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/tb_FSM/bloc1/DC" type="logic">
+      <obj_property name="ElementShortName">DC</obj_property>
+      <obj_property name="ObjectShortName">DC</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/tb_FSM/bloc1/RES" type="logic">
+      <obj_property name="ElementShortName">RES</obj_property>
+      <obj_property name="ObjectShortName">RES</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/tb_FSM/bloc1/VCCEN" type="logic">
+      <obj_property name="ElementShortName">VCCEN</obj_property>
+      <obj_property name="ObjectShortName">VCCEN</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/tb_FSM/bloc1/PMODEN" type="logic">
+      <obj_property name="ElementShortName">PMODEN</obj_property>
+      <obj_property name="ObjectShortName">PMODEN</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/tb_FSM/bloc1/cpt_150ms" type="other">
+      <obj_property name="ElementShortName">cpt_150ms</obj_property>
+      <obj_property name="ObjectShortName">cpt_150ms</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/tb_FSM/bloc1/cpt_15us" type="other">
+      <obj_property name="ElementShortName">cpt_15us</obj_property>
+      <obj_property name="ObjectShortName">cpt_15us</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/tb_FSM/bloc1/cpt_500ms" type="other">
+      <obj_property name="ElementShortName">cpt_500ms</obj_property>
+      <obj_property name="ObjectShortName">cpt_500ms</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/tb_FSM/bloc1/cpt_read" type="other">
+      <obj_property name="ElementShortName">cpt_read</obj_property>
+      <obj_property name="ObjectShortName">cpt_read</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/tb_FSM/bloc1/flag_en" type="logic">
+      <obj_property name="ElementShortName">flag_en</obj_property>
+      <obj_property name="ObjectShortName">flag_en</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/tb_FSM/bloc1/sdata_en" type="logic">
+      <obj_property name="ElementShortName">sdata_en</obj_property>
+      <obj_property name="ObjectShortName">sdata_en</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/tb_FSM/bloc1/sdata_out" type="array">
+      <obj_property name="ElementShortName">sdata_out[7:0]</obj_property>
+      <obj_property name="ObjectShortName">sdata_out[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/tb_FSM/bloc1/sread_idx" type="array">
+      <obj_property name="ElementShortName">sread_idx[3:0]</obj_property>
+      <obj_property name="ObjectShortName">sread_idx[3:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/tb_FSM/bloc1/sRES" type="logic">
+      <obj_property name="ElementShortName">sRES</obj_property>
+      <obj_property name="ObjectShortName">sRES</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/tb_FSM/bloc1/sVCCEN" type="logic">
+      <obj_property name="ElementShortName">sVCCEN</obj_property>
+      <obj_property name="ObjectShortName">sVCCEN</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/tb_FSM/bloc1/sPMODEN" type="logic">
+      <obj_property name="ElementShortName">sPMODEN</obj_property>
+      <obj_property name="ObjectShortName">sPMODEN</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/tb_FSM/bloc1/cpt_150ms_max" type="other">
+      <obj_property name="ElementShortName">cpt_150ms_max</obj_property>
+      <obj_property name="ObjectShortName">cpt_150ms_max</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/tb_FSM/bloc1/cpt_15us_max" type="other">
+      <obj_property name="ElementShortName">cpt_15us_max</obj_property>
+      <obj_property name="ObjectShortName">cpt_15us_max</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/tb_FSM/bloc1/cpt_500ms_max" type="other">
+      <obj_property name="ElementShortName">cpt_500ms_max</obj_property>
+      <obj_property name="ObjectShortName">cpt_500ms_max</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/tb_FSM/bloc1/read_idx_max" type="other">
+      <obj_property name="ElementShortName">read_idx_max</obj_property>
+      <obj_property name="ObjectShortName">read_idx_max</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+</wave_config>
