@@ -6193,44 +6193,45 @@ architecture Behavioral of RAM is
     
 begin
 
-    process(address1)
+    process(address1, mem)
         begin
             sdata_out1 <= mem(to_integer(unsigned(address1)));
     end process;
     
     data_out1   <= sdata_out1;
     
-    process(address2)
+    process(address2, mem)
         begin
             sdata_out2 <= mem(to_integer(unsigned(address2)));
     end process;
     
     data_out2   <= sdata_out2;
+    --data_out2 <= x"4567";
     
     process(clk1, reset)
         begin
-            if reset = '0' then
+           -- if reset = '0' then
                 if rising_edge(clk1) then
-                    if w1 = '1' then
-                        mem(to_integer(unsigned(address1))) <= data_in1;
-                    else
-                        mem(to_integer(unsigned(address1))) <= mem(to_integer(unsigned(address1)));
-                    end if;
-                end if;
-            end if;
-    end process;
+                   -- if w1 = '1' then
+                   --     mem(to_integer(unsigned(address1))) <= data_in1;
+--                    else
+--                        mem(to_integer(unsigned(address1))) <= mem(to_integer(unsigned(address1)));
+                   -- end if;
+--                end if;
+--            end if;
+--    end process;
     
-    process(clk2, reset)
-        begin
-            if reset = '0' then
-                if rising_edge(clk2) then
+--    process(clk2, reset)
+--        begin
+--            if reset = '0' then
+--                if rising_edge(clk2) then
                     if w2 = '1' then
                         mem(to_integer(unsigned(address2))) <= data_in2;
-                    else
-                        mem(to_integer(unsigned(address2))) <= mem(to_integer(unsigned(address2)));
+--                    else
+--                        mem(to_integer(unsigned(address2))) <= mem(to_integer(unsigned(address2)));
                     end if;
                 end if;
-            end if;
+          --  end if;
         end process;
     
 end Behavioral;

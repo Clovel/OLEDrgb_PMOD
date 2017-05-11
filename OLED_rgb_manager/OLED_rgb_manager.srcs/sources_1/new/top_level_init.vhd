@@ -97,6 +97,21 @@ architecture Behavioral of top_level_init is
         );
     end component;
     
+--    component RAM_b is
+--        Port 
+--        ( 
+--             clk   : in  std_logic;
+--             addr1 : in  std_logic_vector(12 downto 0);
+--             din1  : in  std_logic_vector(15 downto 0);
+--             w1    : in  std_logic;
+--             dout1 : out std_logic_vector(15 downto 0);
+--             addr2 : in  std_logic_vector(12 downto 0);
+--             din2  : in  std_logic_vector(15 downto 0);
+--             w2    : in  std_logic;
+--             dout2 : out std_logic_vector(15 downto 0)
+--        );
+--    end component;
+    
     component SPI_controller is
         Port 
         (
@@ -138,6 +153,20 @@ begin
         read_idx    => sread_idx_mem,
         data_out    => sdata_out_mem
     );
+    
+--    bloc2 : RAM_b
+--    Port map
+--    (
+--         clk    => clk,
+--         addr1  => sread_idx_ram,
+--         din1   => sdata_in1,
+--         w1     => sw1,
+--         dout1  => sdata_out_ram,
+--         addr2  => address,
+--         din2   => data_in,
+--         w2     => write_en,
+--         dout2  => sdata_out2 
+--    );
     
     bloc2 : RAM 
     Port map
@@ -191,7 +220,17 @@ begin
     sw1         <= '0';
     sdata_in1   <= std_logic_vector(to_unsigned(0, 16));
     
-    data_out    <= sdata_out2;
+    process (clk, reset)
+        begin
+   --         if reset = '1' then
+     --           data_out <= std_logic_vector(to_unsigned(0, 16));
+       --     else
+                if rising_edge(clk) then
+                    data_out    <= sdata_out2;
+                end if;
+         --   end if;
+    end process;
+    
     CS          <= sCS;
     MOSI        <= sMOSI;
     sclk        <= ssclk;

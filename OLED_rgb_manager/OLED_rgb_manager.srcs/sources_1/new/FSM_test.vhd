@@ -76,6 +76,6 @@ begin
             end if;
     end process;             
     
-    address <= std_logic_vector(saddress);
+     address <= std_logic_vector(saddress);
 
 end Behavioral;

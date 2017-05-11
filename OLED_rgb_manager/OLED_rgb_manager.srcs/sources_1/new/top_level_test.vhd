@@ -115,7 +115,7 @@ begin
         write_en    => swrite_en,
         data_in     => sdata_in,
         address     => saddress,
-        data_out    => sdata_out,
+        data_out    => open,
         CS          => sCS,
         MOSI        => sMOSI,
         sclk        => ssclk,
@@ -125,7 +125,7 @@ begin
         PMODEN      => sPMODEN
     );
     
-    data_out    <= sdata_out;
+    data_out    <= x"0000";--sdata_out;
     CS          <= sCS;
     MOSI        <= sMOSI;
     sclk        <= ssclk;
