@@ -34,15 +34,15 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity SPI_controller is
     Port 
     (
-        clk         : in  STD_LOGIC;
-        reset       : in  STD_LOGIC;     
-        data_en     : in  STD_LOGIC;
-        data_in     : in  STD_LOGIC_VECTOR (7 downto 0);
-        sclk        : out STD_LOGIC;
-        cs          : out STD_LOGIC;
-        MOSI        : out STD_LOGIC;
-        SPI_busy    : out STD_LOGIC;
-        MISO        : in  STD_LOGIC
+        clk         : in  STD_LOGIC;                                    -- horloge de fonctionnement
+        reset       : in  STD_LOGIC;                                    -- RAZ
+        data_en     : in  STD_LOGIC;                                    -- signal d'enable contrôlant l'envoi d'un octet, provient de la FSM
+        data_in     : in  STD_LOGIC_VECTOR (7 downto 0);                -- octet à transmettre, provient de la FSM
+        sclk        : out STD_LOGIC;                                    -- entrée sclk du Pmod
+        cs          : out STD_LOGIC;                                    -- entrée CS du Pmod
+        MOSI        : out STD_LOGIC;                                    -- entrée MOSI du Pmod
+        SPI_busy    : out STD_LOGIC;                                    -- signal d'occupation, envoyé vers la FSM
+        MISO        : in  STD_LOGIC                                     -- sortie MISO du Pmod
     );
 end SPI_controller;
 

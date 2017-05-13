@@ -38,7 +38,8 @@ entity top_level_init is
         reset       : in  STD_LOGIC;
         write_en    : in  STD_LOGIC;
         data_in     : in  STD_LOGIC_VECTOR (15 downto 0);
-        address     : in  STD_LOGIC_VECTOR (12 downto 0);
+        col         : in  STD_LOGIC_VECTOR (6 downto 0);
+        row         : in  STD_LOGIC_VECTOR (5 downto 0);
         data_out    : out STD_LOGIC_VECTOR (15 downto 0);
         CS          : out STD_LOGIC;
         MOSI        : out STD_LOGIC;   
@@ -59,7 +60,7 @@ architecture Behavioral of top_level_init is
     signal sVCCEN   : STD_LOGIC;
     signal sPMODEN  : STD_LOGIC;
     
-    
+    signal saddress         : STD_LOGIC_VECTOR (12 downto 0);
     signal sw1              : STD_LOGIC;
     signal sdata_in1        : STD_LOGIC_VECTOR (15 downto 0);
     signal sdata_out2       : STD_LOGIC_VECTOR (15 downto 0);
@@ -72,6 +73,15 @@ architecture Behavioral of top_level_init is
     signal sdata_out_ram    : STD_LOGIC_VECTOR (15 downto 0);
     signal sSPI_busy        : STD_LOGIC;
     
+    component line_col_decoder is
+        Port
+        (
+            col     : in  STD_LOGIC_VECTOR (6 downto 0);
+            row     : in  STD_LOGIC_VECTOR (5 downto 0);
+            address : out STD_LOGIC_VECTOR (12 downto 0)
+        );
+    end component;
+        
     component MEM_init is
         Port 
         (  
@@ -147,6 +157,14 @@ architecture Behavioral of top_level_init is
     end component;
 begin
 
+    bloc0 : line_col_decoder
+    Port map
+    (
+        col     => col,
+        row     => row,
+        address => saddress
+    );
+    
     bloc1 : MEM_init 
     Port map
     (
@@ -177,7 +195,7 @@ begin
         w1          => sw1,
         w2          => write_en,
         address1    => sread_idx_ram,
-        address2    => address,
+        address2    => saddress,
         data_in1    => sdata_in1,
         data_in2    => data_in,
         data_out1   => sdata_out_ram,

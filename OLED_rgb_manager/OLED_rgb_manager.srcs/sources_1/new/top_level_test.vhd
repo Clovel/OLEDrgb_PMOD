@@ -51,7 +51,8 @@ end top_level_test;
 architecture Behavioral of top_level_test is
 
     signal swrite_en    : STD_LOGIC;
-    signal saddress     : STD_LOGIC_VECTOR (12 downto 0);
+    signal scol         : STD_LOGIC_VECTOR (6 downto 0);
+    signal srow         : STD_LOGIC_VECTOR (5 downto 0);
     signal sdata_out    : STD_LOGIC_VECTOR (15 downto 0);
     signal sdata_in     : STD_LOGIC_VECTOR (15 downto 0);
     
@@ -70,7 +71,8 @@ architecture Behavioral of top_level_test is
             reset       : in  STD_LOGIC;
             write_en    : in  STD_LOGIC;
             data_in     : in  STD_LOGIC_VECTOR (15 downto 0);
-            address     : in  STD_LOGIC_VECTOR (12 downto 0);
+            col         : in  STD_LOGIC_VECTOR (6 downto 0);
+            row         : in  STD_LOGIC_VECTOR (5 downto 0);
             data_out    : out STD_LOGIC_VECTOR (15 downto 0);
             CS          : out STD_LOGIC;
             MOSI        : out STD_LOGIC;   
@@ -89,7 +91,8 @@ architecture Behavioral of top_level_test is
             reset       : in  STD_LOGIC;
             button      : in  STD_LOGIC;
             write_en    : out STD_LOGIC;
-            address     : out STD_LOGIC_VECTOR (12 downto 0);
+            col         : out STD_LOGIC_VECTOR (6 downto 0);
+            row         : out STD_LOGIC_VECTOR (5 downto 0);
             data_out    : out STD_LOGIC_VECTOR (15 downto 0)
         );
     end component;
@@ -103,7 +106,8 @@ begin
         reset       => reset,
         button      => button,
         write_en    => swrite_en,
-        address     => saddress,
+        col         => scol,
+        row         => srow,
         data_out    => sdata_in
     );
     
@@ -114,7 +118,8 @@ begin
         reset       => reset,
         write_en    => swrite_en,
         data_in     => sdata_in,
-        address     => saddress,
+        col         => scol,
+        row         => srow,
         data_out    => open,
         CS          => sCS,
         MOSI        => sMOSI,

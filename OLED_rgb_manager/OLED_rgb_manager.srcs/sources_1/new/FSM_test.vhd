@@ -38,7 +38,8 @@ entity FSM_test is
         reset       : in  STD_LOGIC;
         button      : in  STD_LOGIC;
         write_en    : out STD_LOGIC;
-        address     : out STD_LOGIC_VECTOR (12 downto 0);
+        col         : out STD_LOGIC_VECTOR (6 downto 0);
+        row         : out STD_LOGIC_VECTOR (5 downto 0);
         data_out    : out STD_LOGIC_VECTOR (15 downto 0)
     );
 end FSM_test;
@@ -46,7 +47,8 @@ end FSM_test;
 architecture Behavioral of FSM_test is
 
     signal swrite_en    : STD_LOGIC;
-    signal saddress     : UNSIGNED (12 downto 0);
+    signal scol         : UNSIGNED (6 downto 0);
+    signal srow         : UNSIGNED (5 downto 0);
     signal sdata_out    : STD_LOGIC_VECTOR (15 downto 0);
 
 begin
@@ -64,18 +66,25 @@ begin
     process(clk, reset)
         begin
             if reset = '1' then
-                saddress <= to_unsigned(0, 13);
+                scol <= to_unsigned(0, 7);
+                srow <= to_unsigned(0,6);
             else
                 if rising_edge(clk) then
-                    if saddress = to_unsigned(6143, 13) then
-                        saddress <= to_unsigned(0, 13);
+                    if scol = to_unsigned(95, 7) then
+                        scol <= to_unsigned(0, 7);
+                        if srow = to_unsigned(63, 6) then
+                            srow <= to_unsigned(0, 6);
+                        else
+                            srow <= srow + 1;
+                        end if;
                     else
-                        saddress <= saddress + 1;
+                        scol <= scol + 1;
                     end if;
                 end if;
             end if;
     end process;             
     
-     address <= std_logic_vector(saddress);
+    col <= std_logic_vector(scol);
+    row <= std_logic_vector(srow);
 
 end Behavioral;
