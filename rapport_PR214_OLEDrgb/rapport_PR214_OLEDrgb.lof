@@ -1,12 +1,13 @@
 \select@language {french}
 \contentsline {figure}{\numberline {1}{\ignorespaces Le Pmod OLEDrgb de Digilent utilis\IeC {\'e} dans ce projet\relax }}{5}{figure.caption.4}
 \contentsline {figure}{\numberline {2}{\ignorespaces Table de correpsondance des pins du Pmod OLEDrgb \cite {oledrgb}\relax }}{5}{figure.caption.5}
-\contentsline {figure}{\numberline {3}{\ignorespaces Chronogramme simplifi\IeC {\'e} du fonctionnement du protocole SPI \cite {spiimg}\relax }}{12}{figure.caption.6}
-\contentsline {figure}{\numberline {4}{\ignorespaces Chronogramme du module \texttt {SPI\_controller}\relax }}{14}{figure.caption.7}
-\contentsline {figure}{\numberline {5}{\ignorespaces FSM du module de contr\IeC {\^o}le du Pmod OLEDrgb\relax }}{15}{figure.caption.8}
-\contentsline {figure}{\numberline {6}{\ignorespaces Chronogramme repr\IeC {\'e}sentant le r\IeC {\^o}le de \texttt {flag\_en}\relax }}{17}{figure.caption.9}
-\contentsline {figure}{\numberline {7}{\ignorespaces \IeC {\'E}volution de \texttt {data\_out} en dfonction des diff\IeC {\'e}rents param\IeC {\`e}tres\relax }}{17}{figure.caption.10}
-\contentsline {figure}{\numberline {8}{\ignorespaces Chronogramme repr\IeC {\'e}sentant l'ensemble de la s\IeC {\'e}quence synth\IeC {\'e}tis\IeC {\'e}e\relax }}{17}{figure.caption.11}
-\contentsline {figure}{\numberline {9}{\ignorespaces Zoom sur l'envoi des commandes d'initialisation\relax }}{18}{figure.caption.12}
-\contentsline {figure}{\numberline {10}{\ignorespaces Zoom sur la premi\IeC {\`e}re commande d'initialisation\relax }}{18}{figure.caption.13}
-\contentsline {figure}{\numberline {11}{\ignorespaces Schematic du module de contr\IeC {\^o}le du PMOD OLEDrgb\relax }}{19}{figure.caption.14}
+\contentsline {figure}{\numberline {3}{\ignorespaces Sch\IeC {\'e}ma des diff\IeC {\'e}rentes entit\IeC {\'e}s impliqu\IeC {\'e}es dans la communication avec le Pmod\relax }}{6}{figure.caption.6}
+\contentsline {figure}{\numberline {4}{\ignorespaces Chronogramme simplifi\IeC {\'e} du fonctionnement du protocole SPI \cite {spiimg}\relax }}{12}{figure.caption.7}
+\contentsline {figure}{\numberline {5}{\ignorespaces Chronogramme du module \texttt {SPI\_controller}\relax }}{14}{figure.caption.8}
+\contentsline {figure}{\numberline {6}{\ignorespaces FSM du module de contr\IeC {\^o}le du Pmod OLEDrgb\relax }}{15}{figure.caption.9}
+\contentsline {figure}{\numberline {7}{\ignorespaces Chronogramme repr\IeC {\'e}sentant le r\IeC {\^o}le de \texttt {flag\_en}\relax }}{17}{figure.caption.10}
+\contentsline {figure}{\numberline {8}{\ignorespaces \IeC {\'E}volution de \texttt {data\_out} en dfonction des diff\IeC {\'e}rents param\IeC {\`e}tres\relax }}{17}{figure.caption.11}
+\contentsline {figure}{\numberline {9}{\ignorespaces Chronogramme repr\IeC {\'e}sentant l'ensemble de la s\IeC {\'e}quence synth\IeC {\'e}tis\IeC {\'e}e\relax }}{17}{figure.caption.12}
+\contentsline {figure}{\numberline {10}{\ignorespaces Zoom sur l'envoi des commandes d'initialisation\relax }}{18}{figure.caption.13}
+\contentsline {figure}{\numberline {11}{\ignorespaces Zoom sur la premi\IeC {\`e}re commande d'initialisation\relax }}{18}{figure.caption.14}
+\contentsline {figure}{\numberline {12}{\ignorespaces Schematic du module de contr\IeC {\^o}le du PMOD OLEDrgb\relax }}{19}{figure.caption.15}
