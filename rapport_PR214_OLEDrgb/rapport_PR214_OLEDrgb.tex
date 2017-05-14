@@ -250,7 +250,7 @@ En C, certaines définitions de constantes et quelques fonctions sont déjà cod
 
     D'après la datasheet : 
     \begin{itemize}
-        \item Les deux bits de poids fort gèrent le format de couleur des données de l'image, c'est-à-dire comment sont codées les couleurs pour un pixel. Nous avons choisi d'utiliser le format de couleur 65k numéro 1. Ces deux bits sont donc égaux à \texttt{0b01}
+        \item[-] Les deux bits de poids fort gèrent le format de couleur des données de l'image, c'est-à-dire comment sont codées les couleurs pour un pixel. Nous avons choisi d'utiliser le format de couleur 65k numéro 1. Ces deux bits sont donc égaux à \texttt{0b01}
     \end{itemize}
 
     On choisi l'orientation de l'écran. Sur la carte Nexys4, le Pmod OLEDrgb peut être branché à droite ou à gauche. Ce choix est enregistré dans un \texttt{\#define} dans le header \texttt{def.h}. On a donc deux cas : 
