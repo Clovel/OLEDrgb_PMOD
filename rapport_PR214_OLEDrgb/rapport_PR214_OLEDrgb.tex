@@ -122,6 +122,7 @@ Encadrant : Yannick Bornat
 % Tables
 \tableofcontents
 %\lstlistoflistings
+\newpage
 \listoffigures
 \newpage 
 
@@ -203,9 +204,9 @@ Pin & Signal      & Decription             & \cellcolor[HTML]{9B9B9B} & Pin & Si
 
 \subsection{Liaison UART et outils}
 
-Tout d'abord, avant de commencer a envoyer des commandes au contrôleur de l'écran OLED, il faut pouvoir communiquer avec le "processeur" implémenté sur la carte. Une fois cette communication établie, nous pouvons envoyer un programme compilé dans la mémoire du porcesseur, et donc envoyer des commandes à l'écran via l'interface SPI. \\
+Tout d'abord, avant de commencer a envoyer des commandes au contrôleur de l'écran OLED, il faut pouvoir communiquer avec le "processeur" implémenté sur la carte. Une fois cette communication établie, nous pouvons envoyer un programme compilé dans la mémoire du porcesseur, et donc envoyer des commandes à l'écran via l'interface SPI. 
 
-Ainsi, nous employons la laison UART disponible sur la carte Nexys4 comme bus de communication. Les informations envoyées par cette liaison sont ensuite gérées par le processeur implémenté sur le FPGA. Quand à l'interface côté utilisateur, nous utilisons le logiciel Tera Term (Windows) ou CoolTerm (macOS) pour communiquer avec le port série correspondant à la liason UART établie. \\
+Ainsi, nous employons la laison UART disponible sur la carte Nexys4 comme bus de communication. Les informations envoyées par cette liaison sont ensuite gérées par le processeur implémenté sur le FPGA. Quand à l'interface côté utilisateur, nous utilisons le logiciel Tera Term (Windows) ou CoolTerm (macOS) pour communiquer avec le port série correspondant à la liason UART établie. 
 
 Une fois cette communication possible, il s'agit d'écrire un programme en langage C qui permette dans un premier temps de lancer la séquence d'initialisation de l'écran, puis dans un second temps de lui envoyer une image bitmap. 
 
@@ -217,6 +218,14 @@ Pour ce faire, le compilateur xc8 est utilisé. Pour compiler correctement le pr
 \begin{rmq}
     Vis à vis du compilateur xc8, le microprocesseur cible est un 16F636. En réalisté, notre cible n'est pas un 16F636, mais un processeur programmé sur FPGA qui ressemble à un processeur 16F636 simplifié. 
 \end{rmq}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale =0.18, keepaspectratio]{soft}
+\caption{Schéma des différentes entités impliquées dans la communication avec le Pmod}
+\end{center}
+\end{figure}
+
 
 \subsection{Séquence d'initialisation}
 
@@ -267,6 +276,22 @@ En C, certaines définitions de constantes et quelques fonctions sont déjà cod
 
 \subsection{Envoi de données}
 
+Après nous êtres familiarisé avec certaines commandes du microcontrôleur, s'est posé à nous la problématique d'envoi de donnée à l'écran OLEDrgb. Tout comme les commandes, les données sont envoyées en SPI sous la forme d'octet. Une fois les commandes de début et de fin d'écriture dans la RAM du Pmod, envoyées, nous avons pu directement écrire dans cette RAM et ainsi afficher les couleurs voulues sur l'écran, en passant le signal \texttt{DC} au niveau haut. Le microcontrôleur fonctionne avec un système de codage RGB de 16 bits, soit 5 bits pour le rouge puis 6 bits pour le vert et enfin 5 bits pour le bleu, du bit de poids fort au bit de poids faible. Ainsi il nous faut envoyer deux octets en SPI afin d'allumer un pixel à la couleur voulu.
+
+Afin d'afficher une image complète sur l'écran, il nous faut convertir une fichier image source, \texttt{.bmp}, en un fichier texte compréhensible par le pic implémenté sur la carte NEXYS4. Pour ce faire nous avons utilisé le langage Pyhton. Le programme de conversion, \texttt{bmp\_to\_hex.py}, fonctionne comme suit : 
+\begin{itemize}
+\item[\textbullet]
+Tout d'abord, on crée un fichier texte qui sera notre sortie.
+\item[\textbullet]
+Dans un second temps on vient charger l'image à convertir, celle-ci est désormais stockée dans une matrice à trois dimension. Elle possède 96x64x3 éléments, un code RGB pour chaque pixel. À noter que le fichier \texttt{.bmp} initial est déjà de la taille 96x64.
+\item[\textbullet]
+Puis on vient ramener le code RGB contenu dans matrice au format voulu. En effet, chaque composante possèdent intialement 256 états différents, il nous faut ramener le bleu et le rouge à 32 et le vert à 64.
+\item[\textbullet]
+On parcours ensuite la matrice en inscrivant dans le fichier texte les différents octets rencontrés. Puisqu'il nous faut concatener 5 bits et 3 bits provenant respectivement des codes R et G d'un pixel, puis 3 bits et 5 bits provenant des codes G et B, afin de synthétoser nos octets, le code est à peu délicat, nous ne rentrerons pas plus dans les détails.
+\end{itemize}
+Puisque le convertisseur ainsi programmé fonctionne en inscrivant des charactères dans un fichier texte, nous avons pu le configurer en fonction de nos besoins et de nos éssais. À terme il nous également permis de générer les données en hexadécimal à stocker dans nos sources VHDL.
+
+Ainsi en envoyant le fichier texte via la liaison UART du microprocesseur, nous avons pu récupérer chacune des données inscrites afin de les envoyer vers le Pmod OLEDrgb.
 \newpage
 
 \section{Module de gestion du Pmod OLEDrgb}
@@ -442,7 +467,7 @@ Dans les deux figures qui suivent, qui sont un zoom de la précédente, on peut 
 
 \begin{figure}[H]
 \begin{center}
-\includegraphics[scale = 1.4, keepaspectratio]{schematic_OLEDrgb_manager.png}
+\includegraphics[scale = 2, keepaspectratio]{schematic}
 \caption{Schematic du module de contrôle du PMOD OLEDrgb}
 \end{center}
 \end{figure}
