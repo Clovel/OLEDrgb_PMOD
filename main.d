@@ -1,0 +1,1 @@
+ main.d  main.p1:  SOFTWARE/Sources/main.c SOFTWARE/Sources/../Headers/OLED_functions.h SOFTWARE/Sources/../Headers/OLED_power_on.h SOFTWARE/Sources/../Headers/OLED_up_header.h SOFTWARE/Sources/../Headers/def.h

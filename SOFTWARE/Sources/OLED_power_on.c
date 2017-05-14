@@ -84,7 +84,7 @@ void init_OLED(void)
 		OLED_spi_sendchar(0x60); // 0110 0000
 		/* -DATASHEET- : A[7:6] = 01; 65k color format
 						 A[5]=1, Enable COM Split Odd Even
-						 A[4]=0, Scan from COM [N-1] to COM0. Where N is the multiplex ratio.	// -------- Changement -------- //
+						 A[4]=0, Scan from COM 0 to COM [N1–1]. Where N is the multiplex ratio.	// -------- Changement -------- //
 						 A[3]=0, Disable left-right swapping on COM
 						 A[2]=0, normal order SA,SB,SC (e.g. RGB)
 						 A[1]=0, RAM Column 0 to 95 maps to Pin Seg (SA,SB,SC) 0 to 95

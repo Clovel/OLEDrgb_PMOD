@@ -1,0 +1,89 @@
+
+
+Microchip Technology PIC Macro Assembler V1.37 build -260352376 
+                                                                                                           Sun May 14 13:08:03 2017
+
+
+     1                           
+     2                           	; Microchip MPLAB XC8 C Compiler V1.37
+     3                           	; Copyright (C) 1984-2016 HI-TECH Software
+     4                           
+     5                           	; Auto-generated runtime startup code for final link stage.
+     6                           
+     7                           	;
+     8                           	; Compiler options:
+     9                           	;
+    10                           	; --chip=16F636 -m --opt=all -g SOFTWARE/Sources/main.c \
+    11                           	; SOFTWARE/Sources/OLED_functions.c SOFTWARE/Sources/OLED_power_on.c
+    12                           	;
+    13                           
+    14                           
+    15                           	processor	16F636
+    16                           
+    17                           	global	_main,start,reset_vec
+    18                           	fnroot	_main
+    19                           	psect	config,class=CONFIG,delta=2,noexec
+    20                           	psect	idloc,class=IDLOC,delta=2,noexec
+    21                           	psect	code,class=CODE,delta=2
+    22                           	psect	powerup,class=CODE,delta=2
+    23                           	psect	reset_vec,class=CODE,delta=2
+    24                           	psect	maintext,class=CODE,delta=2
+    25  0000                     	Z	set	2
+    26  0002                     	PCL	set	2
+    27  0002                     	INDF	set	0
+    28  0000                     
+    29                           	STATUS	equ	3
+    30  0003                     	PCLATH	equ	0Ah
+    31  000A                     
+    32                           	psect	eeprom_data,class=EEDATA,delta=2,space=3,noexec
+    33                           	psect	intentry,class=CODE,delta=2
+    34                           	psect	functab,class=CODE,delta=2
+    35                           	global	intlevel0,intlevel1,intlevel2, intlevel3, intlevel4, intlevel5
+    36                           intlevel0:
+    37  0000                     intlevel1:
+    38  0000                     intlevel2:
+    39  0000                     intlevel3:
+    40  0000                     intlevel4:
+    41  0000                     intlevel5:
+    42  0000                     	psect	init,class=CODE,delta=2
+    43                           	psect	cinit,class=CODE,delta=2
+    44                           	psect	text,class=CODE,delta=2
+    45                           	psect	end_init,class=CODE,delta=2
+    46                           	psect	clrtext,class=CODE,delta=2
+    47                           	FSR	set	4
+    48  0004                     	psect	strings,class=CODE,delta=2,reloc=256
+    49                           
+    50                           	global stacklo, stackhi
+    51                           	stacklo	equ	0
+    52  0000                     	stackhi	equ	0
+    53  0000                     
+    54                           
+    55                           	psect	stack,class=STACK,space=2,noexec
+    56                           	global ___sp,___int_sp
+    57                           	___sp:
+    58  0000                     	___int_sp:
+    59  0000                     	psect	reset_vec
+    60                           reset_vec:
+    61  0000                     	; No powerup routine
+    62                           	global start
+    63                           
+    64                           ; jump to start
+    65                           	goto	start & 0x7FF | (reset_vec & not 0x7FF)
+    66  0000  2810               
+    67                           
+    68                           
+    69                           	psect	init
+    70                           start
+    71  0010                     	psect	end_init
+    72                           	global start_initialization
+    73                           	ljmp start_initialization	;jump to C runtime clear & initialization
+    74  0010  2811               
+
+
+Microchip Technology PIC Macro Assembler V1.37 build -260352376 
+Symbol Table                                                                                               Sun May 14 13:08:03 2017
+
+               ___sp 0000                 _main 015C                 start 0010               stackhi 0000  
+             stacklo 0000  start_initialization 0011             ___int_sp 0000             intlevel0 0000  
+           intlevel1 0000             intlevel2 0000             intlevel3 0000             intlevel4 0000  
+           intlevel5 0000             reset_vec 0000  

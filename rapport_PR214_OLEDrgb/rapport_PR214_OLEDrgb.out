@@ -8,7 +8,7 @@
 \BOOKMARK [2][-]{subsection.2.3}{Envoi de donn\351es}{section.2}% 8
 \BOOKMARK [1][-]{section.3}{Module de gestion du Pmod OLEDrgb}{}% 9
 \BOOKMARK [2][-]{subsection.3.1}{Module de transmission de donn\351es destin\351es \340 un protocole d'envoi SPI}{section.3}% 10
-\BOOKMARK [3][-]{subsubsection.3.1.1}{Principe de fonctionnment du module}{subsection.3.1}% 11
+\BOOKMARK [3][-]{subsubsection.3.1.1}{Principe de fonctionnement du module}{subsection.3.1}% 11
 \BOOKMARK [3][-]{subsubsection.3.1.2}{Description et fonctionnement technique}{subsection.3.1}% 12
 \BOOKMARK [2][-]{subsection.3.2}{Contr\364le d'envoi de commandes et de donn\351es}{section.3}% 13
 \BOOKMARK [3][-]{subsubsection.3.2.1}{Principe de fonctionnement de la machine d'\351tat}{subsection.3.2}% 14

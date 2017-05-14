@@ -122,7 +122,6 @@ Encadrant : Yannick Bornat
 % Tables
 \tableofcontents
 %\lstlistoflistings
-\newpage
 \listoffigures
 \newpage 
 
@@ -204,9 +203,9 @@ Pin & Signal      & Decription             & \cellcolor[HTML]{9B9B9B} & Pin & Si
 
 \subsection{Liaison UART et outils}
 
-Tout d'abord, avant de commencer a envoyer des commandes au contrôleur de l'écran OLED, il faut pouvoir communiquer avec le "processeur" implémenté sur la carte. Une fois cette communication établie, nous pouvons envoyer un programme compilé dans la mémoire du porcesseur, et donc envoyer des commandes à l'écran via l'interface SPI. 
+Tout d'abord, avant de commencer a envoyer des commandes au contrôleur de l'écran OLED, il faut pouvoir communiquer avec le "processeur" implémenté sur la carte. Une fois cette communication établie, nous pouvons envoyer un programme compilé dans la mémoire du porcesseur, et donc envoyer des commandes à l'écran via l'interface SPI. \\
 
-Ainsi, nous employons la laison UART disponible sur la carte Nexys4 comme bus de communication. Les informations envoyées par cette liaison sont ensuite gérées par le processeur implémenté sur le FPGA. Quand à l'interface côté utilisateur, nous utilisons le logiciel Tera Term (Windows) ou CoolTerm (macOS) pour communiquer avec le port série correspondant à la liason UART établie. 
+Ainsi, nous employons la laison UART disponible sur la carte Nexys4 comme bus de communication. Les informations envoyées par cette liaison sont ensuite gérées par le processeur implémenté sur le FPGA. Quand à l'interface côté utilisateur, nous utilisons le logiciel Tera Term (Windows) ou CoolTerm (macOS) pour communiquer avec le port série correspondant à la liason UART établie. \\
 
 Une fois cette communication possible, il s'agit d'écrire un programme en langage C qui permette dans un premier temps de lancer la séquence d'initialisation de l'écran, puis dans un second temps de lui envoyer une image bitmap. 
 
@@ -218,14 +217,6 @@ Pour ce faire, le compilateur xc8 est utilisé. Pour compiler correctement le pr
 \begin{rmq}
     Vis à vis du compilateur xc8, le microprocesseur cible est un 16F636. En réalisté, notre cible n'est pas un 16F636, mais un processeur programmé sur FPGA qui ressemble à un processeur 16F636 simplifié. 
 \end{rmq}
-
-\begin{figure}[H]
-\begin{center}
-\includegraphics[scale =0.18, keepaspectratio]{soft}
-\caption{Schéma des différentes entités impliquées dans la communication avec le Pmod}
-\end{center}
-\end{figure}
-
 
 \subsection{Séquence d'initialisation}
 
@@ -260,15 +251,37 @@ En C, certaines définitions de constantes et quelques fonctions sont déjà cod
     D'après la datasheet : 
     \begin{itemize}
         \item[-] Les deux bits de poids fort gèrent le format de couleur des données de l'image, c'est-à-dire comment sont codées les couleurs pour un pixel. Nous avons choisi d'utiliser le format de couleur 65k numéro 1. Ces deux bits sont donc égaux à \texttt{0b01}
-        \item[-] Le sixième bit permet de "Enable COM Split Odd Even" % XAVIER A L'AIDE
+        \item[-] Le sixième bit permet de "Enable COM Split Odd Even". Il est réglé à 1 conformément aux instructions de Digilent. 
         \item[-] Le cinquième bit permet de régler le ratio de multiplexage de l'écran et comment la RAM est parcourue par le contrôleur pour charger les informations sur l'écran. % XAVIER A L'AIDE
         \item[-] Le quatrième bit permet "d'inverser la gauche et la droite" quand le contrôleur parcours la RAM. Changer ce bit à pour conséquence de donner un effet "miroir" à l'image que l'on souhaite afficher. On le met à 0 pour ne pas avoir cet effet. 
         \item[-] Le troisième bit permet de régler l'ordre des couleurs. Si ce bit est mit à 1, l'ordre est BGR au lieu de RGB. On règle ce bit à 0 pour conserver l'ordre classique RGB. 
-        \item[-] 
+        \item[-] Le deuxième bit est celui qui affecte les colonnes 0 à 95 de la RAM aux colonnes 0 à 95 de l'écran. Si ce bit est mis à un, l'affectation est inversée (i.e. 0-95 -> 95-0).
+        \item[-] Enfin, le bit de poids faible permet de régler le sens d'incrémentation des adresses : 0 pour une incrémentation horizontale, 1 pour une incrémentation verticale. Nous mettons ce bit à 0. 
     \end{itemize}
 
-    On choisi l'orientation de l'écran. Sur la carte Nexys4, le Pmod OLEDrgb peut être branché à droite ou à gauche. Ce choix est enregistré dans un \texttt{\#define} dans le header \texttt{def.h}. On a donc deux cas : 
-        \subitem L'écran est branché à droite de la carte. L'orientation est donc "classique", c'est a dire l'orientation ou le haut de l'écran correspond avec le haut du Pmod. 
+    De plus, c'est sur cette commande que l'on règle l'orientation de l'écran. En effet, sur la carte Nexys4, le Pmod OLEDrgb peut être branché à droite ou à gauche. Ce choix est enregistré dans un \texttt{\#define} dans le header \texttt{def.h}. On a donc deux cas : 
+    \begin{itemize}
+        \item[-] L'écran est branché à droite de la carte. L'orientation est donc "classique", c'est-à-dire que l'orientation est telle que le haut de l'écran correspond avec le haut du Pmod. La commande se résume à l'envoi de deux octets : \texttt{0xA0} et \texttt{0x72} (\texttt{0b01110010}). L'octet de réglage \texttt{0x72} correspond aux réglages explicités bits à bits plus haut. 
+        \item[-] L'écran est branché à gauche de la carte. L'orientation est donc dite "inversée", c'est-à-dire que l'orientation est telle que le haut de l'écran correspond avec le bas du Pmod. La commande se résume à l'envoi de deux octets : \texttt{0xA0} et \texttt{Ax60} (\texttt{0b01100000}). Les changements par rapport à l'orientation classique sont d'abord la mise à zéro du bit de réglage du sens de scan des informations pour le remplissage de l'écran, qui se fait dans le sens inverse à présent. Le deuxième changement est la mise à zéro du bit réglant l'affectation des colonnes de la RAM aux colonnes de pixels. Ceux deux changements permettent d'inverser l'orientation de l'écran. Sans l'un de ces changements l'image est déformée car les pixels ne reçoivent pas l'information qui leur est destinée. 
+    \end{itemize}
+
+    \item Il s'agit ensuite de définir le pixel de départ de l'écran. La commande \texttt{0xA1, 0x00} permet de définir le pixel en haut à gauche de l'écran (ou en bas à droite si l'orientation est inversée) comme pixel de départ pour l’écriture dans la RAM de l'écran. 
+
+    \item Ensuite l'offset de ligne de l'écran est mis à zéro par la commande \texttt{0xA2, 0x00}. 
+
+    \item Le ratio de multiplexage est réglé à 64, conformément aux instruction de Digilent, avec les commandes \texttt{0xA8, 0x3F}. De cette façon, toutes les broches de multiplexage sont activées. 
+
+    \item On choisit ensuite d'alimenter le contrôleur et l'écran via une source d'énergie externe. Autrement dit, on choisit un $V_{CC}$ externe. Le $V_{CC}$ en question est celui de la carte Nexys4 dans notre cas. LA commande correspondante est \texttt{0xAD, 0x8E}. 
+
+    \item Conformément aux instructions de Digilent, on règle la période de l'horloge de l'affichage avec la commande \texttt{0xB1, 0x31}. 
+
+    \item Le ratio de division de l'horloge de l'affichage et la fréquence de l'oscillateur interne sont réglés à leur valeur maximale avec la commande \texttt{0xB3, 0xF0}
+
+    \item Le contraste est réglé par 3 suites de commandes concernant les trois couleurs : rouge (\texttt{0x8A, 0x64}), vert (\texttt{0x8B, 0x78}), bleu (\texttt{0x8C, 0x64}). 
+
+    \item Le niveau de précharge des broches de l'écran est mis à 45\% du niveau de $V_{CC}$ comme indiqué par le manuel de Digilent. 
+
+    \item 
 
 
 \end{enumerate}
@@ -276,7 +289,7 @@ En C, certaines définitions de constantes et quelques fonctions sont déjà cod
 
 \subsection{Envoi de données}
 
-Après nous êtres familiarisé avec certaines commandes du microcontrôleur, s'est posé à nous la problématique d'envoi de donnée à l'écran OLEDrgb. Tout comme les commandes, les données sont envoyées en SPI sous la forme d'octet. Une fois les commandes de début et de fin d'écriture dans la RAM du Pmod, envoyées, nous avons pu directement écrire dans cette RAM et ainsi afficher les couleurs voulues sur l'écran, en passant le signal \texttt{DC} au niveau haut. Le microcontrôleur fonctionne avec un système de codage RGB de 16 bits, soit 5 bits pour le rouge puis 6 bits pour le vert et enfin 5 bits pour le bleu, du bit de poids fort au bit de poids faible. Ainsi il nous faut envoyer deux octets en SPI afin d'allumer un pixel à la couleur voulu.
+Après nous êtres familiarisé avec certaines commandes du microcontrôleur, s'est posé à nous la problématique d'envoi de donnée à l'écran OLEDrgb. Tout comme les commandes, les données sont envoyées en SPI sous la forme d'octet. Une fois les commandes de début et de fin d'écriture dans la RAM du Pmod, envoyées, nous avons pu directement écrire dans cette RAM et ainsi afficher les couleurs voulues sur l'écran, en passant le signal \texttt{DC} au niveau haut. Le microcontrôleur fonctionne avec un système de codage RGB de 16 bits, soit 5 bits pour le rouge puis 6 bits pour le vert et enfin 5 bits pour le bleu, du bit de poids fort au bit de poids faible. Ainsi il nous faut envoyer deux octets en SPI afin d'allumer un pixel à la couleur voulu. 
 
 Afin d'afficher une image complète sur l'écran, il nous faut convertir une fichier image source, \texttt{.bmp}, en un fichier texte compréhensible par le pic implémenté sur la carte NEXYS4. Pour ce faire nous avons utilisé le langage Pyhton. Le programme de conversion, \texttt{bmp\_to\_hex.py}, fonctionne comme suit : 
 \begin{itemize}
@@ -292,6 +305,7 @@ On parcours ensuite la matrice en inscrivant dans le fichier texte les différen
 Puisque le convertisseur ainsi programmé fonctionne en inscrivant des charactères dans un fichier texte, nous avons pu le configurer en fonction de nos besoins et de nos éssais. À terme il nous également permis de générer les données en hexadécimal à stocker dans nos sources VHDL.
 
 Ainsi en envoyant le fichier texte via la liaison UART du microprocesseur, nous avons pu récupérer chacune des données inscrites afin de les envoyer vers le Pmod OLEDrgb.
+
 \newpage
 
 \section{Module de gestion du Pmod OLEDrgb}
@@ -300,7 +314,7 @@ Une fois les différentes séquences de commandes mises en place, nous sommes pa
 
 \begin{itemize}
 
-\item[\textbullet] \texttt{SPI\_controller} : Ce module genère l'ensemble des signaux nécessaires à la transmission d'informations par le biais du protocole SPI.
+\item[\textbullet] \texttt{SPI\_controller} : Ce module générè l'ensemble des signaux nécessaires à la transmission d'informations par le biais du protocole SPI.
 
 \item[\textbullet] \texttt{MEM\_init} : Cette source est une ROM contenant les commandes d'initialisations du microcontrôleur.
 
@@ -314,9 +328,9 @@ Les deux mémoires présentées plus haut sont toutes deux composées de donnée
 
 \subsection{Module de transmission de données destinées à un protocole d'envoi SPI}
 
-\subsubsection{Principe de fonctionnment du module}
+\subsubsection{Principe de fonctionnement du module}
 
-Le protocole de communication SPI permet la tranmission de bus de données de 8 bits par le signal \texttt{MOSI} (Master Out Slave In), c'est le signal d'horloge \texttt{sclk} qui permet la lecture des différentes bits du \texttt{MOSI}. En effet, c'est le déclenchement de huit périodes d'horloge qui permet au contrôleur de détecter l'envoi de données. Le protocole SPI possède également une entrée de contrôle \texttt{CS} (Chip Select) et un signal de retour \texttt{MISO} (Master In Slave Out). L'ensemble des signaux sont représentés dans la figure suivante, représentant la caractéristique simplifiée d'un envoi de données par SPI.
+Le protocole de communication SPI permet la transmission de bus de données de 8 bits par le signal \texttt{MOSI} (Master Out Slave In), c'est le signal d'horloge \texttt{sclk} qui permet la lecture des différentes bits du \texttt{MOSI}. En effet, c'est le déclenchement de huit périodes d'horloge qui permet au contrôleur de détecter l'envoi de données. Le protocole SPI possède également une entrée de contrôle \texttt{CS} (Chip Select) et un signal de retour \texttt{MISO} (Master In Slave Out). L'ensemble des signaux sont représentés dans la figure suivante, représentant la caractéristique simplifiée d'un envoi de données par SPI.
 
 \begin{figure}[H]
 \begin{center}
@@ -327,9 +341,9 @@ Le protocole de communication SPI permet la tranmission de bus de données de 8 
 
 Dans le cas du microcontrôleur SSD1331, la lecture des bits de données est faite sur front montant de \texttt{sclk}. Nous avons pu également tester, lors de notre phase de recherche, qu'aucun passage à l'état logique haut n'était nécessaire pour l'entrée \texttt{CS} entre deux envois de données. Enfin, c'est le bit de poids fort qui est envoyé en premier au contrôleur lors de la transmission d'un octet. À l'aide de l'ensemble des ces informations nous avons pu décrire le module explicité plus haut.
 
-La source prend en entrée les signaux \texttt{clk} et \texttt{reset} communs à tous bloc séquentiels, la donnée d'entrée sur 8 bits, ainsi qu'un signal logique d'activation qui dure une période d'horloge. En sortie, sont générés les signaux nécessaires à la communication en SPI, aisni qu'un signal logique $busy$ qui permettra par la suite de temporiser l'envoi de données.
+La source prend en entrée les signaux \texttt{clk} et \texttt{reset} communs à tous bloc séquentiels, la donnée d'entrée sur 8 bits, ainsi qu'un signal logique d'activation qui dure une période d'horloge. En sortie, sont générés les signaux nécessaires à la communication en SPI, ainsi qu'un signal logique $busy$ qui permettra par la suite de temporiser l'envoi de données.
 
-D'après la datasheet du microcontrôleur, la fréquence de fonctionnment du module SPI ne doit pas dépasser les 6 MHz.
+D'après la datasheet du microcontrôleur, la fréquence de fonctionnement du module SPI ne doit pas dépasser les 6 MHz.
 
 \begin{eqnarray*}
 &&f_{max} = 6\text{ Mhz}\\
@@ -467,7 +481,7 @@ Dans les deux figures qui suivent, qui sont un zoom de la précédente, on peut 
 
 \begin{figure}[H]
 \begin{center}
-\includegraphics[scale = 2, keepaspectratio]{schematic}
+\includegraphics[scale = 1.4, keepaspectratio]{schematic_OLEDrgb_manager.png}
 \caption{Schematic du module de contrôle du PMOD OLEDrgb}
 \end{center}
 \end{figure}
