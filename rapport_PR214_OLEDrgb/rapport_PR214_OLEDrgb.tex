@@ -141,9 +141,9 @@ D'abord, l'étude du composant et de sa datasheet. En effet, le Pmod de Digilent
 
 Ensuite, nous avons élaboré un programme d'initialisation et d'utilisation de l'écran. Un microprocesseur basique à été implémenté sur FPGA, nous compilions des programmes écrit en langage C, et nous testions le Pmod de cette façon. Ainsi, en se basant sur ce qu'on a appris des datasheet, nous avons mis au point une séquence de commandes pour initialiser l'écran et pour lui envoyer, via la liaison UART de la carte Nexys4 les données bitmap de l'image. Le but de ces programmes est avant tout de comprendre ce qui doit être décrit en VHDL pour le module de gestion de notre écran OLEDrgb, et ils ne constituent pas notre produit fini. 
 
-Enfin, nous avons développé notre module de gestion du Pmod en VHDL. L’environnement de travail choisi est Vivado de Xilinx. En appliquant une ingénierie inverse aux programmes C développés en amont, une architecture précise à été définie, et la conception de tous les blocs composant notre module ont été écrits. \\
+Enfin, nous avons développé notre module de gestion du Pmod en VHDL. L’environnement de travail choisi est Vivado de Xilinx. En appliquant une ingénierie inverse aux programmes C développés en amont, une architecture précise à été définie, et tous les blocs composant notre module ont été décrits. \\
 
-En pratique, l'étude de la datasheet à été un travail permanent, et à donc été faite en parallèle au développement de nos programmes C et de nos descriptions VHDL. Les points de fonctionnement de nos composant qui semblent pour certains relativement simples en apparence mais nous ont posé problème tout de même quand nous avancions dans nos études. A chaque problème de la sorte, il a fallu revoir les points concernés de la datasheet à plusieurs reprises. Pour les problèmes plus complexes, comme la gestion de la communication entre la carte et le Pmod, la datasheet à été d'une grande aide. 
+En pratique, l'étude de la datasheet à été un travail permanent, et à donc été faite en parallèle au développement de nos programmes C et de nos descriptions VHDL. Les points de fonctionnement de nos composant qui semblent pour certains relativement simples en apparence, nous ont tout de même posé problème quand nous avancions dans nos études. À chaque problème de la sorte, il a fallu revoir les points concernés de la datasheet. Pour des problèmes plus complexes, comme la gestion de la communication entre la carte et le Pmod, la datasheet à été d'une grande aide. 
 
 \clearpage
 
@@ -204,7 +204,7 @@ Pin & Signal      & Decription             & \cellcolor[HTML]{9B9B9B} & Pin & Si
 
 \subsection{Liaison UART et outils}
 
-Tout d'abord, avant de commencer a envoyer des commandes au contrôleur de l'écran OLED, il faut pouvoir communiquer avec le "processeur" implémenté sur la carte. Une fois cette communication établie, nous pouvons envoyer un programme compilé dans la mémoire du porcesseur, et donc envoyer des commandes à l'écran via l'interface SPI. 
+Tout d'abord, avant de commencer à envoyer des commandes au contrôleur de l'écran OLED, il faut pouvoir communiquer avec le processeur implémenté sur la carte. Une fois cette communication établie, nous pouvons envoyer un programme compilé dans la mémoire du porcesseur, et donc envoyer des commandes à l'écran via l'interface SPI. 
 
 Ainsi, nous employons la laison UART disponible sur la carte Nexys4 comme bus de communication. Les informations envoyées par cette liaison sont ensuite gérées par le processeur implémenté sur le FPGA. Quand à l'interface côté utilisateur, nous utilisons le logiciel Tera Term (Windows) ou CoolTerm (macOS) pour communiquer avec le port série correspondant à la liason UART établie. 
 
@@ -345,11 +345,11 @@ Une fois les différentes séquences de commandes mises en place, nous sommes pa
 
 \begin{itemize}
 
-\item[\textbullet] \texttt{SPI\_controller} : Ce module générè l'ensemble des signaux nécessaires à la transmission d'informations par le biais du protocole SPI.
+\item[\textbullet] \texttt{SPI\_controller} : Ce module génére l'ensemble des signaux nécessaires à la transmission d'informations par le biais du protocole SPI.
 
 \item[\textbullet] \texttt{MEM\_init} : Cette source est une ROM contenant les commandes d'initialisations du microcontrôleur.
 
-\item[\textbullet] \texttt{RAM} : Cette RAM contient les données de l'image à afficher sur l'écran, elle est à l'image de la RAM présente dans le microcontrôleur. Cependant elle a été décrite avec deux accès pour permettre son utilisation par un utilisateur extérieur.
+\item[\textbullet] \texttt{RAM} : Cette RAM contient les données de l'image à afficher sur l'écran, elle est à l'image de la RAM présente dans le microcontrôleur. Cependant elle a été décrite avec deux accès pour permettre son utilisation à un utilisateur extérieur.
 
 \item[\textbullet] \texttt{FSM} : Cette machine d'état conditionne l'envoi des données d'initialisation stockées dans la ROM vers le module SPI, puis celui de l'image stockée dans la RAM.
 
@@ -447,9 +447,9 @@ La machine d'état est composée d'un processus séquentiel qui détermine l'ét
 
 \begin{itemize}
 
-\item[\textbullet] \textbf{Les temporisations} : Afin de satisfaire les différentes temporisations nécessaires à la séquence d'initialisation, nous avons synthétisé trois compteurs permettant la modélisation de trois temporisations d'une durée de 500 ms, 150 ms et 15 $\mu$s. Trois processus permettent donc d'incrémenter les différents compteurs dans les états correspondants. Ces derniers ne peuvent être quittés seulement lorsque le compteur atteind sa valeur maximale. Tout come pour la synthèse de \texttt{sclk}, la valeur maximale des compteurs est déterminée grâce à la fréquence de fonctionnment de la carte NEXYS 4.
+\item[\textbullet] \textbf{Les temporisations} : Afin de satisfaire les différentes temporisations nécessaires à la séquence d'initialisation, nous avons synthétisé trois compteurs permettant la modélisation de trois temporisations d'une durée de 500 ms, 150 ms et 15 $\mu$s. Trois processus permettent donc d'incrémenter les différents compteurs dans les états correspondants. Ces derniers peuvent être quittés seulement lorsque le compteur atteind sa valeur maximale. Tout come pour la synthèse de \texttt{sclk}, la valeur maximale des compteurs est déterminée grâce à la fréquence de fonctionnment de la carte NEXYS4.
 
-\item[\textbullet] \textbf{Les indices de lecture} : L'état numéro 7 de la machine d'état correspond au temps d'occupation du module lors de l'envoi d'un octet en SPI. Entre deux envois de données et donc deux passages à l'état 7, on vient incrémenter l'indice de lecture de la mémoire en cours de lecture, c'est l'état 9 qui se charge de cela. L'état 8 quant à lui, permet l'incrémentation d'un compteur modulo 2 qui désigne successivement les deux octets compris dans une case mémoire. Ainsi, trois processus incrémentent respectivement les compteurs \texttt{read\_idx\_mem}, \texttt{read\_idx\_ram} et \texttt{cpt\_read}. À noter que le compteur \texttt{read\_idx\_mem} possède deux valeurs d'arrêt, puisqu'une partie la mémoire est utilisée pour stocker les commandes d'initialisation et une autre pour les commandes de tracé de rectangle. Ces commandes peuvent d'ailleurs être inhibées dans le code vhdl car inutiles à l'initialisation.
+\item[\textbullet] \textbf{Les indices de lecture} : L'état numéro 7 de la machine d'état correspond au temps d'occupation du module lors de l'envoi d'un octet en SPI. Entre deux envois de données et donc deux passages à l'état 7, on vient incrémenter l'indice de lecture de la mémoire en cours de lecture, c'est l'état 9 qui se charge de cela. L'état 8 quant à lui, permet l'incrémentation d'un compteur modulo 2 qui désigne successivement les deux octets compris dans une case mémoire. Ainsi, trois processus incrémentent respectivement les compteurs \texttt{read\_idx\_mem}, \texttt{read\_idx\_ram} et \texttt{cpt\_read}. À noter que le compteur \texttt{read\_idx\_mem} possède deux valeurs d'arrêt, puisqu'une partie la mémoire est utilisée pour stocker les commandes d'initialisation et une autre pour les commandes de tracé de rectangle. Ces commandes peuvent d'ailleurs être inhibées dans le code VHDL car inutiles à l'initialisation.
 
 \end{itemize}
 
@@ -492,7 +492,7 @@ Une fois l'ensemble des composants décrits, nous avons pu les instancier et ain
 \end{center}
 \end{figure}
 
-Sur la figure précente on peut voir au niveau du signal \texttt{MOSI} les différentes étapes d'initialisation. Après environ 150 ms nécessaire à la prise en compte des commutations des signaux de commmandes, au premier pic se trouve l'envoi des commandes d'initialiation via le protocole SPI. Ensuite, après de nouveau environ 150 ms, se trouve le second pic qui correspond à la commandes d'allumage. Enfin, après un temps d'attente de 500 ms, on peut relever un travail continu au niveau du signal \texttt{MOSI}, il s'agit de l'envoi des commandes de tracé du rectangle, puis le rafraichissement continu de l'écran.
+Sur la figure précente on peut voir au niveau du signal \texttt{MOSI} les différentes étapes d'initialisation. Après environ 150 ms nécessaire à la prise en compte des commutations des signaux de commmandes, au premier pic se trouve l'envoi des commandes d'initialiation via le protocole SPI. Ensuite, après de nouveau environ 150 ms, se trouve le second pic qui correspond à la commande d'allumage. Enfin, après un temps d'attente de 500 ms, on peut relever un travail continu au niveau du signal \texttt{MOSI}, il s'agit de l'envoi des commandes de tracé du rectangle, puis le rafraichissement continu de l'écran.
 
 Dans les Figure 10 et 11, qui sont un zoom de la précédente, on peut mieux se rendre compte du protocole d'envoi des commandes durant l'initialisation et ainsi vérifier son fonctionnnement.
 
@@ -520,8 +520,15 @@ Enfin on peut voir, en Figure 12, un schéma de l'ensemble du système ainsi syn
 \end{figure}
 
 \newpage
+\subsection{Utilisation du module de gestion}
+
+Comme énoncé plus haut, la RAM contenant l'image à afficher sur l'écran OLEDrgb possède une seconde entrée afin que l'utilisateur puisse venir y écrire et ainsi afficher ce dont il a besoin. Il lui faut pour cela indiquer une entrée \texttt{data\_in} sur 16 bits contenant l'information colorimétrique du pixel concerné. Afin de spécifier ce pixel, l'utilisateur doit entrer les coordonnées colonne et ligne du pixel, respectivement sur 7 et 6 bits. Enfin il devra passer le bit \texttt{write\_en} au niveau afin d'$enable$ son écriture. Il peut également consulter la donnée stockée à l'adresse renseigné grâce à la sortie \texttt{data\_out}.
+
+\textit{À noté que certains changements, notamment concernant la RAM, ont été effectués depuis la rédaction des certaines parties du rapport.}
 
 \section{Conclusion}
+
+Sous la contrainte du temps, nous avons décidé durant le projet de nous diriger vers la conception d'un module d'affichage d'une image, alors qu'il nous était également possible de nous pencher vers un module d'affichage de carctères ASCii. En effet, il nous est parru plus pertinent de nous intéreser aux images étant donné le caractère polychromatique de l'écran. De plus ce module est tout à fait compatible avec la gestion d'un affichage vidéo. Au cours du projet nous avons pu nous familiariser avec différents types de protocole de transfert de données tels que la liaison UART et le protocole SPI. Nous avons également pu intervenir à différents niveaux  d'absraction. À commencer par la programmation en langage C, jusqu'à la description d'une architecture en VHDL, en passant par le fonctionnement du logiciel Vivado ou encore d'un microcontrôleur. D'autre part, nous avons pu constater la complexité de l'initialisation et de l'allumage de l'écran en question, qui aura été une longue étape de notre étude. Cette étude est d'autant plus difficile, qu'avant cette étape, aucun retour n'est possible du côté de l'écran.
 
 %Bibliographic references
 \clearpage
@@ -548,7 +555,7 @@ Digilent SPI protocol information\\
 
 \bibitem{spidef} 
 Definition of Serial Peripherals Interface Bus and how it works\\
-\url{https://web.archive.org/web/20150413003534/http://www.ee.nmt.edu/teare/ee308l/datasheets/S12SPIV3.pdf}\\
+\url{https://web.archive.org/web/20150413003534/http://www.ee.nmt.edu/~teare/ee308l/datasheets/S12SPIV3.pdf}\\
 Motorola, Inc. , Original Release Date: January 21, 2000, Revised: February 04, 2003
 
 \end{thebibliography}

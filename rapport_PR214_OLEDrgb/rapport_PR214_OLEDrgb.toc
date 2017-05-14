@@ -14,5 +14,6 @@
 \contentsline {subsection}{\numberline {3.2}Contr\IeC {\^o}le d'envoi de commandes et de donn\IeC {\'e}es}{14}{subsection.3.2}
 \contentsline {subsubsection}{\numberline {3.2.1}Principe de fonctionnement de la machine d'\IeC {\'e}tat}{14}{subsubsection.3.2.1}
 \contentsline {subsubsection}{\numberline {3.2.2}Description de la machine d'\IeC {\'e}tat}{16}{subsubsection.3.2.2}
+\contentsline {subsection}{\numberline {3.3}Utilisation du module de gestion}{20}{subsection.3.3}
 \contentsline {section}{\numberline {4}Conclusion}{20}{section.4}
 \contentsline {section}{R\'ef\'erences}{21}{section*.16}
