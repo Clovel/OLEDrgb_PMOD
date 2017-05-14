@@ -6,13 +6,13 @@
 \contentsline {section}{\numberline {2}Fonctionnement du Pmod OLEDrgb}{6}{section.2}
 \contentsline {subsection}{\numberline {2.1}Liaison UART et outils}{6}{subsection.2.1}
 \contentsline {subsection}{\numberline {2.2}S\IeC {\'e}quence d'initialisation}{6}{subsection.2.2}
-\contentsline {subsection}{\numberline {2.3}Envoi de donn\IeC {\'e}es}{9}{subsection.2.3}
-\contentsline {section}{\numberline {3}Module de gestion du Pmod OLEDrgb}{11}{section.3}
-\contentsline {subsection}{\numberline {3.1}Module de transmission de donn\IeC {\'e}es destin\IeC {\'e}es \IeC {\`a} un protocole d'envoi SPI}{11}{subsection.3.1}
-\contentsline {subsubsection}{\numberline {3.1.1}Principe de fonctionnement du module}{11}{subsubsection.3.1.1}
-\contentsline {subsubsection}{\numberline {3.1.2}Description et fonctionnement technique}{12}{subsubsection.3.1.2}
-\contentsline {subsection}{\numberline {3.2}Contr\IeC {\^o}le d'envoi de commandes et de donn\IeC {\'e}es}{13}{subsection.3.2}
-\contentsline {subsubsection}{\numberline {3.2.1}Principe de fonctionnement de la machine d'\IeC {\'e}tat}{13}{subsubsection.3.2.1}
-\contentsline {subsubsection}{\numberline {3.2.2}Description de la machine d'\IeC {\'e}tat}{15}{subsubsection.3.2.2}
-\contentsline {section}{\numberline {4}Conclusion}{19}{section.4}
-\contentsline {section}{R\'ef\'erences}{20}{section*.15}
+\contentsline {subsection}{\numberline {2.3}Envoi de donn\IeC {\'e}es}{10}{subsection.2.3}
+\contentsline {section}{\numberline {3}Module de gestion du Pmod OLEDrgb}{12}{section.3}
+\contentsline {subsection}{\numberline {3.1}Module de transmission de donn\IeC {\'e}es destin\IeC {\'e}es \IeC {\`a} un protocole d'envoi SPI}{12}{subsection.3.1}
+\contentsline {subsubsection}{\numberline {3.1.1}Principe de fonctionnement du module}{12}{subsubsection.3.1.1}
+\contentsline {subsubsection}{\numberline {3.1.2}Description et fonctionnement technique}{13}{subsubsection.3.1.2}
+\contentsline {subsection}{\numberline {3.2}Contr\IeC {\^o}le d'envoi de commandes et de donn\IeC {\'e}es}{14}{subsection.3.2}
+\contentsline {subsubsection}{\numberline {3.2.1}Principe de fonctionnement de la machine d'\IeC {\'e}tat}{14}{subsubsection.3.2.1}
+\contentsline {subsubsection}{\numberline {3.2.2}Description de la machine d'\IeC {\'e}tat}{16}{subsubsection.3.2.2}
+\contentsline {section}{\numberline {4}Conclusion}{20}{section.4}
+\contentsline {section}{R\'ef\'erences}{21}{section*.15}

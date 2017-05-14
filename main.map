@@ -3,7 +3,7 @@ Microchip MPLAB XC8 Compiler V1.37 ()
 Linker command line:
 
 --edf=/Applications/Microchip/xc8/v1.37/dat/en_msgs.txt -cs -h+main.sym \
-  --cmf=main.cmf -z -Q16F636 -o/tmp/xcIC1ixfx -Mmain.map -ver=XC8 \
+  --cmf=main.cmf -z -Q16F636 -o/tmp/xc42nIumS -Mmain.map -ver=XC8 \
   -ASTACK=039h-06fh -pstack=STACK -ACODE=00h-07FFh -ASTRCODE=00h-07FFh \
   -ASTRING=00h-0FFhx8 -ACONST=00h-0FFhx8 -AENTRY=00h-0FFhx8 \
   -ACOMMON=070h-07Fh -ABANK0=020h-06Fh -ABANK1=0A0h-0BFh \

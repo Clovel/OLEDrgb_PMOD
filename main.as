@@ -1733,7 +1733,7 @@ l711:
 	movlw	low(087h)
 	fcall	_OLED_spi_sendchar
 	line	217
-	movlw	low(06h)
+	movlw	low(0Eh)
 	fcall	_OLED_spi_sendchar
 	line	218
 	movlw	low(032h)

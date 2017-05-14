@@ -490,7 +490,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 "216
 [e ( _OLED_spi_sendchar (1 -> -> 135 `i `uc ]
 "217
-[e ( _OLED_spi_sendchar (1 -> -> 6 `i `uc ]
+[e ( _OLED_spi_sendchar (1 -> -> 14 `i `uc ]
 "218
 [e ( _send_char (1 -> -> 50 `ui `uc ]
 "219

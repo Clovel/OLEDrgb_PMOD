@@ -1264,7 +1264,7 @@ send_nl();
 
 # 216
 OLED_spi_sendchar(0x87);
-OLED_spi_sendchar(0x06);
+OLED_spi_sendchar(0x0E);
 send_char('2');
 send_char('3');
 send_nl();

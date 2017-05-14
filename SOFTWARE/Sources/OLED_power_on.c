@@ -230,7 +230,7 @@ void init_OLED(void)
 	send_char('4');
 	send_nl();
 
-	// Set the Contrast for Color A 
+	// Set the Contrast for Color B
 	// – 0x82, 0x50 to set a contrast value 
 	// of 0x50 (out of 0xFF) for color B (default green) 
 	//effectively setting the brightness level. 
@@ -241,7 +241,7 @@ void init_OLED(void)
 	send_char('5');
 	send_nl();
 
-	// Set the Contrast for Color A
+	// Set the Contrast for Color C
 	// – 0x83, 0x7D to set a contrast value 
 	// of 0x7D (out of 0xFF) for color C (default blue) 
 	// effectively setting the brightness level. 

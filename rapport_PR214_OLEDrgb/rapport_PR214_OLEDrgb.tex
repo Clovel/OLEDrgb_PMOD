@@ -277,11 +277,29 @@ En C, certaines définitions de constantes et quelques fonctions sont déjà cod
 
     \item Le ratio de division de l'horloge de l'affichage et la fréquence de l'oscillateur interne sont réglés à leur valeur maximale avec la commande \texttt{0xB3, 0xF0}
 
-    \item Le contraste est réglé par 3 suites de commandes concernant les trois couleurs : rouge (\texttt{0x8A, 0x64}), vert (\texttt{0x8B, 0x78}), bleu (\texttt{0x8C, 0x64}). 
+    \item Le niveau de précharge des couleurs est réglé par 3 suites de commandes concernant les trois couleurs : rouge (\texttt{0x8A, 0x64}), vert (\texttt{0x8B, 0x78}), bleu (\texttt{0x8C, 0x64}). 
 
     \item Le niveau de précharge des broches de l'écran est mis à 45\% du niveau de $V_{CC}$ comme indiqué par le manuel de Digilent. 
 
-    \item 
+    \item On fixe le seuil du niveau haut de la tension des broches communes au pixels à 83\% de la tension $V_{CC}$ conformément à la datasheet de Digilent. Pour ce faire on envoie les commandes \texttt{0xBE, 0x3E}. 
+
+    \item Ensuite, on contrôle la quantité de courant parcourant les segments de l'écran avec la commande \texttt{0x87}. En d'autres termes on règle ici la luminosité de l'écran. Celle-ci se règle sur 4 bits, où plus la valeur est faible, moins l'écran émet de lumière et où la valeur \texttt{0b1111} remet cette valeur à zéro. On choisit d'affecter la valeur intermédiaire \texttt{0x06 - 0b0110} qui donne un résultat satisfaisant. La valeur maximale \texttt{0x0E - 0b1110} ne donne pas beaucoup plus de luminosité mais implique qu'un courant plus fort traverse l'écran, et donc augmente la consommation. 
+
+    \item On règle le niveau de contraste pour les couleur A, B, C (respectivement R, G, B ici) avec les les commandes \texttt{0x81}, \texttt{0x82} et \texttt{0x83} respectivement, suivies par les valeurs que l'on souhaite affecter. Pour les trois couleurs, on a affecté les valeurs maximales, i.e. \texttt{0xFF}. 
+
+    \item On empêche l'image de se déplacer sur l'écran avec la commande \texttt{0x2E}.
+
+    \item On autorise avec la commande \texttt{0x26, 0x01} le remplissage des rectangles dessinés avec la commande \texttt{0x22}. Cette commande est facultative mais nous à permis de tester les fonctionnalités du Pmod. 
+
+    \item À présent on nettoie l'écran en effectuant un "Clear Screen" avec la suite de commandes suivante : \texttt{0x25, 0x00, 0x00, 0x5F, 0x3F}
+
+    \item On réalimente l'écran en passant VCCEN (noté OLED\_VBATC dans le code C) à 1 puis on attends 125 ms (majoration par rapport aux 25 ms préconisés par la datasheet). 
+
+    \item Enfin, la dernière étape consiste à allumer l'écran avec la commande prévue à cet effet : \texttt{0xAF}. On prends soin d'attendre 200 ms avant de terminer l'initialisation et de pouvoir commencer à utiliser l'écran. 
+
+    \begin{rmq}
+    Le numéro de l'étape est à chaque fois envoyé à l'ordinateur via la liaison UART pour vérifier l'avancement de l'initialisation. À la fin de celle-ci, le message "Fin Init OLED " est affiché. 
+    \end{rmq}
 
 
 \end{enumerate}
