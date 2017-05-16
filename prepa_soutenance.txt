@@ -1,0 +1,69 @@
+To do list - Soutenance
+
+Points à aborder: connaissances acquises, 
+
+Introduction
+	Sujet [Clovis]
+	Pmod def [Clovis]
+	Nexys4 [Clovis]
+	OLEDrgb def [Clovis]
+	Méthode de travail [Clovis]
+		Définition du cahier des charges. Choix.
+		Projet commun sur git
+		Étude du composant
+			Étude de la datasheet au début puis au fur et a mesure
+		Étude en C
+		Init en premier, envoi de données après
+	Objectifs [Xavier]
+		Initialisation
+		Envoi de données
+		Module de gestion (VHDL)
+	Extensions possibles [Xavier]
+		ASCII
+		Portait mode
+		Greyscale -> Conversion 65k couleurs vers 255
+
+C
+	Environnement de travail [Clovis]
+		- Schéma uP/uC + SPI
+	Séquence d'Init [Clovis]
+		- Séparation 3 blocs
+		Commandes principales
+	Envoi données [Xavier]
+		Format de couleur : 65k sur 16 bits
+			- Séparation des bits
+		bmp_to_hex.py
+			2 versions
+			4 étapes
+	Contraintes [Xavier]
+		Utilisation de l'UART
+
+
+VHDL
+	Environnement de travail
+	SPI [Clovis]
+		Utilité
+		Def protocole SPI
+		Fonctionnement
+		Choix
+	Machine d'état [Xavier]
+		Utilité
+		Fonctionnement
+		Choix
+	RAM
+		Utilité
+		Fonctionnement
+		Choix
+	Utilisation du module dans une architecture [Clovis]
+		Principe
+
+Démonstrations
+	Démo C
+		Python
+		Init
+
+
+
+Conclusion
+
+
