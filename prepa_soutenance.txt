@@ -42,15 +42,18 @@ C
 VHDL
 	Environnement de travail
 	SPI [Clovis]
+		- Schéma SPI + Simu
 		Utilité
 		Def protocole SPI
 		Fonctionnement
 		Choix
 	Machine d'état [Xavier]
+		- Schéma FSM
+		- Séparation 3 blocs de l'init
 		Utilité
 		Fonctionnement
 		Choix
-	RAM
+	RAM + MemInit [Xavier]
 		Utilité
 		Fonctionnement
 		Choix
@@ -58,12 +61,20 @@ VHDL
 		Principe
 
 Démonstrations
-	Démo C
+	Démo C [Clovis]
 		Python
 		Init
+		Envoi de données
+	Demo VHDL [Xavier]
+		Module de test
+		Python
+		Affichage image
 
-
-
-Conclusion
+Conclusion []
+	Acquis
+		SPI + UART : nouveaux protocoles
+		Gestion d'un périphérique du système
+		Différents niveaux d'abstraction
+		Projet terminé 
 
 
