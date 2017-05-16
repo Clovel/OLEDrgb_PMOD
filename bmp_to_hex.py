@@ -12,8 +12,8 @@ b       = 5
 g       = 6
 trash   = 2
 
-f = open("stop_resisting.hex",'w')
-A = imageio.imread("stop_resisting.bmp")
+f = open("image_ram.hex",'w')
+A = imageio.imread("image_ram.bmp")
 B = A
 c = 0
 
